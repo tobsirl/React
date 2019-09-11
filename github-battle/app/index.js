@@ -6,7 +6,7 @@ function isAuthed() {
   return true;
 }
 
-function isNew() {
+function showWarning() {
   return false;
 }
 
@@ -18,11 +18,8 @@ export default class App extends Component {
     return (
       <div>
         <h1>:koala:</h1>
-        {authed === true ? (
-          <h1>Welcome back!</h1>
-        ) : (
-          <h1>Login to see your dashboard</h1>
-        )}
+        {showWarning() === true && <h3>Warning</h3>}
+        {showWarning() === true ? <h3>Warning</h3> : null}
       </div>
     );
   }
