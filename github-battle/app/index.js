@@ -13,15 +13,18 @@ function isNew() {
 export default class App extends Component {
   render() {
     const authed = isAuthed();
-    const firstLogin = isNew();
+    // const firstLogin = isNew();
 
-    if (firstLogin === true) {
-      return <h1>Welcome!</h1>;
-    } else if (authed === true) {
-      return <h1>Welcome back!</h1>;
-    } else {
-      return <h1>Login to see your dashboard</h1>;
-    }
+    return (
+      <div>
+        <h1>:koala:</h1>
+        {authed === true ? (
+          <h1>Welcome back!</h1>
+        ) : (
+          <h1>Login to see your dashboard</h1>
+        )}
+      </div>
+    );
   }
 }
 
