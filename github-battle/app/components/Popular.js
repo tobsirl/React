@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-export default function Popular() {
-  return (
-    <div>
-      <h1>Popular</h1>
-    </div>
-  )
+export default class componentName extends Component {
+  render() {
+    const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+    return <ul className="flex-center">
+      {languages.map((language, index) => {
+        return <li key={index}>{language}</li>
+      })}
+    </ul>;
+  }
 }
