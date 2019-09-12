@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
+import Popular from './components/Popular';
 
 function isAuthed() {
   return true;
@@ -16,10 +17,8 @@ export default class App extends Component {
     // const firstLogin = isNew();
 
     return (
-      <div>
-        <h1>:koala:</h1>
-        {showWarning() === true && <h3>Warning</h3>}
-        {showWarning() === true ? <h3>Warning</h3> : null}
+      <div className='container'>
+        <Popular></Popular>
       </div>
     );
   }
