@@ -69,6 +69,11 @@ export default class Popular extends Component {
           selected={selectedLanguage}
           onUpdateLanguage={this.updateLanguage}
         />
+        {this.isLoading() && <p>Loading...</p>}
+
+        {error && <p>{error}</p>}
+
+        {repos && <pre>{JSON.stringify(repos, null, 2)}</pre>}
       </React.Fragment>
     );
   }
