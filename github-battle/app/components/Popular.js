@@ -38,6 +38,10 @@ export default class Popular extends Component {
     this.isLoading = this.isLoading.bind(this);
   }
 
+  componentDidMount() {
+    this.updateLanguage(this.state.selectedLanguage)
+  }
+
   updateLanguage(selectedLanguage) {
     this.setState({ selectedLanguage, error: null, repos: null });
 
