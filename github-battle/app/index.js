@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import './index.css';
 import Popular from './components/Popular';
+import Battle from './components/Battle';
 
 function isAuthed() {
   return true;
@@ -15,7 +16,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
-        <Popular />
+        <Battle />
       </div>
     );
   }
