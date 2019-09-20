@@ -90,7 +90,7 @@ export default class componentName extends Component {
     return (
       <div>
         <Instructions />
-        <PlayerInput />
+        <PlayerInput label="label!" onSubmit={value => console.log(value)} />
       </div>
     );
   }

@@ -143,3 +143,25 @@ li {
   padding: 40px;
   border-radius: 3px;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.player {
+  flex: 1;
+  margin: 0 20px;
+  padding: 10px;
+}
+
+.player-label {
+  font-size: 20px;
+  margin: 5px 0;
+  font-weight: 300;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
