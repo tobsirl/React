@@ -27,6 +27,19 @@ function Instructions() {
   );
 }
 
+class PlayerInput extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      username: ''
+    }
+  }
+  render() {
+    
+  }
+}
+
 export default class componentName extends Component {
   render() {
     return (
