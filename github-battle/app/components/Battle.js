@@ -46,7 +46,7 @@ class PlayerInput extends React.Component {
   handleChange(event) {
     this.setState({
       username: event.target.value
-    })
+    });
   }
 
   render() {
@@ -65,6 +65,13 @@ class PlayerInput extends React.Component {
             value={this.state.username}
             onChange={this.handleChange}
           />
+          <button
+            className="btn btn-dark"
+            type="submit"
+            disabled={!this.state.username}
+          >
+            Submit
+          </button>
         </div>
       </form>
     );
@@ -76,6 +83,7 @@ export default class componentName extends Component {
     return (
       <div>
         <Instructions />
+        <PlayerInput />
       </div>
     );
   }
