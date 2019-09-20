@@ -43,6 +43,12 @@ class PlayerInput extends React.Component {
     this.props.onSubmit(this.state.username);
   }
 
+  handleChange(event) {
+    this.setState({
+      username: event.target.value
+    })
+  }
+
   render() {
     return (
       <form className="column player" onSubmit={this.handleSubmit}>
@@ -56,6 +62,8 @@ class PlayerInput extends React.Component {
             className="input-light"
             placeholder="github username"
             autoComplete="off"
+            value={this.state.username}
+            onChange={this.handleChange}
           />
         </div>
       </form>
