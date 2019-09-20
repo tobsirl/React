@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Proptypes from 'prop-types';
 import { FaUserFriends, FaFighterJet, FaTrophy } from 'react-icons/fa';
 
 function Instructions() {
@@ -35,6 +36,7 @@ class PlayerInput extends React.Component {
       username: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(event) {
@@ -77,6 +79,11 @@ class PlayerInput extends React.Component {
     );
   }
 }
+
+PlayerInput.propsTypes = {
+  onSubmit: Proptypes.func.isRequired,
+  label: Proptypes.string.isRequired
+};
 
 export default class componentName extends Component {
   render() {
