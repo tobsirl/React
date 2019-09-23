@@ -86,7 +86,20 @@ PlayerInput.propsTypes = {
 };
 
 function PlayerPreview({ username, onReset, label }) {
-  return <div className="column player"></div>;
+  return (
+    <div className="column player">
+      <h3 className="player-label">{label}</h3>
+      <div class="row bg-light">
+        <div class="player-info">
+          <img
+            className="avatar-small"
+            src={`https://github.com/${username}.png?size=200`}
+            alt={`Avatar for ${username}`}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 PlayerPreview.propsTypes = {
@@ -105,6 +118,7 @@ export default class Battle extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleReset = this.handleReset.bind(this);
   }
 
   handleSubmit(id, player) {
