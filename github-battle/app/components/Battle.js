@@ -129,12 +129,18 @@ export default class Battle extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleReset = this.handleReset.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   handleSubmit(id, player) {
     this.setState({
       [id]: player
+    });
+  }
+
+  handleReset(id) {
+    this.setState({
+      [id]: null
     });
   }
 
@@ -155,7 +161,7 @@ export default class Battle extends Component {
               <PlayerPreview
                 username={playerOne}
                 label="Player One"
-                onReset={() => ({})}
+                onReset={() => this.handleReset('playerOne')}
               />
             )}
 
@@ -168,7 +174,7 @@ export default class Battle extends Component {
               <PlayerPreview
                 username={playerTwo}
                 label="Player Two"
-                onReset={() => ({})}
+                onReset={() => this.handleReset('playerTwo')}
               />
             )}
           </div>
