@@ -86,11 +86,7 @@ PlayerInput.propsTypes = {
 };
 
 function PlayerPreview({ username, onReset, label }) {
-  return (
-    <div className="column player">
-
-    </div>
-  )
+  return <div className="column player"></div>;
 }
 
 PlayerPreview.propsTypes = {
@@ -125,23 +121,33 @@ export default class Battle extends Component {
         <div class="players-container">
           <h1 className="center-text header-lg">Players</h1>
           <div className="row space-around">
-            {playerOne === null ? 
+            {playerOne === null ? (
               <PlayerInput
                 label="Player One"
                 onSubmit={player => this.handleSubmit('playerOne', player)}
               />
-              : <PlayerPreview username={playerOne} label="Player One" onReset={() => ({})}/>
-            }
+            ) : (
+              <PlayerPreview
+                username={playerOne}
+                label="Player One"
+                onReset={() => ({})}
+              />
+            )}
 
-            {playerTwo === null && (
+            {playerTwo === null ? (
               <PlayerInput
                 label="Player Two"
                 onSubmit={player => this.handleSubmit('playerTwo', player)}
               />
+            ) : (
+              <PlayerPreview
+                username={playerTwo}
+                label="Player Two"
+                onReset={() => ({})}
+              />
             )}
           </div>
         </div>
-        <PlayerInput label="label!" onSubmit={value => console.log(value)} />
       </React.Fragment>
     );
   }
