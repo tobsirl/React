@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Proptypes from 'prop-types';
-import { FaUserFriends, FaFighterJet, FaTrophy } from 'react-icons/fa';
+import {
+  FaUserFriends,
+  FaFighterJet,
+  FaTrophy,
+  FaTimesCircle
+} from 'react-icons/fa';
 
 function Instructions() {
   return (
@@ -89,14 +94,20 @@ function PlayerPreview({ username, onReset, label }) {
   return (
     <div className="column player">
       <h3 className="player-label">{label}</h3>
-      <div class="row bg-light">
-        <div class="player-info">
+      <div className="row bg-light">
+        <div className="player-info">
           <img
             className="avatar-small"
             src={`https://github.com/${username}.png?size=200`}
             alt={`Avatar for ${username}`}
           />
+          <a href={`https://github.com/${username}`} className="link">
+            {username}
+          </a>
         </div>
+        <button className="btn-clear flex-center" onClick={onReset}>
+          <FaTimesCircle color="rgb(194, 57, 42)" size={26} />
+        </button>
       </div>
     </div>
   );
@@ -132,7 +143,7 @@ export default class Battle extends Component {
     return (
       <React.Fragment>
         <Instructions />
-        <div class="players-container">
+        <div className="players-container">
           <h1 className="center-text header-lg">Players</h1>
           <div className="row space-around">
             {playerOne === null ? (
