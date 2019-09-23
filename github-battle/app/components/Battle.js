@@ -85,7 +85,21 @@ PlayerInput.propsTypes = {
   label: Proptypes.string.isRequired
 };
 
-export default class componentName extends Component {
+function PlayerPreview({ username, onReset, label }) {
+  return (
+    <div className="column player">
+
+    </div>
+  )
+}
+
+PlayerPreview.propsTypes = {
+  username: Proptypes.string.isRequired,
+  onReset: Proptypes.func.isRequired,
+  label: Proptypes.string.isRequired
+};
+
+export default class Battle extends Component {
   constructor(props) {
     super(props);
 
@@ -94,13 +108,13 @@ export default class componentName extends Component {
       playerTwo: null
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(id, player) {
     this.setState({
       [id]: player
-    })
+    });
   }
 
   render() {
@@ -111,12 +125,13 @@ export default class componentName extends Component {
         <div class="players-container">
           <h1 className="center-text header-lg">Players</h1>
           <div className="row space-around">
-            {playerOne === null && (
+            {playerOne === null ? 
               <PlayerInput
                 label="Player One"
                 onSubmit={player => this.handleSubmit('playerOne', player)}
               />
-            )}
+              : <PlayerPreview username={playerOne} label="Player One" onReset={() => ({})}/>
+            }
 
             {playerTwo === null && (
               <PlayerInput
