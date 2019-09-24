@@ -6,6 +6,7 @@ import {
   FaTrophy,
   FaTimesCircle
 } from 'react-icons/fa';
+import Results from './Results';
 
 function Instructions() {
   return (
@@ -125,7 +126,8 @@ export default class Battle extends Component {
 
     this.state = {
       playerOne: null,
-      playerTwo: null
+      playerTwo: null,
+      battle: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -178,6 +180,14 @@ export default class Battle extends Component {
               />
             )}
           </div>
+        {playerOne && playerTwo && (
+          <button
+          className="btn dark-btn btn-space"
+          onClick={}
+          >
+            Battle
+          </button>
+        )}
         </div>
       </React.Fragment>
     );
