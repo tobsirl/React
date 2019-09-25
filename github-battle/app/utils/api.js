@@ -22,6 +22,20 @@ function getProfile(username) {
     });
 }
 
+function getRepos(username) {
+  return fetch(
+    `https://api.github.com/users/${username}/repos${params}&per_page=100`
+  )
+    .then(res => res.json())
+    .then(repos => {
+      if (repos.message) {
+        throw new Error(getErrorMsg(repos.message, username));
+      }
+
+      return repos;
+    });
+}
+
 export function fetchPopularRepos(language) {
   const endpoint = window.encodeURI(
     `https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`
