@@ -1,6 +1,4 @@
-const id = 'YOUR_CLIENT_ID';
-const sec = 'YOUR_SECRET_ID';
-const params = `?client_id=${id}&client_secret=${sec}`;
+const params = `?client_id=${process.env.ID}&client_secret=${process.env.SEC}`;
 
 function getErrorMsg(message, username) {
   if (message === 'Not Found') {
@@ -56,11 +54,14 @@ function getUserData(player) {
   );
 }
 
-export function battle (players) {
-  return Promise.all([
-    getUserData(players[0]),
-    getUserData(players[1])
-  ]).then((results) => sortPlayers(results))
+function sortPlayers(players) {
+  return players.sort((a, b) => b.score - a.score);
+}
+
+export function battle(players) {
+  return Promise.all([getUserData(players[0]), getUserData(players[1])]).then(
+    results => sortPlayers(results)
+  );
 }
 
 export function fetchPopularRepos(language) {
