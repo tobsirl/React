@@ -150,7 +150,7 @@ export default class Battle extends Component {
     const { playerOne, playerTwo, battle } = this.state;
 
     if (battle === true) {
-      return <Results playerOne={playerOne} playerOne={playerTwo} />;
+      return <Results playerOne={playerOne} playerTwo={playerTwo} />;
     }
 
     return (
