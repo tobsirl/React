@@ -36,6 +36,15 @@ function getRepos(username) {
     });
 }
 
+function getUserData(player) {
+  return Promise.all([getProfile(player), getRepos(player)]).then(
+    ([profile, repos]) => ({
+      profile,
+      score: calculateScore(profile.followers, repos)
+    })
+  );
+}
+
 export function fetchPopularRepos(language) {
   const endpoint = window.encodeURI(
     `https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`
