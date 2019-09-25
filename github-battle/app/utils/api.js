@@ -36,6 +36,17 @@ function getRepos(username) {
     });
 }
 
+function getStarCount(repos) {
+  return repos.reduce(
+    (count, { stargazers_count }) => count + stargazers_count,
+    0
+  );
+}
+
+function calculateScore(followers, repos) {
+  return followers * 3 + getStarCount(repos);
+}
+
 function getUserData(player) {
   return Promise.all([getProfile(player), getRepos(player)]).then(
     ([profile, repos]) => ({
