@@ -2,6 +2,17 @@ import React, { Component } from 'react';
 import { battle } from '../utils/api';
 
 export default class Results extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      winner: null,
+      loser: null,
+      error: null,
+      loading: true
+    };
+  }
+
   componentDidMount() {
     const { playerOne, playerTwo } = this.props;
 
@@ -9,7 +20,7 @@ export default class Results extends Component {
       console.log('data: ', players);
     });
   }
-  
+
   render() {
     return (
       <div>
