@@ -17,7 +17,12 @@ export default class Results extends Component {
     const { playerOne, playerTwo } = this.props;
 
     battle([playerOne, playerTwo]).then(players => {
-      console.log('data: ', players);
+      this.setState({
+        winner: players[0],
+        loser: players[1],
+        error: null,
+        loading: false
+      });
     });
   }
 
