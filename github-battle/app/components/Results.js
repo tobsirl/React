@@ -16,21 +16,28 @@ export default class Results extends Component {
   componentDidMount() {
     const { playerOne, playerTwo } = this.props;
 
-    battle([playerOne, playerTwo]).then(players => {
-      this.setState({
-        winner: players[0],
-        loser: players[1],
-        error: null,
-        loading: false
+    battle([playerOne, playerTwo])
+      .then(players => {
+        this.setState({
+          winner: players[0],
+          loser: players[1],
+          error: null,
+          loading: false
+        });
+      })
+      .catch(({ message }) => {
+        this.setState({
+          error: message,
+          loading: false
+        });
       });
-    });
   }
 
   render() {
     return (
       <div>
         <h1>Results</h1>
-        <pre>{JSON.stringify(this.props, null, 2)}</pre>
+        <pre>{JSON.stringify(this.state, null, 2)}</pre>
       </div>
     );
   }
