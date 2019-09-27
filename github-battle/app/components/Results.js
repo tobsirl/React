@@ -34,10 +34,20 @@ export default class Results extends Component {
   }
 
   render() {
+    const { winner, loser, error, loser } = this.state;
+
+    if (loading === true) {
+      return <p>Loading...</p>;
+    }
+
+    if (error) {
+      return <p className="center-text error">{error}</p>;
+    }
+
     return (
-      <div>
-        <h1>Results</h1>
-        <pre>{JSON.stringify(this.state, null, 2)}</pre>
+      <div className="grid space-around container-sm">
+        <div></div>
+        <div></div>
       </div>
     );
   }
