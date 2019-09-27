@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import { battle } from '../utils/api';
+import {
+  FaCompass,
+  FaBriefcase,
+  FaUsers,
+  FaUserFriends,
+  FaCode,
+  FaUser
+} from 'react-icons/fa';
 
 export default class Results extends Component {
   constructor(props) {
@@ -60,6 +68,32 @@ export default class Results extends Component {
               {winner.profile.login}
             </a>
           </h2>
+          <ul className="card-list">
+            <li>
+              <FaUser color="rgb(239, 115, 115)" size={22} />
+              {winner.profile.name}
+            </li>
+            {winner.profile.location && (
+              <li>
+                <FaCompass color="rgb(144, 115, 255)" size={22} />
+                {winner.profile.location}
+              </li>
+            )}
+            {winner.profile.company && (
+              <li>
+                <FaBriefcase color="#795548" size={22} />
+                {winner.profile.company}
+              </li>
+            )}
+            <li>
+              <FaUsers color="rgb(129, 195, 245)" size={22} />
+              {winner.profile.followers.toLocaleString()} followers
+            </li>
+            <li>
+              <FaUserFriends color="rgb(64, 183, 95)" size={22} />
+              {winner.profile.following.toLocaleString()} following
+            </li>
+          </ul>
         </div>
         <div className="card bg-light">
           <h4 className="header-lg center-text">
