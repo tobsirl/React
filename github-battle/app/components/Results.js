@@ -89,22 +89,13 @@ export default class Results extends Component {
             </li>
           </ul>
         </Card>
-
-        <div className="card bg-light">
-          <h4 className="header-lg center-text">
-            {winner.score === loser.score ? 'Tie' : 'Loser'}
-          </h4>
-          <img
-            className="avatar"
-            src={loser.profile.avatar_url}
-            alt={`Avatar for ${loser.profile.login}`}
-          />
-          <h4 className="center-text">Score: {loser.score.toLocaleString()}</h4>
-          <h2 className="center-text">
-            <a className="link" href={loser.profile.html_url}>
-              {loser.profile.login}
-            </a>
-          </h2>
+        <Card
+          header={winner.score === loser.score ? 'Tie' : 'Loser'}
+          subheader={`Score: ${loser.score.toLocaleString()}`}
+          avatar={loser.profile.avatar_url}
+          href={loser.profile.html_url}
+          name={loser.profile.login}
+        >
           <ul className="card-list">
             <li>
               <FaUser color="rgb(239, 115, 115)" size={22} />
@@ -131,7 +122,7 @@ export default class Results extends Component {
               {loser.profile.following.toLocaleString()} following
             </li>
           </ul>
-        </div>
+        </Card>
       </div>
     );
   }
