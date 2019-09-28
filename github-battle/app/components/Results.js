@@ -61,22 +61,7 @@ export default class Results extends Component {
           avatar={winner.profile.avatar_url}
           href={winner.profile.html_url}
           name={winner.profile.login}
-        />
-        <div className="card bg-light">
-          <h4 className="header-lg center-text">
-            {winner.score === loser.score ? 'Tie' : 'Winner'}
-          </h4>
-          <img
-            className="avatar"
-            src={}
-            alt={`Avatar for ${}`}
-          />
-          <h4 className="center-text">Score: {}</h4>
-          <h2 className="center-text">
-            <a className="link" href={}>
-              {winner.profile.login}
-            </a>
-          </h2>
+        >
           <ul className="card-list">
             <li>
               <FaUser color="rgb(239, 115, 115)" size={22} />
@@ -103,7 +88,8 @@ export default class Results extends Component {
               {winner.profile.following.toLocaleString()} following
             </li>
           </ul>
-        </div>
+        </Card>
+
         <div className="card bg-light">
           <h4 className="header-lg center-text">
             {winner.score === loser.score ? 'Tie' : 'Loser'}
