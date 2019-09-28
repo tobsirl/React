@@ -1,11 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Card extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Card</h1>
-      </div>
-    );
-  }
+export default function Card({ header, subheader, avatar, href, name }) {
+  return (
+    <div className="card bg-light">
+      <h4 className="header-lg center-text">{header}</h4>
+      <img className="avatar" src={avatar} alt={`Avatar for ${name}`} />{' '}
+      {subheader && <h4 className="center-text">{subheader}</h4>}
+      <h2 className="center-text">
+        <a className="link" href={href}>
+          {name}
+        </a>
+      </h2>
+    </div>
+  );
 }
