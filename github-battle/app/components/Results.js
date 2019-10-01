@@ -10,32 +10,32 @@ import {
 } from 'react-icons/fa';
 import Card from './Card';
 
-function Profile() {
+function Profile({ profile }) {
   return (
     <ul className="card-list">
       <li>
         <FaUser color="rgb(239, 115, 115)" size={22} />
-        {winner.profile.name}
+        {profile.name}
       </li>
-      {winner.profile.location && (
+      {profile.location && (
         <li>
           <FaCompass color="rgb(144, 115, 255)" size={22} />
-          {winner.profile.location}
+          {profile.location}
         </li>
       )}
-      {winner.profile.company && (
+      {profile.company && (
         <li>
           <FaBriefcase color="#795548" size={22} />
-          {winner.profile.company}
+          {profile.company}
         </li>
       )}
       <li>
         <FaUsers color="rgb(129, 195, 245)" size={22} />
-        {winner.profile.followers.toLocaleString()} followers
+        {profile.followers.toLocaleString()} followers
       </li>
       <li>
         <FaUserFriends color="rgb(64, 183, 95)" size={22} />
-        {winner.profile.following.toLocaleString()} following
+        {profile.following.toLocaleString()} following
       </li>
     </ul>
   );
