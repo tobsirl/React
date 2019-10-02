@@ -107,7 +107,7 @@ export default class Results extends Component {
           href={loser.profile.html_url}
           name={loser.profile.login}
         >
-          <ProfileList profile={winner.profile} />
+          <ProfileList profile={loser.profile} />
         </Card>
       </div>
     );
