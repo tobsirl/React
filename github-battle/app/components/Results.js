@@ -113,3 +113,9 @@ export default class Results extends Component {
     );
   }
 }
+
+Results.propTypes = {
+  playerOne: PropTypes.string.isRequired,
+  playerTwo: PropTypes.string.isRequired,
+  onReset: PropTypes.func.isRequired
+};
