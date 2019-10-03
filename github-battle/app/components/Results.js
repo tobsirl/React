@@ -44,8 +44,8 @@ function ProfileList({ profile }) {
 }
 
 ProfileList.propTypes = {
-  profile: PropTypes.object.isRequired,
-}
+  profile: PropTypes.object.isRequired
+};
 
 export default class Results extends Component {
   constructor(props) {
