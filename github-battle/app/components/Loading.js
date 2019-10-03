@@ -9,6 +9,16 @@ export default class Loading extends Component {
     };
   }
 
+  componentDidMount() {
+    window.setInterval(() => {
+      this.state.content === 'Loading' + '...'
+        ? this.setState({ content: 'Loading' })
+        : this.state(() =>
+            this.setState(({ content }) => ({ content: content + '.' }))
+          );
+    }, 300);
+  }
+
   render() {
     return (
       <div>
