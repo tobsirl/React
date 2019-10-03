@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   content: {
@@ -38,3 +39,8 @@ export default class Loading extends Component {
     return <p style={styles.content}>{this.state.content}</p>;
   }
 }
+
+Loading.propTypes = {
+  text: PropTypes.string.isRequired,
+  speed: PropTypes.number.isRequired
+};
