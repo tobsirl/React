@@ -10,7 +10,7 @@ export default class Loading extends Component {
   }
 
   componentDidMount() {
-    window.setInterval(() => {
+    this.interval = window.setInterval(() => {
       this.state.content === 'Loading' + '...'
         ? this.setState({ content: 'Loading' })
         : this.state(() =>
@@ -19,12 +19,11 @@ export default class Loading extends Component {
     }, 300);
   }
 
+  componentWillUnmount() {
+    window.clearInterval(this.interval);
+  }
+
   render() {
-    return (
-      <div>
-        <h1>Loading...</h1>
-        {this.state.content}
-      </div>
-    );
+    return <p>{this.state.content}</p>;
   }
 }

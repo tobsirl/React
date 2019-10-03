@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   FaUserFriends,
   FaFighterJet,
@@ -86,10 +86,10 @@ class PlayerInput extends React.Component {
   }
 }
 
-PlayerInput.propsTypes = {
-  onSubmit: Proptypes.func.isRequired,
-  label: Proptypes.string.isRequired
-};
+PlayerInput.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired
+}
 
 function PlayerPreview({ username, onReset, label }) {
   return (
@@ -114,11 +114,11 @@ function PlayerPreview({ username, onReset, label }) {
   );
 }
 
-PlayerPreview.propsTypes = {
-  username: Proptypes.string.isRequired,
-  onReset: Proptypes.func.isRequired,
-  label: Proptypes.string.isRequired
-};
+PlayerPreview.propTypes = {
+  username: PropTypes.string.isRequired,
+  onReset: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired
+}
 
 export default class Battle extends Component {
   constructor(props) {
