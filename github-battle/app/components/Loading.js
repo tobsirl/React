@@ -27,9 +27,7 @@ export default class Loading extends Component {
     this.interval = window.setInterval(() => {
       this.state.content === text + '...'
         ? this.setState({ content: text })
-        : this.state(() =>
-            this.setState(({ content }) => ({ content: content + '.' }))
-          );
+        : this.setState(({ content }) => ({ content: content + '.' }));
     }, speed);
   }
 

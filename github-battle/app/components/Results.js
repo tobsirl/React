@@ -60,6 +60,7 @@ class ProfileList extends React.Component {
 
   render() {
     const { profile } = this.props;
+    const { hoveringLocation, hoveringCompany } = this.state;
 
     return (
       <ul className="card-list">
@@ -68,7 +69,10 @@ class ProfileList extends React.Component {
           {profile.name}
         </li>
         {profile.location && (
-          <li onMouseOver={() => this.mouseOver('hoveringLocation')}>
+          <li
+            onMouseOver={() => this.mouseOver('hoveringLocation')}
+            onMouseOut={() => this.mouseOut('hoveringLocation')}
+          >
             {hoveringLocation === true && (
               <div style={styles.tooltip}>User's location</div>
             )}
@@ -77,7 +81,10 @@ class ProfileList extends React.Component {
           </li>
         )}
         {profile.company && (
-          <li onMouseOut={() => this.mouseOut('hoveringCompany')}>
+          <li
+            onMouseOver={() => this.mouseOver('hoveringCompany')}
+            onMouseOut={() => this.mouseOut('hoveringCompany')}
+          >
             {hoveringCompany === true && (
               <div style={styles.tooltip}>User's company</div>
             )}
@@ -99,7 +106,9 @@ class ProfileList extends React.Component {
 }
 
 ProfileList.propTypes = {
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  hoveringLocation: PropTypes.bool,
+  hoveringCompany: PropTypes.bool
 };
 
 export default class Results extends Component {
