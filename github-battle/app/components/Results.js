@@ -42,18 +42,20 @@ class ProfileList extends React.Component {
       hoveringLocation: false,
       hoveringCompany: false
     };
+    this.mouseOver = this.mouseOver.bind(this);
+    this.mouseOut = this.mouseOut.bind(this);
   }
 
   mouseOver(id) {
     this.setState({
       [id]: true
-    })
+    });
   }
 
   mouseOut(id) {
     this.setState({
-      [id]: true
-    })
+      [id]: false
+    });
   }
 
   render() {
@@ -66,15 +68,19 @@ class ProfileList extends React.Component {
           {profile.name}
         </li>
         {profile.location && (
-          <li>
-            {hoveringLocation === true && <div style={styles tooltip}>User's location</div>}
+          <li onMouseOver={() => this.mouseOver('hoveringLocation')}>
+            {hoveringLocation === true && (
+              <div style={styles.tooltip}>User's location</div>
+            )}
             <FaCompass color="rgb(144, 115, 255)" size={22} />
             {profile.location}
           </li>
         )}
         {profile.company && (
-          <li>
-            {hoveringCompany === true && <div style={styles tooltip}>User's company</div>}
+          <li onMouseOut={() => this.mouseOut('hoveringCompany')}>
+            {hoveringCompany === true && (
+              <div style={styles.tooltip}>User's company</div>
+            )}
             <FaBriefcase color="#795548" size={22} />
             {profile.company}
           </li>
