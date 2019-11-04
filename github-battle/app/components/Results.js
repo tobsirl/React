@@ -43,7 +43,19 @@ class ProfileList extends React.Component {
       hoveringCompany: false
     };
   }
-  
+
+  mouseOver(id) {
+    this.setState({
+      [id]: true
+    })
+  }
+
+  mouseOut(id) {
+    this.setState({
+      [id]: true
+    })
+  }
+
   render() {
     const { profile } = this.props;
 
@@ -55,12 +67,14 @@ class ProfileList extends React.Component {
         </li>
         {profile.location && (
           <li>
+            {hoveringLocation === true && <div style={styles tooltip}>User's location</div>}
             <FaCompass color="rgb(144, 115, 255)" size={22} />
             {profile.location}
           </li>
         )}
         {profile.company && (
           <li>
+            {hoveringCompany === true && <div style={styles tooltip}>User's company</div>}
             <FaBriefcase color="#795548" size={22} />
             {profile.company}
           </li>
