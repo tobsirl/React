@@ -8,6 +8,7 @@ import {
   FaExclamationTriangle
 } from 'react-icons/fa';
 import Card from './Card';
+import Loading from './Loading';
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
   const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
@@ -138,7 +139,7 @@ export default class Popular extends Component {
           selected={selectedLanguage}
           onUpdateLanguage={this.updateLanguage}
         />
-        {this.isLoading() && <p>Loading...</p>}
+        {this.isLoading() && <Loading text="Fetching Repos" />}
 
         {error && <p className="center-text error">{error}</p>}
 

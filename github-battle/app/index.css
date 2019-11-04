@@ -65,7 +65,7 @@ li {
 }
 
 .avatar {
-  max-width: 150px;
+  max-width: 150px; 
   border-radius: 3px;
   margin: 0 auto;
   display: block;
