@@ -72,6 +72,7 @@ class ProfileList extends React.Component {
           <li
             onMouseOver={() => this.mouseOver('hoveringLocation')}
             onMouseOut={() => this.mouseOut('hoveringLocation')}
+            style={styles.container}
           >
             {hoveringLocation === true && (
               <div style={styles.tooltip}>User's location</div>
@@ -84,6 +85,7 @@ class ProfileList extends React.Component {
           <li
             onMouseOver={() => this.mouseOver('hoveringCompany')}
             onMouseOut={() => this.mouseOut('hoveringCompany')}
+            style={styles.container}
           >
             {hoveringCompany === true && (
               <div style={styles.tooltip}>User's company</div>
