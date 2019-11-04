@@ -35,9 +35,18 @@ const styles = {
 };
 
 class ProfileList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hoveringLocation: false,
+      hoveringCompany: false
+    };
+  }
+  
   render() {
     const { profile } = this.props;
-    
+
     return (
       <ul className="card-list">
         <li>
