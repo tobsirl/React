@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   container: {
@@ -28,30 +28,33 @@ export default class Tooltip extends Component {
     super(props);
 
     this.state = {
-      hoveringLocation: false,
-      hoveringCompany: false
+      hovering: false
     };
     this.mouseOver = this.mouseOver.bind(this);
     this.mouseOut = this.mouseOut.bind(this);
   }
 
-  mouseOver(id) {
+  mouseOver() {
     this.setState({
-      [id]: true
+      hovering: true
     });
   }
 
-  mouseOut(id) {
+  mouseOut() {
     this.setState({
-      [id]: false
+      hovering: false
     });
   }
 
   render() {
     return (
-      <div>
+      <div
+        onMouseOver={this.mouseOver}
+        onMouseOut={this.mouseOut}
+        style={styles.container}
+      >
         <h1>tooltip</h1>
       </div>
-    )
+    );
   }
 }
