@@ -12,56 +12,35 @@ import Card from './Card';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
 
-class ProfileList extends React.Component {
-
-
-  render() {
-    const { profile } = this.props;
-    const { hoveringLocation, hoveringCompany } = this.state;
-
-    return (
-      <ul className="card-list">
+function ProfileList({ profile }) {
+  return (
+    <ul className="card-list">
+      <li>
+        <FaUser color="rgb(239, 115, 115)" size={22} />
+        {profile.name}
+      </li>
+      {profile.location && (
         <li>
-          <FaUser color="rgb(239, 115, 115)" size={22} />
-          {profile.name}
+          <FaCompass color="rgb(144, 115, 255)" size={22} />
+          {profile.location}
         </li>
-        {profile.location && (
-          <li
-            onMouseOver={() => this.mouseOver('hoveringLocation')}
-            onMouseOut={() => this.mouseOut('hoveringLocation')}
-            style={styles.container}
-          >
-            {hoveringLocation === true && (
-              <div style={styles.tooltip}>User's location</div>
-            )}
-            <FaCompass color="rgb(144, 115, 255)" size={22} />
-            {profile.location}
-          </li>
-        )}
-        {profile.company && (
-          <li
-            onMouseOver={() => this.mouseOver('hoveringCompany')}
-            onMouseOut={() => this.mouseOut('hoveringCompany')}
-            style={styles.container}
-          >
-            {hoveringCompany === true && (
-              <div style={styles.tooltip}>User's company</div>
-            )}
-            <FaBriefcase color="#795548" size={22} />
-            {profile.company}
-          </li>
-        )}
+      )}
+      {profile.company && (
         <li>
-          <FaUsers color="rgb(129, 195, 245)" size={22} />
-          {profile.followers.toLocaleString()} followers
+          <FaBriefcase color="#795548" size={22} />
+          {profile.company}
         </li>
-        <li>
-          <FaUserFriends color="rgb(64, 183, 95)" size={22} />
-          {profile.following.toLocaleString()} following
-        </li>
-      </ul>
-    );
-  }
+      )}
+      <li>
+        <FaUsers color="rgb(129, 195, 245)" size={22} />
+        {profile.followers.toLocaleString()} followers
+      </li>
+      <li>
+        <FaUserFriends color="rgb(64, 183, 95)" size={22} />
+        {profile.following.toLocaleString()} following
+      </li>
+    </ul>
+  );
 }
 
 ProfileList.propTypes = {
