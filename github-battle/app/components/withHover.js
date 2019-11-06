@@ -23,5 +23,13 @@ export default function withHover(Component) {
         hovering: false
       });
     }
+
+    render() {
+      return (
+        <div onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+          <Component hovering={this.state.hovering} />
+        </div>
+      );
+    }
   };
 }

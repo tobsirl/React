@@ -24,15 +24,6 @@ const styles = {
   }
 };
 
-// export default class Tooltip extends Component {
-//   
-
-//   render() {
-//     const { text, children } = this.props;
-//     const { hovering } = this.state;
-//   }
-// }
-
 function Tooltip({ text, children, hovering }) {
   return (
     <div style={styles.container}>
