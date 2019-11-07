@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import withHover from './withHover';
+import Hover from './Hover';
 
 const styles = {
   container: {
@@ -38,4 +38,4 @@ Tooltip.propTypes = {
   hovering: PropTypes.bool.isRequired
 };
 
-export default withHover(Tooltip, 'hover');
+export default Tooltip;
