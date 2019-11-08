@@ -18,7 +18,12 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      theme: 'light'
+      theme: 'light',
+      toggleTheme: () => {
+        this.setState(({ theme }) => ({
+          theme: theme === 'light' ? 'dark' : 'light'
+        }));
+      }
     };
   }
   render() {
