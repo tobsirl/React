@@ -14,9 +14,16 @@ function showWarning() {
 }
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      theme: 'light'
+    };
+  }
   render() {
     return (
-      <ThemeProvider>
+      <ThemeProvider value={this.state.theme}>
         <div className="container">
           <Battle />
         </div>
