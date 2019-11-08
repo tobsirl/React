@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import './index.css';
 import Popular from './components/Popular';
 import Battle from './components/Battle';
+import { ThemeProvider } from './contexts/theme';
 
 function isAuthed() {
   return true;
@@ -15,9 +16,11 @@ function showWarning() {
 export default class App extends Component {
   render() {
     return (
-      <div className="container">
-        <Battle />
-      </div>
+      <ThemeProvider>
+        <div className="container">
+          <Battle />
+        </div>
+      </ThemeProvider>
     );
   }
 }
