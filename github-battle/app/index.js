@@ -28,7 +28,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <ThemeProvider value={this.state.theme}>
+      <ThemeProvider value={this.state}>
         <div className="container">
           <Battle />
         </div>
