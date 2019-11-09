@@ -246,3 +246,8 @@ li {
   font-size: 20px;
   margin: 50px 0;
 }
+
+.bg-dark {
+  background: rgb(36, 40, 42);
+  border-radius: 3px;
+}
