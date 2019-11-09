@@ -89,7 +89,7 @@ class PlayerInput extends React.Component {
                 onChange={this.handleChange}
               />
               <button
-                className="btn dark-btn"
+                className={`btn ${theme === 'dark' ? 'light-btn' : 'dark-btn'}`}
                 type="submit"
                 disabled={!this.state.username}
               >
