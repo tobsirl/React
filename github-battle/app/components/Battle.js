@@ -82,7 +82,7 @@ class PlayerInput extends React.Component {
               <input
                 type="text"
                 id="username"
-                className="input-light"
+                className={`input-${theme}`}
                 placeholder="github username"
                 autoComplete="off"
                 value={this.state.username}
