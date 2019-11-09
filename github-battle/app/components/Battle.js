@@ -19,19 +19,23 @@ function Instructions() {
             <li>
               <h3 className="header-sm">Enter two Github users</h3>
               <FaUserFriends
-                className="bg-light"
+                className={`bg-${theme}`}
                 color="rgb(255, 191, 116)"
                 size={140}
               />
             </li>
             <li>
               <h3 className="header-sm">Battle</h3>
-              <FaFighterJet className="bg-light" color="#727272" size={140} />
+              <FaFighterJet
+                className={`bg-${theme}`}
+                color="#727272"
+                size={140}
+              />
             </li>
             <li>
               <h3 className="header-sm">See the winners</h3>
               <FaTrophy
-                className="bg-light"
+                className={`bg-${theme}`}
                 color="rgb(255, 215, 0)"
                 size={140}
               />
