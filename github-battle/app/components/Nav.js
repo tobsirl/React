@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeConsumer } from '../contexts/theme';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
@@ -9,14 +9,14 @@ export default function Nav() {
         <nav className="row space-between">
           <ul className="row nav">
             <li>
-              <Link to="/" className="nav-link">
+              <NavLink to="/" className="nav-link">
                 Popular
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link to="/battle" className="nav-link">
+              <NavLink to="/battle" className="nav-link">
                 Battle
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <button
