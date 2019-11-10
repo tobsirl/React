@@ -7,14 +7,6 @@ import { ThemeProvider } from './contexts/theme';
 import Nav from './components/Nav';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function isAuthed() {
-  return true;
-}
-
-function showWarning() {
-  return false;
-}
-
 export default class App extends Component {
   constructor(props) {
     super(props);
