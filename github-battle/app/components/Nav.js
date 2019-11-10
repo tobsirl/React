@@ -8,8 +8,16 @@ export default function Nav() {
       {({ theme, toggleTheme }) => (
         <nav className="row space-between">
           <ul className="row nav">
-            <li></li>
-            <li></li>
+            <li>
+              <Link to="/" className="nav-link">
+                Popular
+              </Link>
+            </li>
+            <li>
+              <Link to="/battle" className="nav-link">
+                Battle
+              </Link>
+            </li>
           </ul>
           <button
             style={{ fontSize: 30 }}
