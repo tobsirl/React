@@ -1,12 +1,13 @@
 import React from 'react';
 import { ThemeConsumer } from '../contexts/theme';
+import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <ThemeConsumer>
       {({ theme, toggleTheme }) => (
         <nav className="row space-between">
-          <ul className='row nav'>
+          <ul className="row nav">
             <li></li>
             <li></li>
           </ul>
