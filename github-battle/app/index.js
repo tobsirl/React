@@ -5,6 +5,7 @@ import Popular from './components/Popular';
 import Battle from './components/Battle';
 import { ThemeProvider } from './contexts/theme';
 import Nav from './components/Nav';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function isAuthed() {
   return true;
