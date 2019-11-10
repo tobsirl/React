@@ -35,7 +35,8 @@ export default class App extends Component {
           <div className={this.state.theme}>
             <div className="container">
               <Nav />
-              <Popular />
+              <Route exact path="/" component={Popular} />
+              <Route path="/battle" component={Battle} />
             </div>
           </div>
         </ThemeProvider>
