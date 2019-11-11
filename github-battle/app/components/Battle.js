@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import Results from './Results';
 import { ThemeConsumer } from '../contexts/theme';
+import { Link } from 'react-router-dom';
 
 function Instructions() {
   return (
@@ -147,8 +148,7 @@ export default class Battle extends Component {
 
     this.state = {
       playerOne: null,
-      playerTwo: null,
-      battle: false
+      playerTwo: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -168,7 +168,7 @@ export default class Battle extends Component {
   }
 
   render() {
-    const { playerOne, playerTwo, battle } = this.state;
+    const { playerOne, playerTwo } = this.state;
 
     return (
       <React.Fragment>
@@ -203,12 +203,15 @@ export default class Battle extends Component {
             )}
           </div>
           {playerOne && playerTwo && (
-            <button
+            <Link
               className="btn dark-btn btn-space"
-              onClick={() => this.setState({ battle: true })}
+              to={{
+                pathname: '/battle/results',
+                search:
+              }}
             >
               Battle
-            </button>
+            </Link>
           )}
         </div>
       </React.Fragment>
