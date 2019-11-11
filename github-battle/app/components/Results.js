@@ -68,7 +68,9 @@ export default class Results extends Component {
   }
 
   componentDidMount() {
-    const { playerOne, playerTwo } = this.props.location.search;
+    const { playerOne, playerTwo } = queryString.parse(
+      this.props.location.search
+    );
 
     battle([playerOne, playerTwo])
       .then(players => {
