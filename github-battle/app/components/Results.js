@@ -12,6 +12,7 @@ import Card from './Card';
 import PropTypes from 'prop-types';
 import Loading from './Loading';
 import Tooltip from './Tooltip';
+import queryString from 'query-string';
 
 function ProfileList({ profile }) {
   return (
@@ -67,7 +68,7 @@ export default class Results extends Component {
   }
 
   componentDidMount() {
-    const { playerOne, playerTwo } = this.props;
+    const { playerOne, playerTwo } = this.props.location.search;
 
     battle([playerOne, playerTwo])
       .then(players => {
