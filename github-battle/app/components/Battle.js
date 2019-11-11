@@ -207,7 +207,7 @@ export default class Battle extends Component {
               className="btn dark-btn btn-space"
               to={{
                 pathname: '/battle/results',
-                search:
+                search: `?playerOne=${playerOne}&playerTwo=${playerTwo}`
               }}
             >
               Battle
