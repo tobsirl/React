@@ -137,29 +137,22 @@ PlayerPreview.propTypes = {
 };
 
 export default class Battle extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    playerOne: null,
+    playerTwo: null
+  };
 
-    this.state = {
-      playerOne: null,
-      playerTwo: null
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
-  }
-
-  handleSubmit(id, player) {
+  handleSubmit = (id, player) => {
     this.setState({
       [id]: player
     });
-  }
+  };
 
-  handleReset(id) {
+  handleReset = id => {
     this.setState({
       [id]: null
     });
-  }
+  };
 
   render() {
     const { playerOne, playerTwo } = this.state;
