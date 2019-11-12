@@ -16,6 +16,7 @@
   "author": "Paul Tobin <tobster111@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
     "dotenv-webpack": "^1.7.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.8.3",
