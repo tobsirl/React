@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-import './index.css';
-import Popular from './components/Popular';
-import Battle from './components/Battle';
-import Results from './components/Results';
-import { ThemeProvider } from './contexts/theme';
-import Nav from './components/Nav';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { Component } from "react";
+import ReactDom from "react-dom";
+import "./index.css";
+import { ThemeProvider } from "./contexts/theme";
+import Nav from "./components/Nav";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const Popular = React.lazy(() => import("./components/Popular"));
+const Battle = React.lazy(() => import("./components/Battle"));
+const Results = React.lazy(() => import("./components/Results"));
 
 export default class App extends Component {
   state = {
-    theme: 'light',
+    theme: "light",
     toggleTheme: () => {
       this.setState(({ theme }) => ({
-        theme: theme === 'light' ? 'dark' : 'light'
+        theme: theme === "light" ? "dark" : "light"
       }));
     }
   };
@@ -39,4 +40,4 @@ export default class App extends Component {
   }
 }
 
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDom.render(<App />, document.getElementById("app"));
