@@ -7,12 +7,16 @@ const activeStyle = {
 export default function Nav() {
   return (
     <nav className="row space-between">
-      <ul>
+      <ul className="row nav">
         <li>
-          <a href="#">Top</a>
+          <a href="#" className="nav-link" activeStyle={activeStyle}>
+            Top
+          </a>
         </li>
         <li>
-          <a href="#">New</a>
+          <a href="#" className="nav-link" activeStyle={activeStyle}>
+            New
+          </a>
         </li>
       </ul>
     </nav>
