@@ -3,14 +3,14 @@ import ReactDom from 'react-dom';
 import './index.css';
 
 import Nav from './components/Nav';
-import Hacker from './components/Hacker';
+import Posts from './components/Posts';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Nav />
-        <Hacker />
+        <Posts />
       </div>
     );
   }

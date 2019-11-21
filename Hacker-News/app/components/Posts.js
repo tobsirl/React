@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Hacker extends Component {
+export default class Posts extends Component {
   render() {
     return (
       <div className="container">
