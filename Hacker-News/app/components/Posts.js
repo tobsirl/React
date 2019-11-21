@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { fetchMainPosts } from '../utils/api';
+import Loading from './Loading';
 
 export default class Posts extends Component {
   constructor(props) {
@@ -22,13 +23,20 @@ export default class Posts extends Component {
       loading: true
     });
 
-    fetchMainPosts(this.props.type).then(posts =>
-      this.setState({
-        posts,
-        loading: false,
-        error: null
-      })
-    );
+    fetchMainPosts(this.props.type)
+      .then(posts =>
+        this.setState({
+          posts,
+          loading: false,
+          error: null
+        })
+      )
+      .catch(err =>
+        this.setState({
+          error: err.message,
+          loading: false
+        })
+      );
   }
 
   render() {
