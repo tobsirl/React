@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchMainPosts } from '../utils/api';
 
 export default class Posts extends Component {
   state = {
@@ -6,6 +7,10 @@ export default class Posts extends Component {
     error: null,
     loading: true
   };
+
+  componentDidMount() {
+    this.handleFetch();
+  }
 
   render() {
     return (
