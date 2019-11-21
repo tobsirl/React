@@ -40,11 +40,19 @@ export default class Posts extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
+    const { posts, error, loading } = this.state;
+    console.log(posts);
+    if (loading === true) {
+      return <Loading />;
+    }
+
+    if (error) {
+      return <p className="center-text error">{error}</p>;
+    }
     return (
       <div className="container">
         <h1>Hacker</h1>
-        {JSON.stringify(this.state.posts)}
+        {JSON.stringify(posts)}
       </div>
     );
   }
