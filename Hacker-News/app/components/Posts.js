@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchMainPosts } from '../utils/api';
 import Loading from './Loading';
+import PostsList from './PostsList';
 
 export default class Posts extends Component {
   constructor(props) {
@@ -41,8 +42,7 @@ export default class Posts extends Component {
 
   render() {
     const { posts, error, loading } = this.state;
-    console.log(this.props.type);
-    console.log(posts);
+
     if (loading === true) {
       return <Loading />;
     }
@@ -52,8 +52,7 @@ export default class Posts extends Component {
     }
     return (
       <div className="container">
-        <h1>Hacker</h1>
-        {JSON.stringify(posts, null, 2)}
+        <PostsList posts={posts}></PostsList>
       </div>
     );
   }
