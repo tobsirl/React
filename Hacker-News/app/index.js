@@ -4,14 +4,17 @@ import './index.css';
 
 import Nav from './components/Nav';
 import Posts from './components/Posts';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Nav />
-        <Posts />
-      </div>
+      <Router>
+        <div className="container">
+          <Nav />
+          <Posts type="Top" />
+        </div>
+      </Router>
     );
   }
 }

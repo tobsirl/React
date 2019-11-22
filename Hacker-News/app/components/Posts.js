@@ -41,6 +41,7 @@ export default class Posts extends Component {
 
   render() {
     const { posts, error, loading } = this.state;
+    console.log(this.props.type);
     console.log(posts);
     if (loading === true) {
       return <Loading />;
