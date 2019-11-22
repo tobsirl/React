@@ -12,7 +12,9 @@ class App extends React.Component {
       <Router>
         <div className="container">
           <Nav />
-          <Posts type="Top" />
+          <Switch>
+            <Route exact path="/" render={() => <Posts type="top" />}></Route>
+          </Switch>
         </div>
       </Router>
     );

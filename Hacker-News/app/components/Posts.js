@@ -53,7 +53,7 @@ export default class Posts extends Component {
     return (
       <div className="container">
         <h1>Hacker</h1>
-        {JSON.stringify(posts)}
+        {JSON.stringify(posts, null, 2)}
       </div>
     );
   }
