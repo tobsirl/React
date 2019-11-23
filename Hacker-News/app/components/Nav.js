@@ -10,7 +10,7 @@ export default function Nav() {
     <nav className="row space-between">
       <ul className="row nav">
         <li>
-          <NavLink to="/" className="nav-link" activeStyle={activeStyle}>
+          <NavLink to="/" exact className="nav-link" activeStyle={activeStyle}>
             Top
           </NavLink>
         </li>

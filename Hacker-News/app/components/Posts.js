@@ -17,6 +17,12 @@ export default class Posts extends Component {
     this.handleFetch();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.type !== this.props.type) {
+      this.handleFetch();
+    }
+  }
+
   handleFetch() {
     this.setState({
       posts: null,
