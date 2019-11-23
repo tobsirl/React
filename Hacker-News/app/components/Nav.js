@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const activeStyle = {
   color: 'rgb(187, 46, 31)'
@@ -9,14 +10,14 @@ export default function Nav() {
     <nav className="row space-between">
       <ul className="row nav">
         <li>
-          <a href="#" className="nav-link" activeStyle={activeStyle}>
+          <NavLink to="/" className="nav-link" activeStyle={activeStyle}>
             Top
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="#" className="nav-link" activeStyle={activeStyle}>
+          <NavLink to="/new" className="nav-link" activeStyle={activeStyle}>
             New
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
