@@ -14,6 +14,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route exact path="/" render={() => <Posts type="top" />}></Route>
+            <Route path="/new" render={() => <Posts type="new" />}></Route>
           </Switch>
         </div>
       </Router>

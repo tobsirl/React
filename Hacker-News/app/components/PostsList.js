@@ -8,10 +8,12 @@ export default function PostsList(props) {
         {props.posts.map(post => {
           return (
             <div>
-              <li key={post.id}>{post.title}</li>
-              <p>
-                by {post.by} on {Date(post.time)}
-              </p>
+              <li key={post.id}>
+                <a href={post.url}>{post.title}</a>
+                <p>
+                  by {post.by} on {Date(post.time)}
+                </p>
+              </li>
             </div>
           );
         })}
