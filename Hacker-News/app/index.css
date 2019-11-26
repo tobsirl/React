@@ -25,6 +25,12 @@ li {
   padding: 50px;
 }
 
+.link {
+  color: rgb(187, 46, 31);
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .nav-link {
   font-size: 18px;
   font-weight: bold;
