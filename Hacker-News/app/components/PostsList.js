@@ -8,17 +8,15 @@ export default function PostsList({ posts }) {
       <ul>
         {posts.map(post => {
           return (
-            <div>
-              <li key={post.id} className="post">
-                <Title url={post.url} title={post.title} id={post.id} />
-                <PostMetaInfo
-                  by={post.by}
-                  time={post.time}
-                  id={post.id}
-                  descendants={post.descendants}
-                />
-              </li>
-            </div>
+            <li key={post.id} className="post">
+              <Title url={post.url} title={post.title} id={post.id} />
+              <PostMetaInfo
+                by={post.by}
+                time={post.time}
+                id={post.id}
+                descendants={post.descendants}
+              />
+            </li>
           );
         })}
       </ul>
