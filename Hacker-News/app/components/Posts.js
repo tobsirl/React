@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchMainPosts } from '../utils/api';
 import Loading from './Loading';
+import PropTypes from 'prop-types';
 import PostsList from './PostsList';
 
 export default class Posts extends Component {
@@ -63,3 +64,7 @@ export default class Posts extends Component {
     );
   }
 }
+
+Posts.propTypes = {
+  type: PropTypes.oneOf(['top', 'new'])
+};
