@@ -58,7 +58,7 @@ export default class Posts extends Component {
     }
     return (
       <div className="container">
-        <PostsList posts={posts}></PostsList>
+        <PostsList posts={posts} />
       </div>
     );
   }
