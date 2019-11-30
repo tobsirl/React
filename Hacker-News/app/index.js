@@ -6,18 +6,22 @@ import Nav from './components/Nav';
 import Posts from './components/Posts';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import { ThemeProvider } from './contexts/theme';
+
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <div className="container">
-          <Nav />
-          <Switch>
-            <Route exact path="/" render={() => <Posts type="top" />}></Route>
-            <Route path="/new" render={() => <Posts type="new" />}></Route>
-          </Switch>
-        </div>
-      </Router>
+      <ThemeProvider value={}>
+        <Router>
+          <div className="container">
+            <Nav />
+            <Switch>
+              <Route exact path="/" render={() => <Posts type="top" />}></Route>
+              <Route path="/new" render={() => <Posts type="new" />}></Route>
+            </Switch>
+          </div>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
