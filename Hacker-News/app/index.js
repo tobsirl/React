@@ -10,12 +10,17 @@ import { ThemeProvider } from './contexts/theme';
 
 class App extends React.Component {
   state = {
-    theme: 'light'
+    theme: 'light',
+    toggleTheme: () => {
+      this.setState(({ theme }) => {
+        theme: theme === 'light' ? 'dark' : 'light';
+      });
+    }
   };
 
   render() {
     return (
-      <ThemeProvider value={this.state.theme}>
+      <ThemeProvider value={this.state}>
         <Router>
           <div className="container">
             <Nav />
