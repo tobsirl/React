@@ -9,9 +9,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from './contexts/theme';
 
 class App extends React.Component {
+  state = {
+    theme: 'light'
+  };
+
   render() {
     return (
-      <ThemeProvider value={}>
+      <ThemeProvider value={this.state.theme}>
         <Router>
           <div className="container">
             <Nav />
