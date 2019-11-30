@@ -12,22 +12,29 @@ class App extends React.Component {
   state = {
     theme: 'light',
     toggleTheme: () => {
-      this.setState(({ theme }) => {
-        theme: theme === 'light' ? 'dark' : 'light';
-      });
+      this.setState(({ theme }) => ({
+        theme: theme === 'light' ? 'dark' : 'light'
+      }));
     }
   };
 
   render() {
+    console.log(this.state.theme);
     return (
       <ThemeProvider value={this.state}>
         <Router>
-          <div className="container">
-            <Nav />
-            <Switch>
-              <Route exact path="/" render={() => <Posts type="top" />}></Route>
-              <Route path="/new" render={() => <Posts type="new" />}></Route>
-            </Switch>
+          <div className={this.state.theme}>
+            <div className="container">
+              <Nav />
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={() => <Posts type="top" />}
+                ></Route>
+                <Route path="/new" render={() => <Posts type="new" />}></Route>
+              </Switch>
+            </div>
           </div>
         </Router>
       </ThemeProvider>

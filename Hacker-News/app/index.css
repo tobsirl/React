@@ -25,6 +25,16 @@ li {
   padding: 50px;
 }
 
+.dark {
+  color: #dadada;
+  background: #1c2022;
+  min-height: 100%;
+}
+
+.dark a {
+  color: rgb(203, 203, 203);
+}
+
 .link {
   color: rgb(187, 46, 31);
   text-decoration: none;
@@ -40,6 +50,11 @@ li {
 
 .nav li {
   margin-right: 10px;
+}
+
+.btn-clear {
+  border: none;
+  background: transparent;
 }
 
 .space-around {
