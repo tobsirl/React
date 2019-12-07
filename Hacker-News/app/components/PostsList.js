@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from './Title';
+import PropTypes from 'prop-types';
 import PostMetaInfo from './PostMetaInfo';
 
 export default function PostsList({ posts }) {
@@ -23,3 +24,7 @@ export default function PostsList({ posts }) {
     </div>
   );
 }
+
+PostsList.propTypes = {
+  posts: PropTypes.array.isRequired
+};
