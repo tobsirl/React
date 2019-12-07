@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fetchCharacters } from './utils/api';
 import CharactersList from './components/CharactersList';
+import Forms from './components/Forms';
 import './App.css';
 
 class App extends Component {
@@ -23,7 +24,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.characters);
     const { characters, loading } = this.state;
 
     if (loading) {
@@ -33,6 +33,7 @@ class App extends Component {
     return (
       <div>
         <CharactersList characters={characters} />
+        <Forms />
       </div>
     );
   }
