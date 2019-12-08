@@ -8,3 +8,7 @@ label {
 input {
   margin-bottom: 0.5em;
 }
+
+ul {
+  list-style: none;
+}
