@@ -19,6 +19,7 @@ export default class Forms extends Component {
       <Fragment>
         <div>
           <label htmlFor="firstname">
+            First Name:
             <input
               type="text"
               value={this.state.firstName}
