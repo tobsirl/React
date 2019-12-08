@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchCharacters } from './utils/api';
 import CharactersList from './components/CharactersList';
 import Forms from './components/Forms';
+
+import Container from '@material-ui/core/Container';
 import './App.css';
 
 class App extends Component {
@@ -32,8 +34,10 @@ class App extends Component {
 
     return (
       <div>
-        <CharactersList characters={characters} />
-        <Forms />
+        <Container maxWidth="sm">
+          <CharactersList characters={characters} />
+          <Forms />
+        </Container>
       </div>
     );
   }
