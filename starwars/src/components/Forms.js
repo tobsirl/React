@@ -5,7 +5,8 @@ export default class Forms extends Component {
   state = {
     firstName: '',
     lastName: '',
-    isFriendly: false
+    isFriendly: true,
+    gender: ''
   };
 
   handleChange = event => {
@@ -55,7 +56,29 @@ export default class Forms extends Component {
           onChange={this.handleChange}
           name="isFriendly"
         />
-        <span>{this.state.isFriendly ? 'Checked' : 'UnChecked'}</span>
+        <span>{this.state.isFriendly === 'on' ? 'Checked' : 'UnChecked'}</span>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={this.state.gender === 'male'}
+            onChange={this.handleChange}
+          />{' '}
+          Male
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={this.state.gender === 'female'}
+            onChange={this.handleChange}
+          />{' '}
+          Female
+        </label>
       </Fragment>
     );
   }
