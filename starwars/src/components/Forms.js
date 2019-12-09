@@ -6,7 +6,8 @@ export default class Forms extends Component {
     firstName: '',
     lastName: '',
     isFriendly: true,
-    gender: ''
+    gender: '',
+    favColor: ''
   };
 
   handleChange = event => {
@@ -79,6 +80,20 @@ export default class Forms extends Component {
           />{' '}
           Female
         </label>
+        <br />
+        <select
+          value={this.state.favColor}
+          onChange={this.handleChange}
+          name="favColor"
+        >
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+        </select>
+        <br />
+        <p style={{ color: `${this.state.favColor}` }}>{this.state.favColor}</p>
       </Fragment>
     );
   }
