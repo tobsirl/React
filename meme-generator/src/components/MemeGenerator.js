@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
 class MemeGenerator extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    };
+  }
   render() {
     return (
       <div>
