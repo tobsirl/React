@@ -1,5 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 200px;
+  height: 100px;
+}
+
 .App {
   text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
