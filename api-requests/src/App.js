@@ -15,6 +15,10 @@ function App() {
   const [error, setError] = useState(null);
   const [post, setPost] = useState(null);
 
+  const incrementIndex = () => {
+    setIndex(i => (i === postIds.length - 1 ? i : i + 1));
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -23,7 +27,7 @@ function App() {
     return (
       <>
         <p>{error}</p>
-        <button>Next Post</button>
+        <button onClick={incrementIndex}>Next Post</button>
       </>
     );
   }
