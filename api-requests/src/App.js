@@ -15,6 +15,19 @@ function App() {
   const [error, setError] = useState(null);
   const [post, setPost] = useState(null);
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <p>{error}</p>
+        <button>Next Post</button>
+      </>
+    );
+  }
+
   return (
     <div className="App">
       <h1>App</h1>
