@@ -15,6 +15,21 @@ function App() {
   const [error, setError] = useState(null);
   const [post, setPost] = useState(null);
 
+  useEffect(() => {
+    setLoading(true);
+    fetchPost(postIds[index])
+      .then(post => {
+        setPost(post);
+        setError(null);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.warn(err.message);
+        setError('Error fetching data. Try again.');
+        setLoading(false);
+      });
+  }, [index]);
+
   const incrementIndex = () => {
     setIndex(i => (i === postIds.length - 1 ? i : i + 1));
   };
@@ -36,7 +51,11 @@ function App() {
     <div className="App">
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      {index === postIds.length - 1 ? <p>No more posts</p> : <button onClick={incrementIndex}>Next Post</button>}
+      {index === postIds.length - 1 ? (
+        <p>No more posts</p>
+      ) : (
+        <button onClick={incrementIndex}>Next Post</button>
+      )}
     </div>
   );
 }
