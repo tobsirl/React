@@ -34,7 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>App</h1>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+      {index === postIds.length - 1 ? <p>No more posts</p> : <button onClick={incrementIndex}>Next Post</button>}
     </div>
   );
 }
