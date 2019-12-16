@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { withToggle } from './HOC/withToggle';
 
 class Menu extends Component {
   state = {
@@ -32,4 +33,4 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+export default withToggle(Menu);
