@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
 class Toggler extends Component {
+  state = {
+    on: false
+  };
+
+  toggle = () => {
+    this.setState(prevState => {
+      return {
+        on: !prevState.on
+      };
+    });
+  };
+
   render() {
-    return (
-      <div>
-        <h1>HI</h1>
-      </div>
-    );
+    return <div>{this.props.children(this.state.on, this.toggle)}</div>;
   }
 }
 
