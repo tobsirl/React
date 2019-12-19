@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withToggle } from './HOC/withToggle';
+// import { withToggle } from './HOC/withToggle';
 
 class Favorite extends Component {
   render() {
@@ -14,4 +14,4 @@ class Favorite extends Component {
   }
 }
 
-export default withToggle(Favorite);
+export default Favorite;
