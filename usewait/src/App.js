@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -10,7 +10,17 @@ import './App.css';
 */
 
 function useWait(delay) {
-  return true;
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      setShow(true);
+    }, delay);
+
+    return () => window.clearTimeout(id);
+  }, [delay]);
+
+  return show;
 }
 
 function Wait({ delay = 1000, placeholder, ui }) {
@@ -23,9 +33,9 @@ function App() {
   return (
     <div className="App">
       <Wait
-        delay={3000}
+        delay={6000}
         placeholder={<p>Waiting...</p>}
-        ui={<p>This text should appear after 3 seconds.</p>}
+        ui={<p>This text should appear after 6 seconds.</p>}
       />
     </div>
   );
