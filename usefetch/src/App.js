@@ -12,21 +12,24 @@ function useFetch(url) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    setError(false);
+    const fetchData = async () => {
+      setLoading(true);
+      setError(false);
 
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
         setData(data);
         setLoading(false);
         setError(false);
-      })
-      .catch(err => {
+        console.log(data);
+      } catch (err) {
         console.warn(err);
-        setError('Could not return data. Try again');
+        setError('Unable to fetch data. Please Try Again');
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, [url]);
 
   return {
