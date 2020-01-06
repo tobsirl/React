@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 /*
@@ -7,10 +7,32 @@ import './App.css';
 */
 
 function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+        setError(false);
+      })
+      .catch(err => {
+        console.warn(err);
+        setError('Could not return data. Try again');
+        setLoading(false);
+      });
+  }, [url]);
+
   return {
-    loading: true,
-    data: null,
-    error: null
+    loading,
+    data,
+    error
   };
 }
 
