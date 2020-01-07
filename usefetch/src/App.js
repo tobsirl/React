@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect, useReducer } from 'react';
 import './App.css';
 
-/*
-  Instructions:
-    Implement the `useFetch` function. 
-*/
-
 function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const initialState = {
+    data: null,
+    loading: true,
+    error: null,
+  }
+
+  const [state, dispatch] = useReducer(fetchReducer, initialState)
 
   useEffect(() => {
     const fetchData = async () => {
