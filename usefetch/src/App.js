@@ -1,14 +1,37 @@
-import React, {  useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import './App.css';
+
+function fetchReducer(state, action) {
+  if (action.type === 'fetch') {
+    return {
+      ...state,
+      loading: true
+    };
+  } else if (action.type === 'success') {
+    return {
+      data: action.data,
+      error: null,
+      loading: false
+    };
+  } else if (action.type === 'error') {
+    return {
+      ...state,
+      error: 'Error fetching data. Try again',
+      loading: false
+    };
+  } else {
+    throw new Error(`That action is not supproted`);
+  }
+}
 
 function useFetch(url) {
   const initialState = {
     data: null,
     loading: true,
-    error: null,
-  }
+    error: null
+  };
 
-  const [state, dispatch] = useReducer(fetchReducer, initialState)
+  const [state, dispatch] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
     const fetchData = async () => {
