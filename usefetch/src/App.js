@@ -34,30 +34,21 @@ function useFetch(url) {
   const [state, dispatch] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(false);
+    dispatch({ type: 'fetch' });
 
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setData(data);
-        setLoading(false);
-        setError(false);
-        console.log(data);
-      } catch (err) {
-        console.warn(err);
-        setError('Unable to fetch data. Please Try Again');
-        setLoading(false);
-      }
-    };
-    fetchData();
+    fetch(url)
+      .then(res => res.json())
+      .then(data => dispatch({ type: 'success', data }))
+      .catch(error => {
+        console.warn(error.message);
+        dispatch({ type: 'error' });
+      });
   }, [url]);
 
   return {
-    loading,
-    data,
-    error
+    loading: state.loading,
+    data: state.data,
+    error: state.error
   };
 }
 
