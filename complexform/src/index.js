@@ -68,8 +68,8 @@ function Form() {
 
       <hr />
 
-      <button onClick={handleSubmit}>Submit</button>
-      <button onClick={handleReset}>Reset</button>
+      <button className="btn-dark" onClick={handleSubmit}>Submit</button>
+      <button className="btn-dark" onClick={handleReset}>Reset</button>
     </React.Fragment>
   );
 }

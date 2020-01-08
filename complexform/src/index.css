@@ -27,3 +27,9 @@ label {
   align-items: flex-start; */
   padding: 2em 2em 2em 2em;
 }
+
+.btn-dark {
+  background-color: black;
+  color: white;
+  padding: 0.75em 1.5em;
+}
