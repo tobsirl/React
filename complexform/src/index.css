@@ -15,3 +15,15 @@ code {
 label {
   display: block;
 }
+
+.form-inputs {
+  background-color: #efefef;
+}
+
+.form-inputs > input {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; */
+  padding: 2em 2em 2em 2em;
+}

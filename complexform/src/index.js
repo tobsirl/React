@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
@@ -19,28 +19,35 @@ import './index.css';
 */
 
 function Form() {
-  const handleSubmit = e => {};
+  const nameRef = useRef();
+  const emailRef = useRef();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   const handleReset = () => {};
 
   return (
     <React.Fragment>
-      <label>
-        Name:
-        <input placeholder="name" type="text" />
-      </label>
-      <label>
-        Email:
-        <input placeholder="email" type="text" />
-      </label>
-      <label>
-        Password:
-        <input placeholder="password" type="text" />
-      </label>
+      <div className="form-inputs">
+        <label>
+          Name:
+          <input placeholder="name" type="text" ref={nameRef} />
+        </label>
+        <label>
+          Email:
+          <input placeholder="email" type="text" />
+        </label>
+        <label>
+          Password:
+          <input placeholder="password" type="text" />
+        </label>
+      </div>
 
       <hr />
 
-      <button>Focus Name Input</button>
+      <button onClick={() => nameRef.current.focus()}>Focus Name Input</button>
       <button>Focus Email Input</button>
       <button>Focus Password Input</button>
 
