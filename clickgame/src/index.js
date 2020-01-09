@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles.css';
@@ -25,7 +25,7 @@ function CounterGame() {
     return () => {
       window.clearInterval(id);
     };
-  }, [timer]);
+  }, []);
 
   const clicked = () => {
     setCount(count => count + 1);
@@ -34,9 +34,8 @@ function CounterGame() {
   return (
     <div className="App">
       <h1>{count}</h1>
-      <h2>Time left: {timer} </h2>
-      {timer <= 0 ? null : <button onClick={clicked}>+</button>}
-      
+      <h2>Time left: {timer} seconds </h2>
+      {timer <= 0 ? null : <button className="btn" onClick={clicked}>+</button>}
     </div>
   );
 }
