@@ -1,12 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './styles.css';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+/*
+  Instructions:
+    You're building an app to see how many times you can click
+    a button in 10 seconds. 
+
+    The UI has three parts, a button, a timer counting down from 10,
+    and a count of how many times you've clicked the button.
+
+    Once the timer reaches 0, remove the button from the UI.
+*/
+
+function CounterGame() {
+  const [count, setCount] = useState(0);
+  const [timer, setTimer] = useState(10);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setTimer(timer => timer - 1);
+    }, 1000);
+    return () => {
+      window.clearInterval(id);
+    };
+  }, [timer]);
+
+  const clicked = () => {
+    setCount(count => count + 1);
+  };
+
+  return (
+    <div className="App">
+      <h1>{count}</h1>
+      <h2>Time left: {timer} </h2>
+      {timer <= 0 ? null : <button onClick={clicked}>+</button>}
+      
+    </div>
+  );
+}
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<CounterGame />, rootElement);
