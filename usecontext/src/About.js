@@ -46,7 +46,7 @@ function Employees({ locale }) {
 }
 
 export default function About() {
-  const locale = useContext(LocaleContext);
+  const { locale } = useContext(LocaleContext);
   return (
     <div>
       <h1>About</h1>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LocaleContext from './LocaleContext';
 
 const text = {
@@ -13,16 +13,16 @@ const text = {
 };
 
 export default function Home() {
+  const { locale } = useContext(LocaleContext);
+
   return (
     <div className="home">
-      <LocaleContext.Consumer>
-        {({ locale }) => (
-          <React.Fragment>
-            <h1>{text[locale].header}</h1>
-            <p>{text[locale].paragraph}</p>
-          </React.Fragment>
-        )}
-      </LocaleContext.Consumer>
+      {
+        <React.Fragment>
+          <h1>{text[locale].header}</h1>
+          <p>{text[locale].paragraph}</p>
+        </React.Fragment>
+      }
     </div>
   );
 }

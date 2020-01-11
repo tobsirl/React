@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LocaleContext from './LocaleContext';
 
 const posts = {
@@ -33,12 +33,12 @@ function Posts({ locale }) {
 }
 
 export default function Blog() {
+  const { locale } = useContext(LocaleContext);
+  
   return (
     <div>
       <h1>Blog</h1>
-      <LocaleContext.Consumer>
-        {({ locale }) => <Posts locale={locale} />}
-      </LocaleContext.Consumer>
+      {<Posts locale={locale} />}
     </div>
   );
 }
