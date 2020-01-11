@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LocaleContext from './LocaleContext';
 
 const employees = {
@@ -46,12 +46,11 @@ function Employees({ locale }) {
 }
 
 export default function About() {
+  const locale = useContext(LocaleContext);
   return (
     <div>
       <h1>About</h1>
-      <LocaleContext.Consumer>
-        {({ locale }) => <Employees locale={locale} />}
-      </LocaleContext.Consumer>
+      {<Employees locale={locale} />}
     </div>
   );
 }
