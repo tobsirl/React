@@ -1,0 +1,42 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav button {
+  background: none;
+  border: none;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav li {
+  padding: 10px;
+}
+
+.employees {
+  text-align: left;
+}
+
+.employees h3 {
+  margin: 0;
+}
+
+.employees li {
+  margin: 20px;
+}
+
+.home p {
+  font-size: 30px;
+}
