@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import LocaleContext from './LocaleContext';
 
@@ -41,15 +41,11 @@ function SpanishNav({ toggleLocale }) {
 }
 
 export default function Nav() {
-  return (
-    <LocaleContext.Consumer>
-      {({ locale, toggleLocale }) =>
-        locale === 'en' ? (
-          <EnglishNav toggleLocale={toggleLocale} />
-        ) : (
-          <SpanishNav toggleLocale={toggleLocale} />
-        )
-      }
-    </LocaleContext.Consumer>
+  const { locale, toggleLocale } = React.useContext(LocaleContext);
+
+  return locale === 'en' ? (
+    <EnglishNav toggleLocale={toggleLocale} />
+  ) : (
+    <SpanishNav toggleLocale={toggleLocale} />
   );
 }
