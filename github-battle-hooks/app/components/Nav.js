@@ -9,7 +9,7 @@ const activeStyle = {
 export default function Nav({ toggleTheme }) {
   return (
     <ThemeConsumer>
-      {({ theme }) => (
+      {theme => (
         <nav className="row space-between">
           <ul className="row nav">
             <li>
