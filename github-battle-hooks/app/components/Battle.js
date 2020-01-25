@@ -6,89 +6,80 @@ import {
   FaTrophy,
   FaTimesCircle
 } from 'react-icons/fa';
-import Results from './Results';
-import ThemeContext, { ThemeConsumer } from '../contexts/theme';
+import ThemeContext from '../contexts/theme';
 import { Link } from 'react-router-dom';
 
 function Instructions() {
+  const theme = useContext(ThemeContext);
+
   return (
-    <ThemeConsumer>
-      {theme => (
-        <div className="instructions-container">
-          <h1 className="center-text header-lg">Instructions</h1>
-          <ol className="container-sm grid center-text battle-instructions">
-            <li>
-              <h3 className="header-sm">Enter two Github users</h3>
-              <FaUserFriends
-                className={`bg-${theme}`}
-                color="rgb(255, 191, 116)"
-                size={140}
-              />
-            </li>
-            <li>
-              <h3 className="header-sm">Battle</h3>
-              <FaFighterJet
-                className={`bg-${theme}`}
-                color="#727272"
-                size={140}
-              />
-            </li>
-            <li>
-              <h3 className="header-sm">See the winners</h3>
-              <FaTrophy
-                className={`bg-${theme}`}
-                color="rgb(255, 215, 0)"
-                size={140}
-              />
-            </li>
-          </ol>
-        </div>
-      )}
-    </ThemeConsumer>
+    <div className="instructions-container">
+      <h1 className="center-text header-lg">Instructions</h1>
+      <ol className="container-sm grid center-text battle-instructions">
+        <li>
+          <h3 className="header-sm">Enter two Github users</h3>
+          <FaUserFriends
+            className={`bg-${theme}`}
+            color="rgb(255, 191, 116)"
+            size={140}
+          />
+        </li>
+        <li>
+          <h3 className="header-sm">Battle</h3>
+          <FaFighterJet className={`bg-${theme}`} color="#727272" size={140} />
+        </li>
+        <li>
+          <h3 className="header-sm">See the winners</h3>
+          <FaTrophy
+            className={`bg-${theme}`}
+            color="rgb(255, 215, 0)"
+            size={140}
+          />
+        </li>
+      </ol>
+    </div>
   );
 }
 
-function PlayerInput() {
+function PlayerInput({onSubmit, label}) {
   const [userName, setUserName] = useState('');
 
-  handleSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
 
-    setUserName(userName);
+    onSubmit(userName);
   };
 
-  handleChange = event => {
+  const handleChange = event => {
     setUserName(event.target.value);
   };
 
+  const theme = useContext(ThemeContext);
+
   return (
-    <ThemeConsumer>
-      {theme => (
-        <form className="column player" onSubmit={handleSubmit}>
-          <label htmlFor="username" className="player-label">
-            {this.props.label}
-          </label>
-          <div className="row player-inputs">
-            <input
-              type="text"
-              id="username"
-              className={`input-${theme}`}
-              placeholder="github username"
-              autoComplete="off"
-              value={userName}
-              onChange={handleChange}
-            />
-            <button
-              className={`btn ${theme === 'dark' ? 'light-btn' : 'dark-btn'}`}
-              type="submit"
-              disabled={!userName}
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      )}
-    </ThemeConsumer>
+    <form className="column player" onSubmit={handleSubmit}>
+      <label htmlFor="username" className="player-label">
+        {label}
+      </label>
+      <div className="row player-inputs">
+        <input
+          type="text"
+          id="username"
+          className={`input-${theme}`}
+          placeholder="github username"
+          autoComplete="off"
+          value={userName}
+          onChange={handleChange}
+        />
+        <button
+          className={`btn ${theme === 'dark' ? 'light-btn' : 'dark-btn'}`}
+          type="submit"
+          disabled={!userName}
+        >
+          Submit
+        </button>
+      </div>
+    </form>
   );
 }
 
