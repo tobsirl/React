@@ -25,10 +25,10 @@ const styles = {
 };
 
 export default function Tooltip({ text, children }) {
-  
+  const [hovering, attrs] = useHover();
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} {...attrs}>
       {hovering === true && <div style={styles.tooltip}>{text}</div>}
       {children}
     </div>
