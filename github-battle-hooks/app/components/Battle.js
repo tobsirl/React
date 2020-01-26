@@ -41,13 +41,13 @@ function Instructions() {
   );
 }
 
-function PlayerInput({onSubmit, label}) {
-  const [userName, setUserName] = useState('');
+function PlayerInput({ onSubmit, label }) {
+  const [username, setUserName] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    onSubmit(userName);
+    onSubmit(username);
   };
 
   const handleChange = event => {
@@ -68,13 +68,13 @@ function PlayerInput({onSubmit, label}) {
           className={`input-${theme}`}
           placeholder="github username"
           autoComplete="off"
-          value={userName}
+          value={username}
           onChange={handleChange}
         />
         <button
           className={`btn ${theme === 'dark' ? 'light-btn' : 'dark-btn'}`}
           type="submit"
-          disabled={!userName}
+          disabled={!username}
         >
           Submit
         </button>
@@ -105,8 +105,8 @@ function PlayerPreview({ username, onReset, label }) {
             {username}
           </a>
         </div>
-        <button className="btn-clear flex-center" onClick={onReset}>
-          <FaTimesCircle color="rgb(194, 57, 42)" size={26} />
+        <button className='btn-clear flex-center' onClick={onReset}>
+          <FaTimesCircle color='rgb(194, 57, 42)' size={26} />
         </button>
       </div>
     </div>
