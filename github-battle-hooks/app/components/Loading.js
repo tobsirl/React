@@ -31,6 +31,6 @@ export default function Loading({ text = 'Loading', speed = 300 }) {
 }
 
 Loading.propTypes = {
-  text: PropTypes.string.isRequired,
-  speed: PropTypes.number.isRequired
+  text: PropTypes.string,
+  speed: PropTypes.number
 };
