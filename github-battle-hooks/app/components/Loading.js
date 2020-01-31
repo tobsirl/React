@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 const styles = {
@@ -11,6 +11,16 @@ const styles = {
     textAlign: 'center'
   }
 };
+
+export default function Loading({text = 'Loading', speed = 300}) {
+  const [content, setContent] = useState(text);
+
+  
+    return <p style={styles.content}>{content}</p>;
+  
+
+}
+
 
 export default class Loading extends Component {
   state = {
@@ -41,7 +51,4 @@ Loading.propTypes = {
   speed: PropTypes.number.isRequired
 };
 
-Loading.defaultProps = {
-  text: 'Loading',
-  speed: 300
-};
+
