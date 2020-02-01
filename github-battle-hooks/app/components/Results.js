@@ -56,11 +56,27 @@ ProfileList.propTypes = {
   hoveringCompany: PropTypes.bool
 };
 
+function battleReducer(state, action) {
+  if (action.type === 'success') {
+    return {
+      winner: action.winner,
+      loser: action.loser,
+      error: null,
+      loading: false
+    };
+  } else if (action.type === 'error') {
+    return {
+      ...state,
+      error: action.message,
+      loading: false
+    };
+  } else {
+    throw new Error(`That action type isn't supported`);
+  }
+}
 
 export default function Results({ location }) {
   const { playerOne, playerTwo } = queryString.parse(location.search);
-
-
 }
 
 export default class Results extends Component {
