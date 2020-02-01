@@ -121,6 +121,22 @@ export default function Popular() {
       cleanup;
     };
   }, [fetchedLanguages, selectedLanguage]);
+
+  return (
+    <React.Fragment>
+      <LanguagesNav
+        selected={selectedLanguage}
+        onUpdateLanguage={this.updateLanguage}
+      />
+      {this.isLoading() && <Loading text="Fetching Repos" />}
+
+      {state.error && <p className="center-text error">{state.error}</p>}
+
+      {state[selectedLanguage] && (
+        <ReposGrid repos={state[selectedLanguage]}></ReposGrid>
+      )}
+    </React.Fragment>
+  );
 }
 
 // export default class Popular extends Component {
