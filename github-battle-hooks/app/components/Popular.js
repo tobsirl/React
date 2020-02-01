@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useReducer } from 'react';
 import Proptypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import {
@@ -106,6 +106,21 @@ function popularReducer(state, action) {
 export default function Popular() {
   const [selectedLanguage, setSelectedLanguage] = useState('All');
   const [state, dispatch] = useReducer(popularReducer, { error: null });
+
+  const fetchedLanguages = useRef([]);
+
+  useEffect(() => {
+    if (fetchedLanguages.current.includes(selectedLanguage) === false) {
+      fetchedLanguages.current.push(selectedLanguage);
+
+      fetchPopularRepos(selectedLanguage)
+        .then(repos => dispatch({ type: 'success', selectedLanguage, repos }))
+        .catch(error => dispatch({ type: 'error', error }));
+    }
+    return () => {
+      cleanup;
+    };
+  }, [fetchedLanguages, selectedLanguage]);
 }
 
 // export default class Popular extends Component {
