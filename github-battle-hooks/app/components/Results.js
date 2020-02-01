@@ -77,6 +77,12 @@ function battleReducer(state, action) {
 
 export default function Results({ location }) {
   const { playerOne, playerTwo } = queryString.parse(location.search);
+  const [state, dispatch] = useReducer(battleReducer, {
+    winner: null,
+    loser: null,
+    error: null,
+    loading: true
+  });
 }
 
 export default class Results extends Component {
