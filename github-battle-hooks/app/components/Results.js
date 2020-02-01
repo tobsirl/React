@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { battle } from '../utils/api';
 import {
   FaCompass,
@@ -55,6 +55,13 @@ ProfileList.propTypes = {
   hoveringLocation: PropTypes.bool,
   hoveringCompany: PropTypes.bool
 };
+
+
+export default function Results({ location }) {
+  const { playerOne, playerTwo } = queryString.parse(location.search);
+
+
+}
 
 export default class Results extends Component {
   state = {
