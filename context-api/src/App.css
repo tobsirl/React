@@ -45,14 +45,15 @@ button {
   padding: 10px;
   border: none;
   margin: 10px;
+  font-size: 2rem;
 }
 
 .dark-theme {
   background-color: #333333;
-  color: whitesmoke;
+  color: grey;
 }
 
 .light-theme {
-  background-color: whitesmoke;
+  background-color: grey;
   color: #333333;
 }
