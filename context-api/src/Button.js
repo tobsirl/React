@@ -1,11 +1,11 @@
 import React from 'react';
-import ThemeContext from './themeContext';
+import { ThemeContextConsumer } from './themeContext';
 
 function Button() {
   return (
-    <ThemeContext.Consumer>
+    <ThemeContextConsumer>
       {theme => <button className={`${theme}-theme`}>Switch Theme</button>}
-    </ThemeContext.Consumer>
+    </ThemeContextConsumer>
   );
 }
 
