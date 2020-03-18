@@ -6,8 +6,8 @@ import App from './App';
 import ThemeContext from './themeContext';
 
 ReactDOM.render(
-  <ThemeContext>
+  <ThemeContext.Provider value="dark">
     <App />
-  </ThemeContext>,
+  </ThemeContext.Provider>,
   document.getElementById('root')
 );
