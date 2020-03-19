@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import UserContext from './userContext';
+import { UserContextProvider } from './userContext';
 
 ReactDOM.render(
-  <UserContext.Provider>
+  <UserContextProvider>
     <App />
-  </UserContext.Provider>,
+  </UserContextProvider>,
   document.getElementById('root')
 );
