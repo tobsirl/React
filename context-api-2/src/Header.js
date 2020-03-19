@@ -3,7 +3,7 @@ import UserContext from './userContext';
 
 function Header() {
   return (
-    <header>
+    <header className="">
       <UserContext.Consumer>
         {username => <p>Welcome, {username}!</p>}
       </UserContext.Consumer>
