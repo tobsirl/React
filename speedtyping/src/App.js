@@ -5,8 +5,14 @@ import './App.css';
 function App() {
   const [text, setText] = useState('');
   const [wordCount, setWordCount] = useState(0);
-  const [timeRemaining, setTimeRemaining] = useState(3);
+  const [timeRemaining, setTimeRemaining] = useState(5);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
+
+  function startClock() {
+    setIsTimeRunning(true);
+    setTimeRemaining(5);
+    setText('');
+  }
 
   function handleChange(e) {
     const { value } = e.target;
@@ -28,14 +34,14 @@ function App() {
       setIsTimeRunning(false);
       setWordCount(calculateWordCount(text));
     }
-  }, [timeRemaining, isTimeRunning, text]);
+  }, [timeRemaining, isTimeRunning]);
 
   return (
     <div>
       <h1>How fast can you type?</h1>
       <textarea value={text} onChange={handleChange} />
       <h4>Time Remaining: {timeRemaining}</h4>
-      <button onClick={() => setIsTimeRunning(true)}>Start</button>
+      <button onClick={() => startClock()}>Start</button>
       <h1>Word Count: {wordCount}</h1>
     </div>
   );
