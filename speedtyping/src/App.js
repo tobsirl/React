@@ -8,10 +8,15 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(5);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
 
-  function startClock() {
+  function startGame() {
     setIsTimeRunning(true);
     setTimeRemaining(5);
     setText('');
+  }
+
+  function endGame() {
+    setIsTimeRunning(false);
+    setWordCount(calculateWordCount(text));
   }
 
   function handleChange(e) {
@@ -31,17 +36,22 @@ function App() {
         setTimeRemaining(time => time - 1);
       }, 1000);
     } else if (timeRemaining === 0) {
-      setIsTimeRunning(false);
-      setWordCount(calculateWordCount(text));
+      endGame();
     }
   }, [timeRemaining, isTimeRunning]);
 
   return (
     <div>
       <h1>How fast can you type?</h1>
-      <textarea value={text} onChange={handleChange} />
+      <textarea
+        disabled={!isTimeRunning}
+        value={text}
+        onChange={handleChange}
+      />
       <h4>Time Remaining: {timeRemaining}</h4>
-      <button onClick={() => startClock()}>Start</button>
+      <button disabled={isTimeRunning} onClick={() => startGame()}>
+        Start
+      </button>
       <h1>Word Count: {wordCount}</h1>
     </div>
   );
