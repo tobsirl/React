@@ -1,25 +1,19 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-const { Provider, Consumer } = React.createContext();
+const UserContext = React.createContext();
 
-class UserContextProvider extends Component {
-  state = {
-    username: 'Paul Tobin'
-  };
+function UserContextProvider(props) {
+  const [username, setUsername] = useState('Paul Tobin');
 
-  onChange = username => {
-    this.setState({ username });
-  };
-
-  render() {
-    return (
-      <Provider
-        value={{ username: this.state.username, onChange: this.onChange }}
-      >
-        {this.props.children}
-      </Provider>
-    );
+  function onChange(username) {
+    setUsername(username);
   }
+
+  return (
+    <UserContext.Provider value={{ username, onChange }}>
+      {props.children}
+    </UserContext.Provider>
+  );
 }
 
-export { UserContextProvider, Consumer as UserContextConsumer };
+export { UserContextProvider, UserContext };
