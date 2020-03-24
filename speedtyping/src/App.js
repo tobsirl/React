@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import './App.css';
 
@@ -8,10 +8,14 @@ function App() {
   const [timeRemaining, setTimeRemaining] = useState(5);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
 
+  const inputRef = useRef(null);
+
   function startGame() {
     setIsTimeRunning(true);
     setTimeRemaining(5);
     setText('');
+    inputRef.current.disabled = false;
+    inputRef.current.focus();
   }
 
   function endGame() {
@@ -47,6 +51,7 @@ function App() {
         disabled={!isTimeRunning}
         value={text}
         onChange={handleChange}
+        ref={inputRef}
       />
       <h4>Time Remaining: {timeRemaining}</h4>
       <button disabled={isTimeRunning} onClick={() => startGame()}>
