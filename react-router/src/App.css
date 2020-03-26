@@ -1,6 +1,9 @@
-.App {
-  text-align: center;
-  height: 90vh;
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2em;
 }
 
-
+.nav a {
+  margin-right: 1em;
+}
