@@ -7,3 +7,9 @@
 .nav a {
   margin-right: 1em;
 }
+
+.page {
+  display: grid;
+  place-content: center;
+  height: 80vh;
+}

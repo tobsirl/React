@@ -3,6 +3,10 @@ import { Link, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
+// components
+import Home from './components/Home';
+import About from './components/About';
+
 function App() {
   return (
     <div className="App">
@@ -14,8 +18,8 @@ function App() {
       </nav>
 
       <Switch>
-        <Route path="/" exact render={() => <h1>Home page!</h1>} />
-        <Route path="/about" render={() => <h1>About page!</h1>} />
+        <Route path="/" exact component={Home} />
+        <Route path="/about" component={About} />
       </Switch>
     </div>
   );
