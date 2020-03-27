@@ -6,6 +6,7 @@ import './App.css';
 // components
 import Home from './components/Home';
 import About from './components/About';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <ul className="nav">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </ul>
       </nav>
 
@@ -23,6 +25,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/contact">
+          <Contact />
         </Route>
       </Switch>
     </div>
