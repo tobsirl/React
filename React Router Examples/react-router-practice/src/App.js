@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './Home';
 import Product from './Product.js';
+import ProductDetails from './ProductDetails';
 
 import './App.css';
 
@@ -18,8 +19,11 @@ function App() {
         <Route exact path={`/`}>
           <Home />
         </Route>
-        <Route path={`/products`}>
+        <Route exact path={`/products`}>
           <Product />
+        </Route>
+        <Route path={`/products/:productId`}>
+          <ProductDetails />
         </Route>
       </Switch>
     </div>
