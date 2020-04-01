@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 function Image({ className, img }) {
   const [hovered, setHovered] = useState(false);
-  console.log(hovered);
+
+  const heartIcon = hovered && <i className="ri-heart-line favorite"></i>;
+  const cartIcon = hovered && <i className="ri-add-circle-line cart"></i>;
 
   return (
     <div
@@ -11,6 +13,8 @@ function Image({ className, img }) {
       onMouseLeave={() => setHovered(false)}
     >
       <img className="image-grid" src={img.url} alt="" />
+      {heartIcon}
+      {cartIcon}
     </div>
   );
 }
