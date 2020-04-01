@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function Image({className, img}) {
+function Image({ className, img }) {
+  const [hovered, setHovered] = useState(false);
+  console.log(hovered);
+
   return (
-    <div className={`${className} image-container`}>
-      <img className="image-grid" src={img} alt="" />
+    <div
+      className={`${className} image-container`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <img className="image-grid" src={img.url} alt="" />
     </div>
-  )
+  );
 }
 
-export default Image
+export default Image;
