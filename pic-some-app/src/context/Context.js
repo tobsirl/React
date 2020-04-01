@@ -15,9 +15,25 @@ function ContextProvider({ children }) {
     })();
   }, []);
 
-  console.log(allPhotos);
+  const toggleFavorite = id => {
+    const updatedArray = allPhotos.map(photo => {
+      if (photo.id === id) {
+        return {
+          ...photo,
+          isFavorite: !photo.isFavorite
+        };
+      }
+      return photo;
+    });
 
-  return <Context.Provider value={{ allPhotos }}>{children}</Context.Provider>;
+    setAllPhotos(updatedArray);
+  };
+
+  return (
+    <Context.Provider value={{ allPhotos, toggleFavorite }}>
+      {children}
+    </Context.Provider>
+  );
 }
 
 export { ContextProvider, Context };

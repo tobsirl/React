@@ -9,7 +9,7 @@ function Photos() {
   const photos = allPhotos.map((img, index) => {
     return <Image img={img} key={img.id} className={getClass(index)} />;
   });
-  
+
   return <main className="photos">{photos}</main>;
 }
 
