@@ -5,7 +5,7 @@ import { useContext } from 'react';
 
 function Image({ className, img }) {
   const [hovered, setHovered] = useState(false);
-  const { toggleFavorite, addCartItem } = useContext(Context);
+  const { toggleFavorite, addCartItem, cartItems } = useContext(Context);
 
   function heartIcon() {
     if (img.isFavorite) {
@@ -25,7 +25,19 @@ function Image({ className, img }) {
     }
   }
 
-  const cartIcon = hovered && <i className="ri-add-circle-line cart" onClick={() => addCartItem(img)}></i>;
+  function cartIcon() {
+    const alreadyInCart = cartItems.some(item => item.id === img.id);
+    if (alreadyInCart) {
+      return <i className="ri-shopping-cart-fill cart"></i>;
+    } else if (hovered) {
+      return (
+        <i
+          className="ri-add-circle-line cart"
+          onClick={() => addCartItem(img)}
+        ></i>
+      );
+    }
+  }
 
   return (
     <div
@@ -35,7 +47,7 @@ function Image({ className, img }) {
     >
       <img className="image-grid" src={img.url} alt="" />
       {heartIcon()}
-      {cartIcon}
+      {cartIcon()}
     </div>
   );
 }
