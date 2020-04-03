@@ -5,7 +5,9 @@ import { useContext } from 'react';
 
 function Image({ className, img }) {
   const [hovered, setHovered] = useState(false);
-  const { toggleFavorite, addCartItem, cartItems } = useContext(Context);
+  const { toggleFavorite, addCartItem, removeCartItem, cartItems } = useContext(
+    Context
+  );
 
   function heartIcon() {
     if (img.isFavorite) {
@@ -28,7 +30,12 @@ function Image({ className, img }) {
   function cartIcon() {
     const alreadyInCart = cartItems.some(item => item.id === img.id);
     if (alreadyInCart) {
-      return <i className="ri-shopping-cart-fill cart"></i>;
+      return (
+        <i
+          className="ri-shopping-cart-fill cart"
+          onClick={() => removeCartItem(img.id)}
+        ></i>
+      );
     } else if (hovered) {
       return (
         <i
