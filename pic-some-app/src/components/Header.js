@@ -4,7 +4,6 @@ import { Context } from '../context/Context';
 
 function Header() {
   const { cartItems } = useContext(Context);
-  console.log(cartItems.length);
 
   const cartFull =
     cartItems.length > 0 ? (
