@@ -31,9 +31,13 @@ function Cart() {
           currency: 'USD',
         })}{' '}
       </p>
-      <div className="order-button">
-        <button onClick={placeOrder}>{`${displayText}`}</button>
-      </div>
+      {cartItems.length > 0 ? (
+        <div className="order-button">
+          <button onClick={placeOrder}>{`${displayText}`}</button>
+        </div>
+      ) : (
+        <p className='order'>You don't have any item in your cart</p>
+      )}
     </main>
   );
 }
