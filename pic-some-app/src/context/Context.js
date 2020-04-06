@@ -17,12 +17,12 @@ function ContextProvider({ children }) {
     })();
   }, []);
 
-  const toggleFavorite = id => {
-    const updatedArray = allPhotos.map(photo => {
+  const toggleFavorite = (id) => {
+    const updatedArray = allPhotos.map((photo) => {
       if (photo.id === id) {
         return {
           ...photo,
-          isFavorite: !photo.isFavorite
+          isFavorite: !photo.isFavorite,
         };
       }
       return photo;
@@ -31,12 +31,16 @@ function ContextProvider({ children }) {
     setAllPhotos(updatedArray);
   };
 
-  const addCartItem = newItem => {
-    setCartItems(prevItems => [...prevItems, newItem]);
+  const addCartItem = (newItem) => {
+    setCartItems((prevItems) => [...prevItems, newItem]);
   };
 
-  const removeCartItem = id => {
-    setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+  const removeCartItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
+  const emptyCart = () => {
+    setCartItems([]);
   };
 
   return (
@@ -46,7 +50,8 @@ function ContextProvider({ children }) {
         toggleFavorite,
         addCartItem,
         removeCartItem,
-        cartItems
+        cartItems,
+        emptyCart
       }}
     >
       {children}
