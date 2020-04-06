@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Context } from '../context/Context';
 import { useContext } from 'react';
+import useHover from '../hooks/useHover';
 
 function Image({ className, img }) {
-  const [hovered, setHovered] = useState(false);
+  // const [hovered, setHovered] = useState(false);
   const { toggleFavorite, addCartItem, removeCartItem, cartItems } = useContext(
     Context
   );
+  const [hovered, ref] = useHover();
 
   function heartIcon() {
     if (img.isFavorite) {
@@ -28,7 +30,7 @@ function Image({ className, img }) {
   }
 
   function cartIcon() {
-    const alreadyInCart = cartItems.some(item => item.id === img.id);
+    const alreadyInCart = cartItems.some((item) => item.id === img.id);
     if (alreadyInCart) {
       return (
         <i
@@ -47,11 +49,7 @@ function Image({ className, img }) {
   }
 
   return (
-    <div
-      className={`${className} image-container`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className={`${className} image-container`} ref={ref}>
       <img className="image-grid" src={img.url} alt="" />
       {heartIcon()}
       {cartIcon()}
@@ -64,8 +62,8 @@ Image.propTypes = {
   img: PropTypes.shape({
     id: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
-    isFavorite: PropTypes.bool
-  })
+    isFavorite: PropTypes.bool,
+  }),
 };
 
 export default Image;
