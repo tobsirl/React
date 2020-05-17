@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
 }
 
 .App-logo {
@@ -45,4 +48,27 @@
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.card {
+  width: 20%;
+  height: 20%;
+  background: burlywood;
+  border-radius: 50px;
+}
+
+.card__image {
+  border-radius: 50px;
+  width: 100%;
+}
+
+.card__info {
+  padding: 3em 3em;
+  text-align: left;
+}
+
+.card__title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
 }

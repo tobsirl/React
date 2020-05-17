@@ -18,15 +18,28 @@ export default function RandomMeal() {
   if (!data) return null;
   console.log(data.meals[0].idMeal);
 
-  const { strMeal, strInstructions, strMealThumb } = data.meals[0];
+  const {
+    strMeal,
+    strInstructions,
+    strMealThumb,
+    strCategory,
+    strArea,
+  } = data.meals[0];
 
   return (
     <>
       <div className="container">
-        <p>{data.meals.idMeal}</p>
-        <h1>{strMeal}</h1>
-        <img className="image" src={strMealThumb} alt="" />
-        <p>{strInstructions}</p>
+        <div class="card">
+          <div class="img">
+            <img className="card__image" src={strMealThumb} alt="" />
+          </div>
+          <div class="card__info">
+            <h1 className="card__title">{strMeal}</h1>
+            <p>{strArea}</p>
+            <p>{strCategory}</p>
+            <p>{strInstructions.slice(0, 30) + '...'}</p>
+          </div>
+        </div>
       </div>
     </>
   );
