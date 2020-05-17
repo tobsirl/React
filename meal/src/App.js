@@ -1,12 +1,13 @@
 import React from 'react';
 
-import RandomMeal from './components/RandomMeal'
-
 import './App.css';
+import Header from './components/Header';
+import RandomMeal from './components/RandomMeal';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <RandomMeal />
     </div>
   );

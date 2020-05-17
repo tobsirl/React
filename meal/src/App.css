@@ -45,6 +45,27 @@
   width: 100%;
 }
 
+.flex {
+  display: flex;
+}
+
+header {
+  background-color: burlywood;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  list-style: 0;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
