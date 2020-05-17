@@ -29,11 +29,11 @@ export default function RandomMeal() {
   return (
     <>
       <div className="container">
-        <div class="card">
-          <div class="img">
+        <div className="card">
+          <div className="img">
             <img className="card__image" src={strMealThumb} alt="" />
           </div>
-          <div class="card__info">
+          <div className="card__info">
             <h1 className="card__title">{strMeal}</h1>
             <p>{strArea}</p>
             <p>{strCategory}</p>

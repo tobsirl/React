@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Header() {
+  const [searchText, setSearchText] = useState('');
+
+  const onSearch = () => {
+
+    console.log('here');
+  };
+
   return (
     <>
       <header>
@@ -12,7 +19,12 @@ export default function Header() {
               <a href="">Contact</a>
             </li>
           </ul>
-          <input type="text" value="" />
+          <input
+            type="searchText"
+            placeholder="Search"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
         </nav>
       </header>
     </>
