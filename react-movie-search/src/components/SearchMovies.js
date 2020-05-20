@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 export default function SearchMovies() {
+
+  
   return (
     <div>
       <form className="form">
