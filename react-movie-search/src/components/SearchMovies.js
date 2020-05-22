@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
 
+import MoviesCardList from './MoviesCardList';
+
 export default function SearchMovies() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [query, setQuery] = useState('');
+  const [movieData, setMovieData] = useState([]);
 
   async function searchMovie(e) {
     e.preventDefault();
-    const response = await fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=4e6a1064e598fc7775b77627eaf33da0&query=${searchTerm}`
-    );
 
-    const data = await response.json();
+    try {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=4e6a1064e598fc7775b77627eaf33da0&query=${query}`
+      );
 
-    return data;
+      const data = await response.json();
+
+      setMovieData(data.results);
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
+  // const movie  = movieData.map((movie) => console.log(movie))
   return (
-    <div>
+    <>
       <form className="form">
         <label htmlFor="query" className="label">
           Movie Name
@@ -25,12 +34,15 @@ export default function SearchMovies() {
           name="query"
           className="input"
           placeholder="The Godfather"
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button className="button" type="submit" onClick={searchMovie}>
           Search
         </button>
       </form>
-    </div>
+      <div className="card-list">
+        <MoviesCardList movies={movieData} />
+      </div>
+    </>
   );
 }
