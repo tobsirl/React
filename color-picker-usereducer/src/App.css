@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  background-color: #e4e4e4;
+}
+
+.color-black {
+  color: black;
+}
+
+.color-red {
+  color: red;
+  font-size: 45rem;
+}
