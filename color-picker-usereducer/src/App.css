@@ -11,3 +11,33 @@
   color: red;
   font-size: 45rem;
 }
+
+.title {
+  font-size: 4rem;
+}
+
+.btn {
+  width: 10%;
+  padding: 2em 2em;
+  border-radius: 100%;
+  font-size: 1.4rem;
+}
+
+.btn-red {
+  background-color: red;
+  color: #fff;
+}
+
+.btn-yellow {
+  background-color: yellow;
+}
+
+.btn-reset {
+  background-color: black;
+  color: #fff;
+}
+
+.button__area {
+  display: flex;
+  justify-content: center;
+}

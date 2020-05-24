@@ -10,6 +10,10 @@ function colorReducer(state, action) {
       return {
         color: (state.color = 'yellow'),
       };
+    case 'reset':
+      return {
+        color: (state.color = 'black'),
+      };
     default:
       return state;
   }
@@ -26,10 +30,17 @@ export default function ColorPicker() {
 
   return (
     <div>
-      <h1 style={{color:`${state.color}`}}>Pick a Color!</h1>
+      <h1 className="title" style={{ color: `${state.color}` }}>Pick a Color!</h1>
       <div className="button__area">
-        <button onClick={() => dispatch('red')}>Red</button>
-        <button onClick={() => dispatch('yellow')}>Yellow</button>
+        <button className="btn btn-red" onClick={() => dispatch('red')}>
+          Red
+        </button>
+        <button className="btn btn-yellow" onClick={() => dispatch('yellow')}>
+          Yellow
+        </button>
+        <button className="btn btn-reset" onClick={() => dispatch('reset')}>
+          Reset
+        </button>
       </div>
     </div>
   );
