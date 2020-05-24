@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 
 function colorReducer(state, action) {
-  switch (action) {
+  switch (action.type) {
     case 'red':
       return {
         color: (state.color = 'red'),
@@ -26,19 +26,28 @@ export default function ColorPicker() {
 
   const [state, dispatch] = useReducer(colorReducer, initialState);
 
-  console.log(state.color);
-
   return (
     <div>
-      <h1 className="title" style={{ color: `${state.color}` }}>Pick a Color!</h1>
+      <h1 className="title" style={{ color: `${state.color}` }}>
+        Pick a Color!
+      </h1>
       <div className="button__area">
-        <button className="btn btn-red" onClick={() => dispatch('red')}>
+        <button
+          className="btn btn-red"
+          onClick={() => dispatch({ type: 'red' })}
+        >
           Red
         </button>
-        <button className="btn btn-yellow" onClick={() => dispatch('yellow')}>
+        <button
+          className="btn btn-yellow"
+          onClick={() => dispatch({ type: 'yellow' })}
+        >
           Yellow
         </button>
-        <button className="btn btn-reset" onClick={() => dispatch('reset')}>
+        <button
+          className="btn btn-reset"
+          onClick={() => dispatch({ type: 'reset' })}
+        >
           Reset
         </button>
       </div>

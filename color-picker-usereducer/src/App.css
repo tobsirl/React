@@ -17,10 +17,18 @@
 }
 
 .btn {
-  width: 10%;
-  padding: 2em 2em;
-  border-radius: 100%;
-  font-size: 1.4rem;
+  padding: 2.5em;
+  margin: 2.5em;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  border: none;
+  text-align: center;
+}
+
+.btn:focus,
+.btn:active {
+  border: 2px solid black;
+  outline: 0;
 }
 
 .btn-red {
