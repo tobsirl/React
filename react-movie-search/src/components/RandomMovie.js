@@ -56,8 +56,6 @@ export default function RandomMovie() {
     `https://api.themoviedb.org/3/movie/popular?api_key=4e6a1064e598fc7775b77627eaf33da0&language=en-US&page=1`
   );
 
-  console.log(data);
-
   if (loading === true) {
     return <p>Loading...</p>;
   }
@@ -65,7 +63,7 @@ export default function RandomMovie() {
   if (error === true) return <p>{error}</p>;
 
   const { id, title } = data.results[0];
-  console.log(id);
+
   return (
     <div>
       <p>{title}</p>
