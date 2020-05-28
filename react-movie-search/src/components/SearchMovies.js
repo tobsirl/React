@@ -22,7 +22,6 @@ export default function SearchMovies() {
     }
   }
 
-  // const movie  = movieData.map((movie) => console.log(movie))
   return (
     <>
       <form className="form">

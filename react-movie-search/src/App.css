@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
+  background-color: #eeeeee;
   color: #333;
 }
 
@@ -90,6 +90,7 @@ li {
 
 .card__title {
   font-size: 1.6rem;
+  margin: 0;
 }
 
 .card__image {
