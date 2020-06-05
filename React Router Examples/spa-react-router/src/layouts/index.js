@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-export default function Layout() {
+export function Layout(props) {
   return (
-    <div>
-      
+    <div className="">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#"></a>About
+          </li>
+          <li>
+            <a href="#"></a>Contact
+          </li>
+        </ul>
+      </nav>
+      {props.children}
     </div>
-  )
+  );
 }
