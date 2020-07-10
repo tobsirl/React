@@ -1,12 +1,16 @@
 import React from 'react';
 
+import CharacterItem from './CharacterItem';
+
 const CharacterGrid = ({ characters, isLoading }) => {
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
-    <section className="cards">{characters.map((charater) => (
-      <h1>{charater.name}</h1>
-    ))}</section>
+    <section className="cards">
+      {characters.map((character) => (
+        <CharacterItem data={character} />
+      ))}
+    </section>
   );
 };
 
