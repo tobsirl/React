@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Header from './components/ui/Header';
+import Search from './components/ui/Search'
 import CharacterGrid from './components/characters/CharacterGrid';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="container">
       <Header />
+      <Search />
       <CharacterGrid characters={characters} isLoading={isLoading}/>
     </div>
   );
