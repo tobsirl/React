@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
-const Search = () => {
+const Search = ({ getQuery }) => {
   const [search, setSearch] = useState('');
+
+  const onChange = (query) => {
+    setSearch(query);
+    getQuery(query);
+  };
 
   return (
     <section className="search">
@@ -12,7 +17,7 @@ const Search = () => {
           placeholder="Search characters"
           autoFocus
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
         />
       </form>
     </section>
