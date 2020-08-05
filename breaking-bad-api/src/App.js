@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/ui/Header';
 import Search from './components/ui/Search';
 import CharacterGrid from './components/characters/CharacterGrid';
+import Sidebar from './components/ui/Sidebar';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -22,9 +23,12 @@ function App() {
     setIsLoading(false);
   }, [query]);
 
+  // console.log(characters);
+
   return (
     <div className="container">
       <Header />
+      <Sidebar list={characters} />
       <Search getQuery={(query) => setQuery(query)} />
       <CharacterGrid characters={characters} isLoading={isLoading} />
     </div>
