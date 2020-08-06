@@ -28,9 +28,9 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <Sidebar list={characters} />
+      <Sidebar list={characters} title="Charactor Names" />
       <Search getQuery={(query) => setQuery(query)} />
-      <CharacterGrid characters={characters} isLoading={isLoading} />
+      {/* <CharacterGrid characters={characters} isLoading={isLoading} /> */}
     </div>
   );
 }

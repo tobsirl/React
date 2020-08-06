@@ -17,17 +17,21 @@ a {
 }
 
 .container {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
   max-width: 1100px;
-  margin: auto;
+  margin: auto; 
   padding: 0 20px;
+  grid-template-areas: "sidebar main"; 
 }
 
 /* Sidebar */
 .sidebar {
-  position: absolute;
-  left: 100px;
-  display: flex;
-  flex-direction: column;
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
 }
 
 .btn {
