@@ -17,6 +17,10 @@ body {
   max-width: 1100px;
 }
 
+.content {
+  display: flex;
+}
+
 .header img {
   width: 200px;
 }
