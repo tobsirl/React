@@ -16,22 +16,23 @@ function App() {
     );
     const data = await response.json();
     setCharacters(data);
-    setIsLoading(false)
+    setIsLoading(false);
   }
 
   useEffect(() => {
-    getCharacters()
-  
-  }, [])
+    getCharacters();
+  }, []);
 
-  if(isLoading) return <p>Loading...</p>
+  if (isLoading) return <p>Loading...</p>;
 
   return (
-    <div className="container">
+    <React.Fragment>
       <Header />
-      <Sidebar characters={characters}/>
-      <Characters />
-    </div>
+      <div className="container">
+        <Sidebar characters={characters} />
+        <Characters />
+      </div>
+    </React.Fragment>
   );
 }
 

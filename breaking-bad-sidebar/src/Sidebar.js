@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-export default function Sidebar() {
+export default function Sidebar({ characters }) {
+  console.log(characters);
+
   return (
-    <div className="container">
-    <div className="sidebar content">
-
-    <h3>Title</h3>
-
-
-      Sidebar
+    <div className="sidebar">
+      <h3>Title</h3>
+      <ul>
+        {characters.map((charactor) => (
+          <li key={charactor.char_id}>{charactor.name}</li>
+        ))}
+      </ul>
     </div>
-    </div>
-  )
+  );
 }
