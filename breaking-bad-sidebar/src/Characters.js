@@ -28,7 +28,11 @@ export default function Characters() {
       <Header />
       <div className="content main container">
         <Sidebar title="Characters" list={characters} />
-        <Character />
+        <Switch>
+          <Route>
+            <Character />
+          </Route>
+        </Switch>
       </div>
     </React.Fragment>
   );

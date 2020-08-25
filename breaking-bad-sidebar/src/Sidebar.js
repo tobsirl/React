@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useRouteMatch, useLocation } from 'react-router-dom';
-import slug from 'slug'
+import slug from 'slug';
 
 function CustomLink({ to, children }) {
   const match = useRouteMatch(to.pathname);
@@ -20,12 +20,15 @@ export default function Sidebar({ title, list }) {
     <div className="sidebar">
       <h3>{title}</h3>
       <ul>
-        {list.map((item) => (
+        {list.map((character) => (
           <CustomLink
-            key={item}
-            to={{ pathname: `${url}/${slug(item)}`, search: location.search }}
+            key={character.char_id}
+            to={{
+              pathname: `${url}/${slug(character.name)}`,
+              search: location.search,
+            }}
           >
-            {item}
+            {character.name}
           </CustomLink>
         ))}
       </ul>
