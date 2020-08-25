@@ -21,12 +21,12 @@ export default function Characters() {
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
-  
+
   return (
     <React.Fragment>
       <Header />
       <div className="content main">
-        <Sidebar characters={characters} />
+        <Sidebar title="Characters" characters={characters} />
         <Character />
       </div>
     </React.Fragment>
