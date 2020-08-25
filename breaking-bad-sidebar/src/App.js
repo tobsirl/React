@@ -7,9 +7,7 @@ import Characters from './Characters';
 function App() {
   return (
     <React.Fragment>
-      <div className="container">
-        <Characters />
-      </div>
+      <Characters />
     </React.Fragment>
   );
 }

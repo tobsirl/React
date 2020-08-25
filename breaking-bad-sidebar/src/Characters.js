@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
 
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -25,8 +26,8 @@ export default function Characters() {
   return (
     <React.Fragment>
       <Header />
-      <div className="content main">
-        <Sidebar title="Characters" characters={characters} />
+      <div className="content main container">
+        <Sidebar title="Characters" list={characters} />
         <Character />
       </div>
     </React.Fragment>
