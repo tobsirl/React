@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './styles.css';
 
@@ -9,7 +9,11 @@ function App() {
   return (
     <Router>
       <React.Fragment>
-        <Characters />
+        <Switch>
+          <Route path="/characters">
+            <Characters />
+          </Route>
+        </Switch>
       </React.Fragment>
     </Router>
   );
