@@ -22,7 +22,7 @@ export default function Sidebar({ title, list }) {
         {list.map((character) => (
           <Link
             key={character.char_id}
-            to={`${url}/${slug(character.name)}`}
+            to={`${url}/${character.char_id}`}
           >
             {character.name}
           </Link>
