@@ -41,3 +41,11 @@ body {
 .main {
   width: 75%;
 }
+
+.sidebar__list {
+  list-style: none;
+}
+
+.sidebar__list li {
+  text-decoration: none;
+}

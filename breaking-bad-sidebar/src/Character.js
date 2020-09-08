@@ -15,22 +15,18 @@ export default function Character() {
 
     const data = await response.json();
     setcharacter(data[0]);
-    setIsLoading(false)
+    setIsLoading(false);
   }
 
   useEffect(() => {
-    getCharacter(characterId)
- 
-  }, [characterId])
+    getCharacter(characterId);
+  }, [characterId]);
 
   if (isLoading) return <p>Loading...</p>;
-
 
   return (
     <div>
       <h3 className="center">Main Content</h3>
-      {characterId}
-      <p>{JSON.stringify(character, null, 2)}</p>
       <p>{character.name}</p>
       <img src={character.img} alt="" />
     </div>
