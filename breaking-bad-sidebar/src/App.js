@@ -5,6 +5,7 @@ import './styles.css';
 
 import Home from './Home';
 import Characters from './Characters';
+import Episodes from './Episodes'
 import FourOhFour from './FourOhFour';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route path="/characters">
             <Characters />
+          </Route>
+          <Route path="/episodes">
+            <Episodes />
           </Route>
           <Route path="*">
             <FourOhFour />

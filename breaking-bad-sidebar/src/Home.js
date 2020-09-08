@@ -9,6 +9,7 @@ export default function Home() {
       <div className="container center">
         <h1>Breaking Bad API</h1>
         <Link to={`/characters`}>Characters</Link>
+        <Link to={`/episodes`}>Episodes</Link>
       </div>
     </React.Fragment>
   );
