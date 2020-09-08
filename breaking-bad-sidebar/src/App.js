@@ -5,6 +5,7 @@ import './styles.css';
 
 import Home from './Home';
 import Characters from './Characters';
+import FourOhFour from './FourOhFour';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route path="/characters">
             <Characters />
+          </Route>
+          <Route path="*">
+            <FourOhFour />
           </Route>
         </Switch>
       </React.Fragment>
