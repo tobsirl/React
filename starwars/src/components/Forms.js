@@ -93,7 +93,7 @@ export default class Forms extends Component {
           <option value="yellow">Yellow</option>
         </select>
         <br />
-        <p style={{ color: `${this.state.favColor}` }}>{this.state.favColor}</p>
+        <h2 style={{ color: `${this.state.favColor}` }}>{this.state.favColor}</h2>
       </Fragment>
     );
   }

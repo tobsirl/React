@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/ui/Header';
 import Search from './components/ui/Search';
 import CharacterGrid from './components/characters/CharacterGrid';
 import Sidebar from './components/ui/Sidebar';
+import CharaterItem from './components/characters/CharacterItem';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -26,12 +28,12 @@ function App() {
   // console.log(characters);
 
   return (
-    <div className="container">
-      <Header />
-      <Sidebar list={characters} title="Charactor Names" />
-      <Search getQuery={(query) => setQuery(query)} />
-      {/* <CharacterGrid characters={characters} isLoading={isLoading} /> */}
-    </div>
+    <Router>
+      <div className="container">
+        <Header />
+        <Sidebar list={characters} title="Charactor Names" />
+      </div>
+    </Router>
   );
 }
 

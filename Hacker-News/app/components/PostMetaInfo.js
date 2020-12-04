@@ -5,9 +5,10 @@ import { dateFormat } from '../utils/helper';
 export default function PostMetaInfo({ by, time, id, descendants }) {
   return (
     <div>
-      <p>
-        by {by} on {dateFormat(time)}
-      </p>
+      <span>
+        by <Link to={`/user?id=${by}`}>{by}</Link>
+      </span>
+      <span>on {dateFormat(time)}</span>
     </div>
   );
 }
