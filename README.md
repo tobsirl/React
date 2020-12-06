@@ -47,6 +47,9 @@ class HelloWorld extends React.Component {
 }
 ```
 
+### Ecosystem
+React was created by Jordan Walke, an software engineer at Facebook in 2011, and was open-sourced at JSConf US in May 2013. Since then it has continued to grow in popularity. React is maintained by Facebook with a large community of developers who have added to the eco system.
+
 ```js
 import React from "react"
 import ReactDOM from "react-dom"
