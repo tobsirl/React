@@ -16,6 +16,25 @@ React will them carry out the necessary changes to only those elements that requ
 
 ![virtual dom](https://user-images.githubusercontent.com/25591390/101282522-a3270980-37cd-11eb-988f-3cb8f2a1c26e.png)
 
+### Reusable Components
+React is built on re-usable components, these components can be used several times throughout the application. Applications are a collection of composable React components that can be reused multiple times.
+
+```js
+import Navbar from './Navbar';
+import Content from './Content';
+import Footer from './Footer';
+
+function App() {
+  return ( 
+    <div>
+      <Navbar />
+      <Content />
+      <Footer />
+    </div>
+  )
+}
+```
+
 ```js
 import React from "react"
 import ReactDOM from "react-dom"
