@@ -34,6 +34,18 @@ function App() {
   )
 }
 ```
+### JSX
+**JavaScript eXtension** allows us to write JavaScript that looks like HTML.
+Example - class based component that renders a h1. 
+```js
+class HelloWorld extends React.Component {
+  render() {
+    return (
+      <h1 className='large'>Hello World</h1>
+    );
+  }
+}
+```
 
 ```js
 import React from "react"
