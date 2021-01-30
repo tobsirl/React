@@ -1,8 +1,9 @@
 import './App.css';
+import './box-styles.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <h1>test</h1>
     </div>
   );
