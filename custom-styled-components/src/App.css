@@ -4,9 +4,7 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-width: 80em;
   margin: 0 auto;
+  padding: 3em;
 }
