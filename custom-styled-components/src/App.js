@@ -1,29 +1,33 @@
 import './App.css';
 import './box-styles.css';
 
+function Box(props) {
+  return <div {...props} />;
+}
+
 const smallBox = (
-  <div
+  <Box
     className="box box--small"
     style={{ background: 'lightblue', fontStyle: 'italic' }}
   >
     small lightblue box
-  </div>
+  </Box>
 );
 const mediumBox = (
-  <div
+  <Box
     className="box box--medium"
     style={{ background: 'pink', fontStyle: 'italic' }}
   >
     medium pink box
-  </div>
+  </Box>
 );
 const largeBox = (
-  <div
+  <Box
     className="box box--large"
     style={{ background: 'orange', fontStyle: 'italic' }}
   >
     large orange box
-  </div>
+  </Box>
 );
 
 function App() {
