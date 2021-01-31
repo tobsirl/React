@@ -1,10 +1,11 @@
 import './App.css';
 import './box-styles.css';
 
-function Box({ className = '', style, ...otherProps }) {
+function Box({ className = '', size, style, ...otherProps }) {
+  const sizeClassName = size ? `box--${size}` : '';
   return (
     <div
-      className={`box ${className}`}
+      className={`box ${className} ${sizeClassName}`}
       style={{ fontStyle: 'italic', ...style }}
       {...otherProps}
     />
@@ -12,17 +13,17 @@ function Box({ className = '', style, ...otherProps }) {
 }
 
 const smallBox = (
-  <Box className="box--small" style={{ background: 'lightblue' }}>
+  <Box size="small" style={{ background: 'lightblue' }}>
     small lightblue box
   </Box>
 );
 const mediumBox = (
-  <Box className="box--medium" style={{ background: 'pink' }}>
+  <Box size="medium" style={{ background: 'pink' }}>
     medium pink box
   </Box>
 );
 const largeBox = (
-  <Box className="box--large" style={{ background: 'orange' }}>
+  <Box size="large" style={{ background: 'orange' }}>
     large orange box
   </Box>
 );
