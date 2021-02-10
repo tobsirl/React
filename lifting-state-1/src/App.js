@@ -1,9 +1,10 @@
 import './App.css';
+import SearchableList from './components/SearchableList';
 
 function App() {
   return (
     <div className="App">
-      <h1>test</h1>
+      <SearchableList />
     </div>
   );
 }
