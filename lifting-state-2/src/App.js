@@ -3,25 +3,25 @@ import React, { useState } from 'react';
 
 import Display from './components/Display';
 import NameInput from './components/NameInput';
-import DogsName from './components/DogsName';
+import AnimalInput from './components/AnimalInput';
 
 function App() {
   const [name, setName] = useState('');
-  const [dogsName, setDogsName] = useState('');
+  const [animal, setAnimal] = useState('');
 
   function nameChange(event) {
     setName(event.target.value);
   }
 
   return (
-    <div className="App">
+    <form className="App">
       <NameInput name={name} onNameChange={nameChange} />
-      <DogsName
-        dogsName={dogsName}
-        onDogsNameChange={(event) => setDogsName(event.target.value)}
+      <AnimalInput
+        animal={animal}
+        onAnimalChange={(event) => setAnimal(event.target.value)}
       />
-      <Display name={name} dogsName={dogsName} />
-    </div>
+      <Display name={name} animal={animal} />
+    </form>
   );
 }
 

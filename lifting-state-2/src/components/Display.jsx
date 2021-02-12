@@ -1,3 +1,3 @@
-export default function Display({ name, dogsName }) {
-  return `My name is ${name} and my dog's name is ${dogsName}`;
+export default function Display({ name, animal }) {
+  return `My name is ${name} and my favourite animal is ${animal}`;
 }
