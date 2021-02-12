@@ -1,11 +1,12 @@
 import './App.css';
 
 import Display from './components/Display';
+import NameInput from './components/NameInput';
 
 function App() {
   return (
     <div className="App">
-      <h1>display</h1>
+      <NameInput />
       <Display name="Paul" dogsName="rex" />
     </div>
   );
