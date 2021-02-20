@@ -2,8 +2,19 @@ import './App.css';
 
 function Board() {
   const squares = Array(9).fill(null);
+  squares[0] = 'X';
+  squares[1] = 'X';
+  squares[2] = 'O';
 
-  function selectSquare(square) {}
+  const nextValue = calculateNextValue(squares);
+  const winner = calculateWinner(squares);
+  const status = calculateStatus(winner, squares, nextValue);
+
+  function selectSquare(square) {
+    if (winner || squares[square]) {
+      return;
+    }
+  }
 
   function renderSquare(i) {
     return (
@@ -14,7 +25,7 @@ function Board() {
   }
   return (
     <div>
-      <div class="status">{}</div>
+      <div class="status">{status}</div>
       <div class="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
