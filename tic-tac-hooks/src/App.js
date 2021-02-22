@@ -1,10 +1,14 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 
 function Board() {
-  const squares = Array(9).fill(null);
-  squares[0] = 'X';
-  squares[1] = 'X';
-  squares[2] = 'O';
+  const [squares, setSquares] = useState(
+    JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null)
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem('squares', JSON.stringify(squares));
+  }, [squares]);
 
   const nextValue = calculateNextValue(squares);
   const winner = calculateWinner(squares);
@@ -14,6 +18,15 @@ function Board() {
     if (winner || squares[square]) {
       return;
     }
+
+    const squaresCopy = [...squares];
+    squaresCopy[square] = nextValue;
+
+    setSquares(squaresCopy);
+  }
+
+  function reset() {
+    setSquares(Array(9).fill(null));
   }
 
   function renderSquare(i) {
@@ -23,6 +36,7 @@ function Board() {
       </button>
     );
   }
+
   return (
     <div>
       <div class="status">{status}</div>
@@ -41,6 +55,9 @@ function Board() {
         {renderSquare(7)}
         {renderSquare(8)}
       </div>
+      <button className="restart" onClick={reset}>
+        Reset
+      </button>
     </div>
   );
 }
