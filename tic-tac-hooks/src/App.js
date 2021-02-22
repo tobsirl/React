@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 
 function Board() {
   const [squares, setSquares] = useState(
-    JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null)
+    () =>
+      JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null)
   );
 
   useEffect(() => {
