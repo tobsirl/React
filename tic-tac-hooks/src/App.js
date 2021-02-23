@@ -1,15 +1,12 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useLocalStorageState } from './utils';
 
 function Board() {
-  const [squares, setSquares] = useState(
-    () =>
-      JSON.parse(window.localStorage.getItem('squares')) || Array(9).fill(null)
+  const [squares, setSquares] = useLocalStorageState(
+    'squares',
+    Array(9).fill(null)
   );
-
-  useEffect(() => {
-    window.localStorage.setItem('squares', JSON.stringify(squares));
-  }, [squares]);
 
   const nextValue = calculateNextValue(squares);
   const winner = calculateWinner(squares);
