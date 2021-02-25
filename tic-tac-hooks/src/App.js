@@ -2,11 +2,43 @@ import './App.css';
 import React from 'react';
 import { useLocalStorageState } from './utils';
 
-function Board() {
+function Board({ onClick, squares }) {
+  function renderSquare(i) {
+    return (
+      <button className="square" onClick={() => onClick(i)}>
+        {squares[i]}
+      </button>
+    );
+  }
+
+  return (
+    <div>
+      <div class="board-row">
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
+      </div>
+      <div class="board-row">
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
+      </div>
+      <div class="board-row">
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
+      </div>
+    </div>
+  );
+}
+
+function Game() {
   const [squares, setSquares] = useLocalStorageState(
     'squares',
     Array(9).fill(null)
   );
+
+  const history = [];
 
   const nextValue = calculateNextValue(squares);
   const winner = calculateWinner(squares);
@@ -23,48 +55,21 @@ function Board() {
     setSquares(squaresCopy);
   }
 
-  function reset() {
+  function restart() {
     setSquares(Array(9).fill(null));
   }
 
-  function renderSquare(i) {
-    return (
-      <button className="square" onClick={() => selectSquare(i)}>
-        {squares[i]}
-      </button>
-    );
-  }
-
-  return (
-    <div>
-      <div class="status">{status}</div>
-      <div class="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-      </div>
-      <div class="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div class="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
-      <button className="restart" onClick={reset}>
-        Reset
-      </button>
-    </div>
-  );
-}
-
-function Game() {
   return (
     <div className="game">
       <div className="game-board">
-        <Board />
+        <Board onClick={selectSquare} squares={squares} />
+        <button className="restart" onClick={restart}>
+          restart
+        </button>
+      </div>
+      <div className="game-info">
+        <div>{status}</div>
+        {/* <ol>{moves}</ol> */}
       </div>
     </div>
   );
