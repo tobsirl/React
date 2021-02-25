@@ -38,7 +38,8 @@ function Game() {
     Array(9).fill(null)
   );
 
-  const history = [];
+  const currentStep = 0;
+  const history = [squares];
 
   const nextValue = calculateNextValue(squares);
   const winner = calculateWinner(squares);
@@ -59,6 +60,19 @@ function Game() {
     setSquares(Array(9).fill(null));
   }
 
+  const moves = history.map((septSquares, step) => {
+    const desc = step === 0 ? 'Go to game start' : `Go to move #${step}`;
+    const isCurrentStep = step === currentStep;
+    return (
+      <li key={step}>
+        <button disabled={isCurrentStep}>
+          {desc}
+          {isCurrentStep ? 'current' : null}
+        </button>
+      </li>
+    );
+  });
+
   return (
     <div className="game">
       <div className="game-board">
@@ -69,7 +83,7 @@ function Game() {
       </div>
       <div className="game-info">
         <div>{status}</div>
-        {/* <ol>{moves}</ol> */}
+        <ol>{moves}</ol>
       </div>
     </div>
   );
