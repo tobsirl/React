@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Notes from './pages/Notes';
 import Create from './pages/Create';
+import Checkboxes from './pages/Checkboxes';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         </Route>
         <Route path="/create">
           <Create />
+        </Route>
+        <Route path="/checkboxes">
+          <Checkboxes />
         </Route>
       </Switch>
     </Router>

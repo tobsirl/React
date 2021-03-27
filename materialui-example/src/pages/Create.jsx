@@ -1,4 +1,8 @@
-import {Typography} from '@material-ui/core/';
+import { Typography } from '@material-ui/core/';
 export default function Create() {
-  return <Typography variant="h1">Create</Typography>;
+  return (
+    <Typography variant="h6" component="h2" gutterBottom color="textSecondary">
+      Create a New Note
+    </Typography>
+  );
 }
