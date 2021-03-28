@@ -1,4 +1,4 @@
-import { Typography, Button } from '@material-ui/core/';
+import { Typography, ButtonGroup, Button } from '@material-ui/core/';
 export default function Create() {
   return (
     <div>
@@ -13,6 +13,14 @@ export default function Create() {
       <Button type="submit" color="primary">
         Submit
       </Button>
+      <Button type="submit" color="secondary" variant="outlined">
+        Submit
+      </Button>
+      <ButtonGroup>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
     </div>
   );
 }
