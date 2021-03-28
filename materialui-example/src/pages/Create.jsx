@@ -1,7 +1,7 @@
-import { Typography, ButtonGroup, Button } from '@material-ui/core/';
+import { Typography, Container, Button } from '@material-ui/core/';
 export default function Create() {
   return (
-    <div>
+    <Container>
       <Typography
         variant="h6"
         component="h2"
@@ -10,17 +10,14 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
-      <Button type="submit" color="primary">
+      <Button
+        type="submit"
+        color="secondary"
+        variant="contained"
+        onClick={() => console.log('Button Clicked')}
+      >
         Submit
       </Button>
-      <Button type="submit" color="secondary" variant="outlined">
-        Submit
-      </Button>
-      <ButtonGroup>
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
-    </div>
+    </Container>
   );
 }
