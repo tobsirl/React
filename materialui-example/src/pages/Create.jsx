@@ -1,23 +1,12 @@
-import { Typography, Container, Button } from '@material-ui/core/';
+import { Typography, Container, Button, useTheme } from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  btn: {
-    fontSize: 60,
-    backgroundColor: 'violet',
-    '&:hover': {
-      backgroundColor: 'blue',
-    },
-  },
-  title: {
-    textDecoration: 'underline',
-    marginBottom: 20,
-  },
-});
+const useStyles = makeStyles({});
 
 export default function Create() {
   const classes = useStyles();
+  // const theme = useTheme()
 
   return (
     <Container>
@@ -26,17 +15,15 @@ export default function Create() {
         component="h2"
         gutterBottom
         color="textSecondary"
-        className={classes.title}
       >
         Create a New Note
       </Typography>
       <Button
         type="submit"
-        color="secondary"
+        color="primary"
         variant="contained"
         onClick={() => console.log('Button Clicked')}
         endIcon={<KeyboardArrowRight />}
-        className={classes.btn}
       >
         Submit
       </Button>
