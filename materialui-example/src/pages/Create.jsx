@@ -1,7 +1,17 @@
 import { Typography, Container, Button } from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
-import SendIcon from '@material-ui/icons/Send'
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 60,
+    backgroundColor: 'violet',
+  },
+});
+
 export default function Create() {
+  const classes = useStyles();
+
   return (
     <Container>
       <Typography
@@ -17,8 +27,8 @@ export default function Create() {
         color="secondary"
         variant="contained"
         onClick={() => console.log('Button Clicked')}
-        startIcon={<SendIcon />}
         endIcon={<KeyboardArrowRight />}
+        className={classes.btn}
       >
         Submit
       </Button>
