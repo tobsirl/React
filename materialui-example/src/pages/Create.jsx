@@ -1,4 +1,6 @@
 import { Typography, Container, Button } from '@material-ui/core/';
+import { KeyboardArrowRight } from '@material-ui/icons';
+import SendIcon from '@material-ui/icons/Send'
 export default function Create() {
   return (
     <Container>
@@ -15,6 +17,8 @@ export default function Create() {
         color="secondary"
         variant="contained"
         onClick={() => console.log('Button Clicked')}
+        startIcon={<SendIcon />}
+        endIcon={<KeyboardArrowRight />}
       >
         Submit
       </Button>
