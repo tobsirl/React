@@ -6,6 +6,13 @@ const useStyles = makeStyles({
   btn: {
     fontSize: 60,
     backgroundColor: 'violet',
+    '&:hover': {
+      backgroundColor: 'blue',
+    },
+  },
+  title: {
+    textDecoration: 'underline',
+    marginBottom: 20,
   },
 });
 
@@ -19,6 +26,7 @@ export default function Create() {
         component="h2"
         gutterBottom
         color="textSecondary"
+        className={classes.title}
       >
         Create a New Note
       </Typography>
