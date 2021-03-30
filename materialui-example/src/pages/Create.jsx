@@ -3,7 +3,13 @@ import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles({});
+const useStyles = makeStyles({
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block',
+  }
+});
 
 export default function Create() {
   const classes = useStyles();
@@ -20,7 +26,14 @@ export default function Create() {
         Create a New Note
       </Typography>
       <form action="" noValidate autoComplete="off">
-        <TextField label="Note Title" variant="outlined" color="secondary" />
+        <TextField
+          label="Note Title"
+          variant="outlined"
+          color="secondary"
+          fullWidth
+          required
+          className={classes.field}
+        />
       </form>
       <Button
         type="submit"
