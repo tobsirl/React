@@ -21,8 +21,7 @@ describe('renders the Create page', () => {
   describe('renders the Checkboxes page', () => {
     it('should display a checkbox', () => {
       render(<Check />);
-      const checkboxInput = screen.getByRole('checkbox', {name: /sunday/i})
-      screen.debug()
+      const checkboxInput = screen.getByRole('checkbox');
       expect(checkboxInput).toBeInTheDocument();
     });
   });
