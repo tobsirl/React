@@ -1,4 +1,4 @@
-import { getByTestId, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Check from './pages/Check';
 import Create from './pages/Create';
 import Notes from './pages/Notes';
