@@ -18,6 +18,14 @@ export default function Create() {
   const classes = useStyles();
   // const theme = useTheme()
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (title && details) {
+      console.log('title :>> ', title);
+      console.log('details :>> ', details);
+    }
+  }
+
   return (
     <Container>
       <Typography
@@ -28,7 +36,7 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
-      <form action="" noValidate autoComplete="off">
+      <form action="" noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
           onChange={(event) => setTitle(event.target.value)}
           label="Note Title"
@@ -49,16 +57,15 @@ export default function Create() {
           required
           className={classes.field}
         />
-      </form>
       <Button
         type="submit"
         color="primary"
         variant="contained"
-        onClick={() => console.log('Button Clicked')}
         endIcon={<KeyboardArrowRight />}
       >
         Submit
       </Button>
+      </form>
       {title}
       <br />
       {details}
