@@ -1,6 +1,7 @@
 import { Typography, Container, Button, useTheme } from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles({});
 
@@ -18,6 +19,9 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
+      <form action="" noValidate autoComplete="off">
+        <TextField label="Note Title" variant="outlined" color="secondary" />
+      </form>
       <Button
         type="submit"
         color="primary"
