@@ -15,11 +15,24 @@ const useStyles = makeStyles({
 export default function Create() {
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
+  const [titleError, setTitleError] = useState(false);
+  const [detailsError, setDetailsError] = useState(false);
   const classes = useStyles();
   // const theme = useTheme()
 
   function handleSubmit(event) {
     event.preventDefault();
+    setTitleError(false);
+    setDetailsError(false);
+
+    if (!title) {
+      setTitleError(true);
+    }
+
+    if (!details) {
+      setDetailsError(true);
+    }
+
     if (title && details) {
       console.log('title :>> ', title);
       console.log('details :>> ', details);
@@ -45,6 +58,7 @@ export default function Create() {
           fullWidth
           required
           className={classes.field}
+          error={titleError}
         />
         <TextField
           onChange={(event) => setDetails(event.target.value)}
@@ -55,16 +69,17 @@ export default function Create() {
           rows={4}
           fullWidth
           required
+          error={detailsError}
           className={classes.field}
         />
-      <Button
-        type="submit"
-        color="primary"
-        variant="contained"
-        endIcon={<KeyboardArrowRight />}
-      >
-        Submit
-      </Button>
+        <Button
+          type="submit"
+          color="primary"
+          variant="contained"
+          endIcon={<KeyboardArrowRight />}
+        >
+          Submit
+        </Button>
       </form>
       {title}
       <br />
