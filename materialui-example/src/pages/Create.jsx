@@ -24,6 +24,7 @@ export default function Create() {
   const [details, setDetails] = useState('');
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState('todos');
   const classes = useStyles();
   // const theme = useTheme()
 
@@ -79,10 +80,14 @@ export default function Create() {
           error={detailsError}
           className={classes.field}
         />
-        <RadioGroup>
+        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
           <FormControlLabel value="money" control={<Radio />} label="Money" />
           <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-          <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
+          <FormControlLabel
+            value="reminders"
+            control={<Radio />}
+            label="Reminders"
+          />
           <FormControlLabel value="work" control={<Radio />} label="Work" />
         </RadioGroup>
 
@@ -95,9 +100,8 @@ export default function Create() {
           Submit
         </Button>
       </form>
-      {title}
       <br />
-      {details}
+      <pre>{category}</pre>
     </Container>
   );
 }
