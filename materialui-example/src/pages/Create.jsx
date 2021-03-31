@@ -5,6 +5,8 @@ import {
   RadioGroup,
   Radio,
   FormControlLabel,
+  FormLabel,
+  FormControl,
 } from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
@@ -80,16 +82,23 @@ export default function Create() {
           error={detailsError}
           className={classes.field}
         />
-        <RadioGroup value={category} onChange={(event) => setCategory(event.target.value)}>
-          <FormControlLabel value="money" control={<Radio />} label="Money" />
-          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-          <FormControlLabel
-            value="reminders"
-            control={<Radio />}
-            label="Reminders"
-          />
-          <FormControlLabel value="work" control={<Radio />} label="Work" />
-        </RadioGroup>
+
+        <FormControl className={classes.field}>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          >
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel
+              value="reminders"
+              control={<Radio />}
+              label="Reminders"
+            />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
 
         <Button
           type="submit"
