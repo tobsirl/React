@@ -4,6 +4,7 @@ import {
   Button,
   RadioGroup,
   Radio,
+  FormControlLabel,
 } from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
@@ -79,8 +80,10 @@ export default function Create() {
           className={classes.field}
         />
         <RadioGroup>
-          <Radio value="hello" />
-          <Radio value="goodbye" />
+          <FormControlLabel value="money" control={<Radio />} label="Money" />
+          <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+          <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
+          <FormControlLabel value="work" control={<Radio />} label="Work" />
         </RadioGroup>
 
         <Button
