@@ -1,4 +1,10 @@
-import { Typography, Container, Button } from '@material-ui/core/';
+import {
+  Typography,
+  Container,
+  Button,
+  RadioGroup,
+  Radio,
+} from '@material-ui/core/';
 import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
@@ -72,6 +78,11 @@ export default function Create() {
           error={detailsError}
           className={classes.field}
         />
+        <RadioGroup>
+          <Radio value="hello" />
+          <Radio value="goodbye" />
+        </RadioGroup>
+
         <Button
           type="submit"
           color="primary"
