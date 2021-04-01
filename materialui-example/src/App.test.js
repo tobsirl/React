@@ -6,7 +6,7 @@ import Notes from './pages/Notes';
 describe('renders the Notes page', () => {
   it('should display the notes text', () => {
     render(<Notes />);
-    const notesElement = screen.getByText(/notes/i);
+    const notesElement = screen.getByText(/Yoshi's birthday bash/i);
     expect(notesElement).toBeInTheDocument();
   });
 });

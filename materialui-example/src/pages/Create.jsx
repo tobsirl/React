@@ -46,6 +46,17 @@ export default function Create() {
     if (title && details) {
       console.log('title :>> ', title);
       console.log('details :>> ', details);
+      fetch('http://localhost:8000/notes', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          details,
+          category,
+        }),
+      });
     }
   }
 
