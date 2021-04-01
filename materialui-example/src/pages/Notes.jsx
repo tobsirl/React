@@ -14,5 +14,11 @@ export default function Notes() {
     fetchNotes();
   }, []);
 
-  return <div>{JSON.stringify(notes[0].title, null, 2)}</div>;
+  return (
+    <div>
+      {notes.map((note) => (
+        <p key={note.id}>{note.title}</p>
+      ))}
+    </div>
+  );
 }
