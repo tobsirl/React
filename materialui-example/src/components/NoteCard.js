@@ -9,20 +9,26 @@ import {
 import IconButton from '@material-ui/core/IconButton';
 import { DeleteOutlined } from '@material-ui/icons';
 
-export default function NoteCard({ title, details, category }) {
+export default function NoteCard(props) {
+  console.log(props);
   return (
     <Card>
       <CardHeader
         action={
-          <IconButton aria-label="settings">
+          <IconButton
+            aria-label="settings"
+            onClick={() => props.onHandleDelete(props.note.id)}
+          >
             <DeleteOutlined />
           </IconButton>
         }
-        title={title}
-        subheader={category}
+        title={props.note.title}
+        subheader={props.note.category}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary">{details}</Typography>
+        <Typography variant="body2" color="textSecondary">
+          {props.note.details}
+        </Typography>
       </CardContent>
     </Card>
   );
