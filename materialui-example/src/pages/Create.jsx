@@ -12,6 +12,7 @@ import { KeyboardArrowRight } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles({
   field: {
@@ -28,6 +29,7 @@ export default function Create() {
   const [detailsError, setDetailsError] = useState(false);
   const [category, setCategory] = useState('todos');
   const classes = useStyles();
+  const history = useHistory();
   // const theme = useTheme()
 
   function handleSubmit(event) {
@@ -56,7 +58,7 @@ export default function Create() {
           details,
           category,
         }),
-      });
+      }).then(() => history.push('/'));
     }
   }
 
