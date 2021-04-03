@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {Container, Grid} from '@material-ui/core'
+import React, { useState, useEffect } from 'react'
+import { Container, Grid } from '@material-ui/core'
 import NoteCard from '../components/NoteCard'
 export default function Notes() {
   const [notes, setNotes] = useState([])

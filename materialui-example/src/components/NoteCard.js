@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
-import {DeleteOutlined} from '@material-ui/icons'
+import { DeleteOutlined } from '@material-ui/icons'
 
 export default function NoteCard(props) {
   console.log(props)
@@ -16,7 +16,7 @@ export default function NoteCard(props) {
       <CardHeader
         action={
           <IconButton
-            aria-label="settings"
+            aria-label='settings'
             onClick={() => props.onHandleDelete(props.note.id)}
           >
             <DeleteOutlined />
@@ -26,7 +26,7 @@ export default function NoteCard(props) {
         subheader={props.note.category}
       />
       <CardContent>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant='body2' color='textSecondary'>
           {props.note.details}
         </Typography>
       </CardContent>

@@ -1,9 +1,9 @@
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Notes from './pages/Notes'
 import Create from './pages/Create'
 import Checkboxes from './pages/Checkboxes'
-import React, {useState} from 'react'
-import {createMuiTheme, ThemeProvider} from '@material-ui/core'
+import React, { useState } from 'react'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import Layout from './components/Layout'
 
 const theme = createMuiTheme({
@@ -33,7 +33,7 @@ function App() {
   })
 
   function handleChange(event) {
-    setState({...state, [event.target.name]: event.target.checked})
+    setState({ ...state, [event.target.name]: event.target.checked })
   }
 
   return (
@@ -41,13 +41,13 @@ function App() {
       <Router>
         <Layout>
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Notes />
             </Route>
-            <Route path="/create">
+            <Route path='/create'>
               <Create />
             </Route>
-            <Route path="/checkboxes">
+            <Route path='/checkboxes'>
               <Checkboxes daysOfTheWeek={state} handleChange={handleChange} />
             </Route>
           </Switch>

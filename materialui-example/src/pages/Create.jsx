@@ -8,11 +8,11 @@ import {
   FormLabel,
   FormControl,
 } from '@material-ui/core/'
-import {KeyboardArrowRight} from '@material-ui/icons'
-import {makeStyles} from '@material-ui/core'
+import { KeyboardArrowRight } from '@material-ui/icons'
+import { makeStyles } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
-import React, {useState} from 'react'
-import {useHistory} from 'react-router'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router'
 
 const useStyles = makeStyles({
   field: {
@@ -65,19 +65,19 @@ export default function Create() {
   return (
     <Container>
       <Typography
-        variant="h6"
-        component="h2"
+        variant='h6'
+        component='h2'
         gutterBottom
-        color="textSecondary"
+        color='textSecondary'
       >
         Create a New Note
       </Typography>
-      <form action="" noValidate autoComplete="off" onSubmit={handleSubmit}>
+      <form action='' noValidate autoComplete='off' onSubmit={handleSubmit}>
         <TextField
           onChange={event => setTitle(event.target.value)}
-          label="Note Title"
-          variant="outlined"
-          color="secondary"
+          label='Note Title'
+          variant='outlined'
+          color='secondary'
           fullWidth
           required
           className={classes.field}
@@ -85,9 +85,9 @@ export default function Create() {
         />
         <TextField
           onChange={event => setDetails(event.target.value)}
-          label="Details"
-          variant="outlined"
-          color="secondary"
+          label='Details'
+          variant='outlined'
+          color='secondary'
           multiline
           rows={4}
           fullWidth
@@ -102,21 +102,21 @@ export default function Create() {
             value={category}
             onChange={event => setCategory(event.target.value)}
           >
-            <FormControlLabel value="money" control={<Radio />} label="Money" />
-            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value='money' control={<Radio />} label='Money' />
+            <FormControlLabel value='todos' control={<Radio />} label='Todos' />
             <FormControlLabel
-              value="reminders"
+              value='reminders'
               control={<Radio />}
-              label="Reminders"
+              label='Reminders'
             />
-            <FormControlLabel value="work" control={<Radio />} label="Work" />
+            <FormControlLabel value='work' control={<Radio />} label='Work' />
           </RadioGroup>
         </FormControl>
 
         <Button
-          type="submit"
-          color="primary"
-          variant="contained"
+          type='submit'
+          color='primary'
+          variant='contained'
           endIcon={<KeyboardArrowRight />}
         >
           Submit
