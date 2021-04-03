@@ -4,6 +4,7 @@ import Create from './pages/Create'
 import Checkboxes from './pages/Checkboxes'
 import React, {useState} from 'react'
 import {createMuiTheme, ThemeProvider} from '@material-ui/core'
+import Layout from './components/Layout'
 
 const theme = createMuiTheme({
   palette: {
@@ -38,17 +39,19 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Notes />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/checkboxes">
-            <Checkboxes daysOfTheWeek={state} handleChange={handleChange} />
-          </Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <Notes />
+            </Route>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/checkboxes">
+              <Checkboxes daysOfTheWeek={state} handleChange={handleChange} />
+            </Route>
+          </Switch>
+        </Layout>
       </Router>
     </ThemeProvider>
   )
