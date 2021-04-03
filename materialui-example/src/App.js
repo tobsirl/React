@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Notes from './pages/Notes';
-import Create from './pages/Create';
-import Checkboxes from './pages/Checkboxes';
-import React, { useState } from 'react';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Notes from './pages/Notes'
+import Create from './pages/Create'
+import Checkboxes from './pages/Checkboxes'
+import React, {useState} from 'react'
+import {createMuiTheme, ThemeProvider} from '@material-ui/core'
 
 const theme = createMuiTheme({
   palette: {
@@ -18,7 +18,7 @@ const theme = createMuiTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
   },
-});
+})
 
 function App() {
   const [state, setState] = useState({
@@ -29,10 +29,10 @@ function App() {
     Thursday: false,
     Friday: true,
     Saturday: false,
-  });
+  })
 
   function handleChange(event) {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    setState({...state, [event.target.name]: event.target.checked})
   }
 
   return (
@@ -51,7 +51,7 @@ function App() {
         </Switch>
       </Router>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

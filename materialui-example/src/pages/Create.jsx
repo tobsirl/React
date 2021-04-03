@@ -7,12 +7,12 @@ import {
   FormControlLabel,
   FormLabel,
   FormControl,
-} from '@material-ui/core/';
-import { KeyboardArrowRight } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core';
-import TextField from '@material-ui/core/TextField';
-import React, { useState } from 'react';
-import { useHistory } from 'react-router';
+} from '@material-ui/core/'
+import {KeyboardArrowRight} from '@material-ui/icons'
+import {makeStyles} from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
+import React, {useState} from 'react'
+import {useHistory} from 'react-router'
 
 const useStyles = makeStyles({
   field: {
@@ -20,34 +20,34 @@ const useStyles = makeStyles({
     marginBottom: 20,
     display: 'block',
   },
-});
+})
 
 export default function Create() {
-  const [title, setTitle] = useState('');
-  const [details, setDetails] = useState('');
-  const [titleError, setTitleError] = useState(false);
-  const [detailsError, setDetailsError] = useState(false);
-  const [category, setCategory] = useState('todos');
-  const classes = useStyles();
-  const history = useHistory();
+  const [title, setTitle] = useState('')
+  const [details, setDetails] = useState('')
+  const [titleError, setTitleError] = useState(false)
+  const [detailsError, setDetailsError] = useState(false)
+  const [category, setCategory] = useState('todos')
+  const classes = useStyles()
+  const history = useHistory()
   // const theme = useTheme()
 
   function handleSubmit(event) {
-    event.preventDefault();
-    setTitleError(false);
-    setDetailsError(false);
+    event.preventDefault()
+    setTitleError(false)
+    setDetailsError(false)
 
     if (!title) {
-      setTitleError(true);
+      setTitleError(true)
     }
 
     if (!details) {
-      setDetailsError(true);
+      setDetailsError(true)
     }
 
     if (title && details) {
-      console.log('title :>> ', title);
-      console.log('details :>> ', details);
+      console.log('title :>> ', title)
+      console.log('details :>> ', details)
       fetch('http://localhost:8000/notes', {
         method: 'POST',
         headers: {
@@ -58,7 +58,7 @@ export default function Create() {
           details,
           category,
         }),
-      }).then(() => history.push('/'));
+      }).then(() => history.push('/'))
     }
   }
 
@@ -74,7 +74,7 @@ export default function Create() {
       </Typography>
       <form action="" noValidate autoComplete="off" onSubmit={handleSubmit}>
         <TextField
-          onChange={(event) => setTitle(event.target.value)}
+          onChange={event => setTitle(event.target.value)}
           label="Note Title"
           variant="outlined"
           color="secondary"
@@ -84,7 +84,7 @@ export default function Create() {
           error={titleError}
         />
         <TextField
-          onChange={(event) => setDetails(event.target.value)}
+          onChange={event => setDetails(event.target.value)}
           label="Details"
           variant="outlined"
           color="secondary"
@@ -100,7 +100,7 @@ export default function Create() {
           <FormLabel>Note Category</FormLabel>
           <RadioGroup
             value={category}
-            onChange={(event) => setCategory(event.target.value)}
+            onChange={event => setCategory(event.target.value)}
           >
             <FormControlLabel value="money" control={<Radio />} label="Money" />
             <FormControlLabel value="todos" control={<Radio />} label="Todos" />
@@ -125,5 +125,5 @@ export default function Create() {
       <br />
       <pre>{category}</pre>
     </Container>
-  );
+  )
 }

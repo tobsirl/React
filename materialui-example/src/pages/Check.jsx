@@ -1,6 +1,6 @@
-import { FormControlLabel, Checkbox } from '@material-ui/core';
+import {FormControlLabel, Checkbox} from '@material-ui/core'
 
-export default function Check({ day, checked, handleChange }) {
+export default function Check({day, checked, handleChange}) {
   return (
     <>
       <FormControlLabel
@@ -10,5 +10,5 @@ export default function Check({ day, checked, handleChange }) {
         }
       />
     </>
-  );
+  )
 }

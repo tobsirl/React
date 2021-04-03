@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 import {
   Card,
   CardHeader,
   CardMedia,
   CardContent,
   Typography,
-} from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import { DeleteOutlined } from '@material-ui/icons';
+} from '@material-ui/core'
+import IconButton from '@material-ui/core/IconButton'
+import {DeleteOutlined} from '@material-ui/icons'
 
 export default function NoteCard(props) {
-  console.log(props);
+  console.log(props)
   return (
     <Card>
       <CardHeader
@@ -31,5 +31,5 @@ export default function NoteCard(props) {
         </Typography>
       </CardContent>
     </Card>
-  );
+  )
 }

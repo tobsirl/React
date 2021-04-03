@@ -1,6 +1,6 @@
-import { FormGroup } from '@material-ui/core';
-import React from 'react';
-import Check from './Check';
+import {FormGroup} from '@material-ui/core'
+import React from 'react'
+import Check from './Check'
 
 export default function Checkboxes(props) {
   return (
@@ -15,5 +15,5 @@ export default function Checkboxes(props) {
         </div>
       ))}
     </FormGroup>
-  );
+  )
 }
