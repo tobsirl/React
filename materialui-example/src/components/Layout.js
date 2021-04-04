@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@material-ui/core'
+import { AddCircleOutlined, SubjectOutlined } from '@material-ui/icons'
 import React from 'react'
 
 const drawerWidth = 240
@@ -29,6 +30,19 @@ const useStyles = makeStyles({
 export default function Layout({ children }) {
   const classes = useStyles()
 
+  const menuItems = [
+    {
+      text: 'My Notes',
+      icon: <SubjectOutlined color='secondary' />,
+      path: '/',
+    },
+    {
+      text: 'Create Note',
+      icon: <AddCircleOutlined color='secondary' />,
+      path: '/create',
+    },
+  ]
+
   return (
     <div className={classes.root}>
       {/* app bar */}
@@ -49,7 +63,6 @@ export default function Layout({ children }) {
             <ListItemText primary='hello' />
           </ListItem>
         </List>
-        
       </Drawer>
       <div className={classes.page}>{children}</div>
     </div>
