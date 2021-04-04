@@ -13,23 +13,26 @@ import { useHistory, useLocation } from 'react-router'
 
 const drawerWidth = 240
 
-const useStyles = makeStyles({
-  page: {
-    background: '#f9f9f9',
-    width: '100%',
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  root: {
-    display: 'flex',
-  },
-  active: {
-    background: '#f4f4f4',
-  },
+const useStyles = makeStyles(theme => {
+  return {
+    page: {
+      background: '#f9f9f9',
+      width: '100%',
+      padding: theme.spacing(3),
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    root: {
+      display: 'flex',
+    },
+    active: {
+      background: '#f4f4f4',
+    },
+  }
 })
 export default function Layout({ children }) {
   const classes = useStyles()
