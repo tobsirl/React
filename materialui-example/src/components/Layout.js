@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core'
 import { AddCircleOutlined, SubjectOutlined } from '@material-ui/icons'
 import React from 'react'
+import { useHistory } from 'react-router'
 
 const drawerWidth = 240
 
@@ -29,6 +30,7 @@ const useStyles = makeStyles({
 })
 export default function Layout({ children }) {
   const classes = useStyles()
+  const history = useHistory()
 
   const menuItems = [
     {
@@ -59,9 +61,16 @@ export default function Layout({ children }) {
         </div>
 
         <List>
-          <ListItem>
-            <ListItemText primary='hello' />
-          </ListItem>
+          {menuItems.map(menuItem => (
+            <ListItem
+              key={menuItem.text}
+              button
+              onClick={() => history.push(menuItem.path)}
+            >
+              <ListItemIcon>{menuItem.icon}</ListItemIcon>
+              <ListItemText primary={menuItem.text} />
+            </ListItem>
+          ))}
         </List>
       </Drawer>
       <div className={classes.page}>{children}</div>
