@@ -32,6 +32,9 @@ const useStyles = makeStyles(theme => {
     active: {
       background: '#f4f4f4',
     },
+    title: {
+      padding: theme.spacing(2),
+    },
   }
 })
 export default function Layout({ children }) {
@@ -64,7 +67,9 @@ export default function Layout({ children }) {
         classes={{ paper: classes.drawerPaper }}
       >
         <div>
-          <Typography variant='h5'>Ninja Notes</Typography>
+          <Typography variant='h5' className={classes.title}>
+            Ninja Notes
+          </Typography>
         </div>
 
         <List>

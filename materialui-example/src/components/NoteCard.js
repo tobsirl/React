@@ -5,14 +5,25 @@ import {
   CardMedia,
   CardContent,
   Typography,
+  makeStyles,
 } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import { DeleteOutlined } from '@material-ui/icons'
 
+const useStyles = makeStyles({
+  test: {
+    border: (note) => {
+      if (note.category === 'work') {
+        return '1px solid red'
+      }
+    },
+  },
+})
+
 export default function NoteCard(props) {
-  console.log(props)
+  const classes = useStyles(props.note)
   return (
-    <Card>
+    <Card elevation={1} className={classes.test}>
       <CardHeader
         action={
           <IconButton
