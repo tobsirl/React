@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => {
     appbar: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
+    toolbar: theme.mixins.toolbar,
   }
 })
 export default function Layout({ children }) {
@@ -96,7 +97,11 @@ export default function Layout({ children }) {
           ))}
         </List>
       </Drawer>
-      <div className={classes.page}>{children}</div>
+
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   )
 }
