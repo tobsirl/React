@@ -12,6 +12,7 @@ import {
 import { AddCircleOutlined, SubjectOutlined } from '@material-ui/icons'
 import React from 'react'
 import { useHistory, useLocation } from 'react-router'
+import { format } from 'date-fns'
 
 const drawerWidth = 240
 
@@ -63,9 +64,11 @@ export default function Layout({ children }) {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.appbar}>
+      <AppBar className={classes.appbar} elevation={0}>
         <Toolbar>
-          <Typography>Welcome to the Ninja Notes Website</Typography>
+          <Typography>
+            Today is the {format(new Date(), 'do MMMM Y')}
+          </Typography>
         </Toolbar>
       </AppBar>
 
