@@ -5,8 +5,18 @@ import Notes from './pages/Notes'
 
 describe('renders the Notes page', () => {
   it('should display the notes text', () => {
-    render(<Notes />)
-    const notesElement = screen.getByText(/Yoshi's birthday bash/i)
+    render(
+      <Notes
+        note={{
+          title: "Yoshi's birthday bash",
+          details:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          category: 'reminders',
+          id: 1,
+        }}
+      />,
+    )
+    const notesElement = screen.getByText("Yoshi's birthday bash")
     expect(notesElement).toBeInTheDocument()
   })
 })
@@ -24,5 +34,13 @@ describe('renders the Create page', () => {
       const checkboxInput = screen.getByRole('checkbox')
       expect(checkboxInput).toBeInTheDocument()
     })
+
+    // it('should render a checkbox', () => {
+    //   render(<Check />)
+    //   const sunday = screen.getByRole('checkbox', {
+    //     name: /sunday/i,
+    //   })
+    //   expect(sunday).toBeChecked(true)
+    // })
   })
 })

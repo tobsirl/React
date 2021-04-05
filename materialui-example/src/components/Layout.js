@@ -6,6 +6,8 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
+  AppBar,
+  Toolbar,
 } from '@material-ui/core'
 import { AddCircleOutlined, SubjectOutlined } from '@material-ui/icons'
 import React from 'react'
@@ -13,7 +15,7 @@ import { useHistory, useLocation } from 'react-router'
 
 const drawerWidth = 240
 
-const useStyles = makeStyles(theme => {
+const useStyles = makeStyles((theme) => {
   return {
     page: {
       background: '#f9f9f9',
@@ -34,6 +36,9 @@ const useStyles = makeStyles(theme => {
     },
     title: {
       padding: theme.spacing(2),
+    },
+    appbar: {
+      width: `calc(100% - ${drawerWidth}px)`,
     },
   }
 })
@@ -57,9 +62,12 @@ export default function Layout({ children }) {
 
   return (
     <div className={classes.root}>
-      {/* app bar */}
+      <AppBar className={classes.appbar}>
+        <Toolbar>
+          <Typography>Welcome to the Ninja Notes Website</Typography>
+        </Toolbar>
+      </AppBar>
 
-      {/* side drawer */}
       <Drawer
         className={classes.drawer}
         variant='permanent'
@@ -73,7 +81,7 @@ export default function Layout({ children }) {
         </div>
 
         <List>
-          {menuItems.map(menuItem => (
+          {menuItems.map((menuItem) => (
             <ListItem
               key={menuItem.text}
               button
