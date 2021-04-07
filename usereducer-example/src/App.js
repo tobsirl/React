@@ -1,11 +1,16 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
+
+function countReducer(state, action) {
+  console.log('action :>> ', action);
+  return state + action;
+}
 
 function Counter({ step = 1, initialCount = 0 }) {
-  const [count, setCount] = useState(initialCount);
+  const [count, changeCount] = useReducer(countReducer, initialCount);
 
   function increment() {
-    setCount(count + 1);
+    changeCount(step);
   }
 
   return (
