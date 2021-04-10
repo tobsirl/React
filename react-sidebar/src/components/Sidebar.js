@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
+import { SidebarData } from '../data/sidebarData';
+import './Sidebar.css';
 
 export default function Sidebar() {
   return (
@@ -12,9 +14,14 @@ export default function Sidebar() {
       </div>
       <nav className="nav-menu">
         <ul className="nav-menu-items">
-          <li class="sidebar-toggle">
-            <Link to="#" className="menu-bars"></Link>
-          </li>
+          {SidebarData.map((menuItem) => (
+            <li key={menuItem.id} className={menuItem.cName}>
+              <Link to={`${menuItem.path}`}>
+                {menuItem.icon}
+                <span>{menuItem.title}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </>
