@@ -7,7 +7,7 @@ import Products from './pages/Products';
 
 function App() {
   return (
-    <div className="app">
+    <>
       <Router>
         <Sidebar />
         <Switch>
@@ -22,7 +22,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }
 
