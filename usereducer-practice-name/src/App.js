@@ -25,8 +25,8 @@ function Names({ initialName = 'Paul' }) {
   const { name } = state
   return (
     <div>
-      <button onClick={nameChangeSimon}>{name}</button>
-      <p></p>
+      <button onClick={nameChangeSimon}>Change Name</button>
+      <p>Name: {name}</p>
     </div>
   )
 }
