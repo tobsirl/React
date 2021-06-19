@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
 
+function WelcomeMessage({ user }) {
+  return (
+    <div>
+      <h1>{user.name}</h1>
+    </div>
+  );
+}
+
 function Header() {
   return (
     <div>
@@ -17,10 +25,11 @@ function Footer() {
   );
 }
 
-function Dashboard({ onLogout }) {
+function Dashboard({ onLogout, user }) {
   return (
     <div>
       <h1>Dashboard</h1>
+      <WelcomeMessage user={user} />
       <button onClick={onLogout}>Logout</button>
     </div>
   );
@@ -44,7 +53,10 @@ function App() {
       </div>
       <div style={{ flex: 1 }}>
         {currentUser ? (
-          <Dashboard onLogout={() => setCurrentUser({ name: '' })} />
+          <Dashboard
+            user={currentUser}
+            onLogout={() => setCurrentUser({ name: '' })}
+          />
         ) : (
           <LoginScreen onLogin={() => setCurrentUser({ name: 'Paul' })} />
         )}
@@ -57,3 +69,5 @@ function App() {
 }
 
 export default App;
+
+// onLogout={() => setCurrentUser({ name: '' })}
