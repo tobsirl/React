@@ -9,10 +9,19 @@ function Header() {
   );
 }
 
-function Dashboard() {
+function Footer() {
+  return (
+    <div>
+      <h1>Footer</h1>
+    </div>
+  );
+}
+
+function Dashboard({ onLogout }) {
   return (
     <div>
       <h1>Dashboard</h1>
+      <button onClick={onLogout}>Logout</button>
     </div>
   );
 }
@@ -35,10 +44,13 @@ function App() {
       </div>
       <div style={{ flex: 1 }}>
         {currentUser ? (
-          <Dashboard />
+          <Dashboard onLogout={() => setCurrentUser({ name: '' })} />
         ) : (
           <LoginScreen onLogin={() => setCurrentUser({ name: 'Paul' })} />
         )}
+      </div>
+      <div style={{ backgroundColor: 'lightblue' }}>
+        <Footer />
       </div>
     </div>
   );
