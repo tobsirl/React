@@ -4,7 +4,7 @@ import './App.css';
 function WelcomeMessage({ user }) {
   return (
     <div>
-      <h1>Welcome {user.name}</h1>
+      <h1>Welcome {user.name}!</h1>
     </div>
   );
 }
@@ -25,11 +25,11 @@ function Footer() {
   );
 }
 
-function DashboardContent({ user }) {
+function DashboardContent({ children }) {
   return (
     <div>
       <h3>Dashboard Content</h3>
-      <WelcomeMessage user={user} />
+      {children}
     </div>
   );
 }
@@ -42,13 +42,11 @@ function DashboardNav() {
   );
 }
 
-function Dashboard({ onLogout, user }) {
+function Dashboard({ children }) {
   return (
     <div>
       <h1>The Dashboard</h1>
-      <DashboardNav />
-      <DashboardContent user={user} />
-      <button onClick={onLogout}>Logout</button>
+      {children}
     </div>
   );
 }
@@ -71,10 +69,12 @@ function App() {
       </div>
       <div style={{ flex: 1 }}>
         {currentUser ? (
-          <Dashboard
-            user={currentUser}
-            onLogout={() => setCurrentUser({ name: '' })}
-          />
+          <Dashboard>
+            <DashboardNav />
+            <DashboardContent>
+              <WelcomeMessage user={currentUser} />
+            </DashboardContent>
+          </Dashboard>
         ) : (
           <LoginScreen onLogin={() => setCurrentUser({ name: 'Paul' })} />
         )}
@@ -87,4 +87,3 @@ function App() {
 }
 
 export default App;
-
