@@ -65,7 +65,7 @@ function LoginScreen({ onLogin }) {
 function App() {
   const [currentUser, setCurrentUser] = useState('');
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
       <div style={{ backgroundColor: 'lightblue' }}>
         <Header />
       </div>
@@ -88,4 +88,3 @@ function App() {
 
 export default App;
 
-// onLogout={() => setCurrentUser({ name: '' })}
