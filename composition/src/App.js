@@ -4,7 +4,7 @@ import './App.css';
 function WelcomeMessage({ user }) {
   return (
     <div>
-      <h1>{user.name}</h1>
+      <h1>Welcome {user.name}</h1>
     </div>
   );
 }
@@ -25,11 +25,29 @@ function Footer() {
   );
 }
 
+function DashboardContent({ user }) {
+  return (
+    <div>
+      <h3>Dashboard Content</h3>
+      <WelcomeMessage user={user} />
+    </div>
+  );
+}
+
+function DashboardNav() {
+  return (
+    <div>
+      <h3>Dashboard Nav</h3>
+    </div>
+  );
+}
+
 function Dashboard({ onLogout, user }) {
   return (
     <div>
-      <h1>Dashboard</h1>
-      <WelcomeMessage user={user} />
+      <h1>The Dashboard</h1>
+      <DashboardNav />
+      <DashboardContent user={user} />
       <button onClick={onLogout}>Logout</button>
     </div>
   );
@@ -38,7 +56,7 @@ function Dashboard({ onLogout, user }) {
 function LoginScreen({ onLogin }) {
   return (
     <div>
-      <h1>LoginScreen</h1>
+      <h1>Please Login</h1>
       <button onClick={onLogin}>Login</button>
     </div>
   );
