@@ -14,26 +14,27 @@ const CountContext = React.createContext();
 
 function CountProvider(props) {
   const [count, setCount] = React.useState(0);
-  return <CountContext.Provider {...props} />;
+  const value = [count, setCount];
+  return <CountContext.Provider value={value} {...props} />;
 }
 
 function CountDisplay() {
   // 🐨 get the count from useContext with the CountContext
-  
-  const count = 0;
+  const [count] = React.useContext(CountContext);
   return <div>{`The current count is ${count}`}</div>;
 }
 
 function Counter() {
   // 🐨 get the setCount from useContext with the CountContext
-  const setCount = () => {};
+
+  const [, setCount] = React.useContext(CountContext);
   const increment = () => setCount((c) => c + 1);
   return <button onClick={increment}>Increment count</button>;
 }
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <CountProvider>
         <CountDisplay />
         <Counter />
