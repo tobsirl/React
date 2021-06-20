@@ -2,6 +2,7 @@
 // http://localhost:3000/isolated/exercise/03.js
 
 import * as React from 'react';
+import './App.css';
 
 // 🐨 create your CountContext here with React.createContext
 const CountContext = React.createContext();

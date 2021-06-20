@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Anton', sans-serif;
+}
+
+input,
+button,
+select {
+  font: inherit;
 }
