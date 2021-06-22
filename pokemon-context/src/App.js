@@ -12,8 +12,8 @@ import {
   PokemonDataView,
   PokemonInfoFallback,
   PokemonErrorBoundary,
-} from '../pokemon';
-import { useAsync } from '../utils';
+} from './pokemon';
+import { useAsync } from './utils';
 
 // 🐨 Create a PokemonCacheContext
 
