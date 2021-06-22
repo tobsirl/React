@@ -1,11 +1,4 @@
-// useContext: Caching response data in context
-// 💯 caching in a context provider (exercise)
-// http://localhost:3000/isolated/exercise/03.extra-2.js
-
-// you can edit this here and look at the isolated page or you can copy/paste
-// this in the regular exercise file.
-
-import * as React from 'react';
+import React, { useContext, useReducer } from 'react';
 import {
   fetchPokemon,
   PokemonForm,
@@ -14,6 +7,7 @@ import {
   PokemonErrorBoundary,
 } from './pokemon';
 import { useAsync } from './utils';
+import './App.css';
 
 // 🐨 Create a PokemonCacheContext
 
