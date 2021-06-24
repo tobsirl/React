@@ -64,6 +64,9 @@ function App() {
       </div>
       <hr />
       <div>
+        <h1>useImperativeHandle</h1>
+      </div>
+      <div>
         <button onClick={scrollToTop}>scroll to top</button>
       </div>
       <MessagesDisplay ref={messageDisplayRef} messages={messages} />
