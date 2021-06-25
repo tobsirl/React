@@ -1,44 +1,44 @@
 // useDebugValue: useMedia
 // http://localhost:3000/isolated/exercise/06.js
 
-import * as React from 'react';
-import './App.css';
+import * as React from 'react'
+import './App.css'
 
-const formatDebugValue = ({ query, state }) => `\`${query}\` => ${state}`;
+const formatDebugValue = ({ query, state }) => `\`${query}\` => ${state}`
 
 function useMedia(query, initialState = false) {
-  const [state, setState] = React.useState(initialState);
+  const [state, setState] = React.useState(initialState)
   // 🐨 call React.useDebugValue here.
   // 💰 here's the formatted label I use: `\`${query}\` => ${state}`
-  React.useDebugValue({ query, state }, formatDebugValue);
+  React.useDebugValue({ query, state }, formatDebugValue)
 
   React.useEffect(() => {
-    let mounted = true;
-    const mql = window.matchMedia(query);
+    let mounted = true
+    const mql = window.matchMedia(query)
     function onChange() {
       if (!mounted) {
-        return;
+        return
       }
-      setState(Boolean(mql.matches));
+      setState(Boolean(mql.matches))
     }
 
-    mql.addListener(onChange);
-    setState(mql.matches);
+    mql.addListener(onChange)
+    setState(mql.matches)
 
     return () => {
-      mounted = false;
-      mql.removeListener(onChange);
-    };
-  }, [query]);
+      mounted = false
+      mql.removeListener(onChange)
+    }
+  }, [query])
 
-  return state;
+  return state
 }
 
 function Box() {
-  const isBig = useMedia('(min-width: 1000px)');
-  const isMedium = useMedia('(max-width: 999px) and (min-width: 700px)');
-  const isSmall = useMedia('(max-width: 699px)');
-  const color = isBig ? 'green' : isMedium ? 'yellow' : isSmall ? 'red' : null;
+  const isBig = useMedia('(min-width: 1000px)')
+  const isMedium = useMedia('(max-width: 999px) and (min-width: 700px)')
+  const isSmall = useMedia('(max-width: 699px)')
+  const color = isBig ? 'green' : isMedium ? 'yellow' : isSmall ? 'red' : null
 
   return (
     <>
@@ -47,11 +47,11 @@ function Box() {
       </div>
       <div style={{ width: 260, height: 260, backgroundColor: color }} />
     </>
-  );
+  )
 }
 
 function App() {
-  return <Box />;
+  return <Box />
 }
 
-export default App;
+export default App
