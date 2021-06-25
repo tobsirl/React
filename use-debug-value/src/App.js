@@ -2,7 +2,7 @@
 // http://localhost:3000/isolated/exercise/06.js
 
 import * as React from 'react';
-import './App.css'
+import './App.css';
 
 function useMedia(query, initialState = false) {
   const [state, setState] = React.useState(initialState);
@@ -42,7 +42,7 @@ function Box() {
       <div>
         <h1>useDebugValue</h1>
       </div>
-      <div style={{ width: 200, height: 200, backgroundColor: color }} />
+      <div style={{ width: 260, height: 260, backgroundColor: color }} />
     </>
   );
 }
