@@ -1,8 +1,8 @@
 import React from 'react';
-import ThemeProvider from '../context/ThemeContext';
+import { ThemeContext } from '../context/ThemeContext';
 
 function Button() {
-  const value = React.useContext(ThemeProvider);
+  const value = React.useContext(ThemeContext);
   console.log(value);
   return <button className={`${value}-theme`}>Switch Theme</button>;
 }
