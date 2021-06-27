@@ -1,5 +1,5 @@
-import Button from './components/Button';
-import Header from './components/Header';
+import Button from './components/Button'
+import Header from './components/Header'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Button />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
