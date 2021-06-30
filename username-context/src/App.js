@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './App.css'
 import Header from './components/Header'
 import { UserContext } from './context/userContext'
 
 function App() {
   const [username, setUsername] = useState('')
+  const [usernameContext, changeUsername] = useContext(UserContext)
+
   return (
     <div>
       <Header />
       <main>
-        <UserContext.Consumer>
-          {username => (
-            <p className="main">No new notifications, {username}! 🎉</p>
-          )}
-        </UserContext.Consumer>
+        <p className="main">No new notifications, {usernameContext}! 🎉</p>
       </main>
 
       <input
@@ -23,9 +21,7 @@ function App() {
         value={username}
         onChange={e => setUsername(e.target.value)}
       />
-      <button onClick={e => setUsername(e.target.value)}>
-        Change Username
-      </button>
+      <button onClick={() => changeUsername(username)}>Change Username</button>
     </div>
   )
 }

@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import { UserContext } from '../context/userContext'
 
 function Header() {
-  const username = useContext(UserContext)
+  const [usernameContext] = useContext(UserContext)
   return (
     <header>
-      <p>Welcome, {username}!</p>
+      <p>Welcome, {usernameContext}!</p>
     </header>
   )
 }
