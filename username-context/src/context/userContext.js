@@ -1,4 +1,9 @@
 import React from 'react'
 
 const UserContext = React.createContext()
-export default UserContext
+
+function UserContextProvider(props) {
+  return <UserContext.Provider value="Paul" {...props} />
+}
+
+export { UserContext, UserContextProvider }
