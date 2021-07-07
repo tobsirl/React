@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 export default function Navbar() {
   return (
-    <div>
-      <h1>Nav</h1>
-    </div>
-  )
+    <nav>
+      <button>Planets</button>
+      <button>People</button>
+    </nav>
+  );
 }
