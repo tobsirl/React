@@ -23,7 +23,7 @@ export default function Planets() {
       <h2>Planets</h2>
       <div>
         {data.results.map((planet) => (
-          <Planet planet={planet} />
+          <Planet key={planet.name} {...planet} />
         ))}
       </div>
     </div>
