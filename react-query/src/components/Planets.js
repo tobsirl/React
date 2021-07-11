@@ -8,7 +8,11 @@ async function fetchPlanets() {
   return response.json()
 }
 export default function Planets() {
-  const { isLoading, isError, data, error } = useQuery('planets', fetchPlanets)
+  const { isLoading, isError, data, error } = useQuery(
+    'planets',
+    fetchPlanets,
+    { staleTime: 0, cacheTime: 10 },
+  )
 
   if (isLoading) {
     return <p>Loading...</p>
