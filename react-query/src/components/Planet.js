@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Planet({ name, population, terrain }) {
+export default function Planet({ planet }) {
   return (
     <div className="card">
-      <h3>{name}</h3>
-      <p>Population - {population}</p>
-      <p>Terrain - {terrain}</p>
+      <h3>{planet.name}</h3>
+      <p>Population - {planet.population}</p>
+      <p>Terrain - {planet.terrain}</p>
     </div>
   )
 }
