@@ -12,6 +12,7 @@ export default function Planets() {
   const { isLoading, isError, data, error } = useQuery(
     ['planets', page],
     fetchPlanets,
+    { keepPreviousData: true },
   )
 
   if (isLoading) {
@@ -22,13 +23,17 @@ export default function Planets() {
     return <p>{`Error Message: ${error}`}</p>
   }
 
+  if (!data) {
+    return <p>{`issue getting data`}</p>
+  }
+
   return (
     <div>
       <h2>Planets</h2>
       <button onClick={setPage(1)}>page 1</button>
       <button onClick={setPage(2)}>page 2</button>
       <button onClick={setPage(3)}>page 3</button>
-      
+
       <div>
         {data.results.map((planet) => (
           <Planet key={planet.name} planet={planet} />
