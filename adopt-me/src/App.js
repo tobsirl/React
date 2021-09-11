@@ -3,7 +3,7 @@ function Pet(props) {
     React.createElement('h2', {}, props.name),
     React.createElement('h3', {}, props.animal),
     React.createElement('h3', {}, props.breed),
-  ]);
+  ])
 }
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       animal: 'Dog',
       breed: 'Wheaten Terrier',
     }),
-  ]);
+  ])
 }
 
-ReactDOM.render(React.createElement(App), document.getElementById('root'));
+ReactDOM.render(React.createElement(App), document.getElementById('root'))
