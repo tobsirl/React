@@ -1,0 +1,14 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Tobin <tobster111@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.4.0"
+  }
+}
