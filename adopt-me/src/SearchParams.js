@@ -10,7 +10,6 @@ export default function SearchParams() {
   const [pets, setPets] = useState([])
   const [breeds] = useBreedList(animal)
 
-
   useEffect(() => {
     requestPets()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,7 +26,12 @@ export default function SearchParams() {
 
   return (
     <div className="search-params">
-      <form action="">
+      <form
+        onSubmit={(event) => {
+          event.preventDefault()
+          requestPets()
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
@@ -57,7 +61,7 @@ export default function SearchParams() {
         <label htmlFor="breed">
           Breed
           <select
-            // disabled={!breeds.length}
+            disabled={!breeds.length}
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
