@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import useBreedList from './useBreedList'
 import Pet from './Pet'
 
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
@@ -7,12 +8,12 @@ export default function SearchParams() {
   const [animal, setAnimal] = useState('')
   const [breed, setBreed] = useState('')
   const [pets, setPets] = useState([])
-  const breeds = []
+  const [breeds] = useBreedList(animal)
+
 
   useEffect(() => {
     requestPets()
-    breeds.push(pets)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function requestPets() {
@@ -40,11 +41,10 @@ export default function SearchParams() {
         <label htmlFor="animal">
           Animal
           <select
-            name="Animal"
             id="animal"
             value={animal}
-            onChange={(event) => setAnimal(event.target.vaule)}
-            onBlur={(event) => setAnimal(event.target.vaule)}
+            onChange={(event) => setAnimal(event.target.value)}
+            onBlur={(event) => setAnimal(event.target.value)}
           >
             <option />
             {ANIMALS.map((animal) => (
@@ -57,7 +57,7 @@ export default function SearchParams() {
         <label htmlFor="breed">
           Breed
           <select
-            disabled={!breeds.length}
+            // disabled={!breeds.length}
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}

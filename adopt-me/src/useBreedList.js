@@ -14,7 +14,7 @@ export default function useBreedList(animal) {
     } else {
       requestBreedList()
     }
-    
+
     async function requestBreedList() {
       setBreedList([])
       setStatus('loading')
@@ -24,9 +24,12 @@ export default function useBreedList(animal) {
       )
 
       const json = await res.json()
+      console.log(json)
       localCache[animal] = json.breeds || []
       setBreedList(localCache[animal])
       setStatus('loaded')
     }
-  }, [])
+  }, [animal])
+
+  return [breedList, status]
 }
