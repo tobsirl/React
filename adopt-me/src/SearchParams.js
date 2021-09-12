@@ -3,7 +3,7 @@ import Pet from './Pet'
 
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
 export default function SearchParams() {
-  const [location, setLocation] = useState('Seattle, WA')
+  const [location, setLocation] = useState('')
   const [animal, setAnimal] = useState('')
   const [breed, setBreed] = useState('')
   const [pets, setPets] = useState([])
@@ -12,6 +12,7 @@ export default function SearchParams() {
   useEffect(() => {
     requestPets()
     breeds.push(pets)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function requestPets() {
@@ -70,7 +71,7 @@ export default function SearchParams() {
             ))}
           </select>
         </label>
-        ;<button>Submit</button>
+        <button>Submit</button>
       </form>
       {pets.map((pet) => (
         <Pet
