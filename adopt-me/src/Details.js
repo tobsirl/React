@@ -17,9 +17,15 @@ class Details extends Component {
   }
 
   render() {
+    const { animal, breed, city, state, description, name } = this.state
     return (
-      <div>
-        <h2>hi</h2>
+      <div className="details">
+        <div>
+          <h1>{name}</h1>
+          <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
+          <button>Adopt {name}</button>
+          <p>{description}</p>
+        </div>
       </div>
     )
   }
