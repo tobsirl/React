@@ -12,12 +12,11 @@ class Details extends Component {
       `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`,
     )
 
-    const json = res.json()
+    const json = await res.json()
     this.setState(Object.assign({ loading: false }, json.pets[0]))
   }
 
   render() {
-    console.log(this.state.loading)
     return (
       <div>
         <h2>hi</h2>
