@@ -16,7 +16,6 @@ class Details extends Component {
 
   render() {
     const { animal, breed, city, state, description, name, images } = this.state
-    console.log(images)
 
     if (this.state.loading) {
       return <h2>Loading...</h2>
