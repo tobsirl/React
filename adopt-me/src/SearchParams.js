@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import ThemeContext from './ThemeContext'
 import useBreedList from './useBreedList'
 import Results from './Results'
 
@@ -9,6 +10,7 @@ export default function SearchParams() {
   const [breed, setBreed] = useState('')
   const [pets, setPets] = useState([])
   const [breeds] = useBreedList(animal)
+  const [theme] = useContext(ThemeContext)
 
   useEffect(() => {
     requestPets()
