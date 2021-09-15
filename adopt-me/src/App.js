@@ -1,26 +1,31 @@
-import { StrictMode } from 'react'
+import { StrictMode, useState } from 'react'
 import { render } from 'react-dom'
 import Details from './Details'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import SearchParams from './SearchParams'
+import ThemeContext from './ThemeContext'
 
 function App() {
+  const theme = useState('darkblue')
+
   return (
-    <div>
-      <Router>
-        <header>
-          <Link to="/">Adopt Me!</Link>
-        </header>
-        <Switch>
-          <Route path="/details/:id">
-            <Details />
-          </Route>
-          <Route path="/">
-            <SearchParams />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <ThemeContext.Provider vaule={theme}>
+      <div>
+        <Router>
+          <header>
+            <Link to="/">Adopt Me!</Link>
+          </header>
+          <Switch>
+            <Route path="/details/:id">
+              <Details />
+            </Route>
+            <Route path="/">
+              <SearchParams />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
