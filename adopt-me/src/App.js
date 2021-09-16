@@ -9,7 +9,7 @@ function App() {
   const theme = useState('darkblue')
 
   return (
-    <ThemeContext.Provider vaule={theme}>
+    <ThemeContext.Provider value={theme}>
       <div>
         <Router>
           <header>
