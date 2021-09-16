@@ -19,6 +19,8 @@ class Details extends Component {
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal })
 
+  adopt = () => (window.location = 'http://bit.ly/pet-adopt')
+
   render() {
     const { animal, breed, city, state, description, name, images } = this.state
 
