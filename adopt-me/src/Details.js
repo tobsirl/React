@@ -3,9 +3,10 @@ import { withRouter } from 'react-router-dom'
 import Carousel from './Carousel'
 import ErrorBoundary from './ErrorBoundary'
 import ThemeContext from './ThemeContext'
+import Modal from './Modal'
 
 class Details extends Component {
-  state = { loading: true }
+  state = { loading: true, showModal: false }
 
   async componentDidMount() {
     const res = await fetch(
@@ -15,6 +16,8 @@ class Details extends Component {
     const json = await res.json()
     this.setState(Object.assign({ loading: false }, json.pets[0]))
   }
+
+  toggleModal = () => this.setState({ showModal: !this.state.showModal })
 
   render() {
     const { animal, breed, city, state, description, name, images } = this.state
