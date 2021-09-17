@@ -1,10 +1,11 @@
 import './App.css';
+import StateComponent from './StateComponent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>test</h1>
+        <StateComponent />
       </header>
     </div>
   );
