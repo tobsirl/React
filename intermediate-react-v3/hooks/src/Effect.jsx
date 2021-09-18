@@ -8,9 +8,23 @@ export default function Effect() {
     return () => clearTimeout(timer)
   }, [time])
 
+  function stopTimer() {
+    setTime(new Date())
+  }
+
+  function handleKeyDown() {
+    
+  }
+
   return (
     <div>
-      <h1>useEffect Example: {time.toLocaleTimeString()}</h1>
+      <h1
+        onClick={stopTimer}
+        onKeyDown={(event) => handleKeyDown(event)}
+        role="presentation"
+      >
+        useEffect Example: {time.toLocaleTimeString()}
+      </h1>
     </div>
   )
 }
