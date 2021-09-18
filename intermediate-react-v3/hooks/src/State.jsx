@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 export default function State() {
   const [isGreen, setIsGreen] = useState(true)
 
-  function handleKeyDown(event) {
-    console.log('here :>>', event.code)
+  function handleKeyDown() {
     setIsGreen(!isGreen)
   }
 
