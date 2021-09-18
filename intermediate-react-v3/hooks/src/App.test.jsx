@@ -1,9 +1,13 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import App from './App'
+import State from './State'
 
-test('renders learn react link', () => {
-  render(<App />)
-  const linkElement = screen.getByText(/test/i)
-  expect(linkElement).toBeInTheDocument()
+describe('test for the <State /> component', () => {
+  it('should check for the "useState Example" text', () => {
+    render(<State />)
+
+    const stateText = screen.getByText(/usestate example/i)
+
+    expect(stateText).toHaveTextContent(/usestate example/i)
+  })
 })
