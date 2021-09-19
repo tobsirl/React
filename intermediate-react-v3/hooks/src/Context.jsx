@@ -63,6 +63,9 @@ export default function Context() {
   return (
     <UserContext.Provider value={userState}>
       <div>
+        <h1>
+          <strong>useContext Example</strong>
+        </h1>
         <h1>First level</h1>
         <LevelTwo />
       </div>
