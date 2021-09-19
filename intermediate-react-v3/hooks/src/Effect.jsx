@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 export default function Effect() {
   const [time, setTime] = useState(new Date())
   const [delay, setDelay] = useState(1000)
-  let timer
+  const timer = useRef(0)
 
   useEffect(() => {
-    timer = setTimeout(() => setTime(new Date()), delay)
+    timer.current = setTimeout(() => setTime(new Date()), delay)
     // return () => clearTimeout(timer)
   }, [delay, time])
 
