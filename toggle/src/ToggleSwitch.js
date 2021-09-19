@@ -4,13 +4,26 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
-    // color: (props) => props.color,
+    color: (props) => props.color,
   },
   switchBase: {
     height: '16px',
     width: '32px',
-    backgroundColor: 'red',
+    backgroundColor: 'green',
+    borderRadius: '100px'
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 22 / 2,
+    "&:before, &:after": {
+      content: '""',
+      position: "absolute",
+      top: "50%",
+      transform: "translateY(-50%)",
+      width: 16,
+      height: 16
+    }
   }
+
 });
 
 
