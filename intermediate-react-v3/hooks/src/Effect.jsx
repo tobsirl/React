@@ -2,19 +2,20 @@ import React, { useState, useEffect } from 'react'
 
 export default function Effect() {
   const [time, setTime] = useState(new Date())
+  const [delay, setDelay] = useState(1000)
+  let timer
 
   useEffect(() => {
-    const timer = setTimeout(() => setTime(new Date()), 1000)
-    return () => clearTimeout(timer)
-  }, [time])
+    timer = setTimeout(() => setTime(new Date()), delay)
+    // return () => clearTimeout(timer)
+  }, [delay, time])
 
   function stopTimer() {
-    setTime(new Date())
+    clearTimeout(timer)
+    setDelay(null)
   }
 
-  function handleKeyDown() {
-    
-  }
+  function handleKeyDown() {}
 
   return (
     <div>
