@@ -6,6 +6,7 @@ import Context from './Context'
 import Ref from './Ref'
 import Reducer from './Reducer'
 import Memo from './Memo'
+import Callback from './Callback'
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
       <Reducer />
       <hr />
       <Memo />
+      <hr />
+      <Callback />
       <hr />
     </div>
   )
