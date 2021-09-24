@@ -29,6 +29,7 @@
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
         "jest/valid-expect": "error",
-        "no-alert": 0
+        "no-alert": 0,
+        "react/prop-types": 0,
     }
 }
