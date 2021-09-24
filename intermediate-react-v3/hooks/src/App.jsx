@@ -9,6 +9,7 @@ import Memo from './Memo'
 import Callback from './Callback'
 import LayoutEffect from './LayoutEffect'
 import ImperativeHandle from './ImperativeHandle'
+import DebugValue from './DebugValue'
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
       <LayoutEffect />
       <hr />
       <ImperativeHandle />
+      <hr />
+      <DebugValue />
       <hr />
     </div>
   )
