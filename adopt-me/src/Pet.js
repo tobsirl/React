@@ -8,12 +8,12 @@ function Pet({ name, animal, breed, location, id, images }) {
   }
 
   return (
-    <Link to={`/details/${id}`} className="pet">
-      <div className="image-container">
+    <Link to={`/details/${id}`}>
+      <div>
         <img src={hero} alt={name} />
       </div>
 
-      <div className="info">
+      <div>
         <h1>{name}</h1>
         <h2>{`${animal} - ${breed} - ${location}`}</h2>
       </div>

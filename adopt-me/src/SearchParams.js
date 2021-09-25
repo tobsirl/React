@@ -27,7 +27,7 @@ export default function SearchParams() {
   }
 
   return (
-    <div className="search-params">
+    <div>
       <form
         onSubmit={(event) => {
           event.preventDefault()
