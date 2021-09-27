@@ -35,7 +35,7 @@ const SearchParams = () => {
           requestPets();
         }}
       >
-        <label htmlFor="location">
+        <label className="search-label" htmlFor="location">
           Location
           <input
             className="w-60"
@@ -45,7 +45,7 @@ const SearchParams = () => {
             onChange={(e) => updateLocation(e.target.value)}
           />
         </label>
-        <label htmlFor="animal">
+        <label className="search-label" htmlFor="animal">
           Animal
           <select
             className="w-60"
@@ -80,7 +80,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        <label htmlFor="theme">
+        <label className="search-label" htmlFor="theme">
           Theme
           <select
             className="w-60"
