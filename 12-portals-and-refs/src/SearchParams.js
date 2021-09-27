@@ -38,7 +38,7 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="location">
           Location
           <input
-            className="w-60"
+            className="search-control"
             id="location"
             value={location}
             placeholder="Location"
@@ -48,7 +48,7 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="animal">
           Animal
           <select
-            className="w-60"
+            className="search-control"
             id="animal"
             value={animal}
             onChange={(e) => updateAnimal(e.target.value)}
@@ -65,7 +65,7 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="breed">
           Breed
           <select
-            className="w-60"
+            className="search-control"
             disabled={!breeds.length}
             id="breed"
             value={breed}
@@ -83,7 +83,7 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="theme">
           Theme
           <select
-            className="w-60"
+            className="search-control"
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
             onBlur={(e) => setTheme(e.target.value)}
@@ -94,7 +94,9 @@ const SearchParams = () => {
             <option value="mediumorchid">Medium Orchid</option>
           </select>
         </label>
-        <button style={{ backgroundColor: theme }}>Submit</button>
+        <button className="search-control" style={{ backgroundColor: theme }}>
+          Submit
+        </button>
       </form>
       <Results pets={pets} />
     </div>
