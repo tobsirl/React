@@ -10,7 +10,8 @@ const App = () => {
   return (
     <ThemeContext.Provider value={theme}>
       <div>
-        <Suspense>
+        <h2>this h2 won't go away</h2>
+        <Suspense fallback={<h2>Loading route</h2>}>
           <Router>
             <header>
               <Link to="/">Adopt Me!</Link>
