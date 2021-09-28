@@ -10,19 +10,21 @@ const App = () => {
   return (
     <ThemeContext.Provider value={theme}>
       <div>
-        <Router>
-          <header>
-            <Link to="/">Adopt Me!</Link>
-          </header>
-          <Switch>
-            <Route path="/details/:id">
-              <Details />
-            </Route>
-            <Route path="/">
-              <SearchParams />
-            </Route>
-          </Switch>
-        </Router>
+        <Suspense>
+          <Router>
+            <header>
+              <Link to="/">Adopt Me!</Link>
+            </header>
+            <Switch>
+              <Route path="/details/:id">
+                <Details />
+              </Route>
+              <Route path="/">
+                <SearchParams />
+              </Route>
+            </Switch>
+          </Router>
+        </Suspense>
       </div>
     </ThemeContext.Provider>
   );
