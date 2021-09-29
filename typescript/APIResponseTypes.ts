@@ -10,3 +10,11 @@ export interface Pet {
   city: string;
   state: string;
 }
+
+export interface PetAPIResponse {
+  numberOfResults: number;
+  startIndex: number;
+  endIndex: number;
+  hasNext: boolean;
+  pets: Pet[];
+}
