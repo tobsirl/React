@@ -86,7 +86,7 @@ const DetailsWithRouter = withRouter(Details);
 const DetailsErrorBoundary: FunctionComponent = function DetailsErrorBoundary() {
   return (
     <ErrorBoundary>
-      <DetailsWithRouter  />
+      <DetailsWithRouter />
     </ErrorBoundary>
   );
 
