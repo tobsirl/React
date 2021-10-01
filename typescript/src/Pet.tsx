@@ -1,4 +1,14 @@
+import {FunctionComponent} from 'react';
 import { Link } from "react-router-dom";
+
+interface Props {
+  name: string;
+  animal: string;
+  breed: string;
+  images: string[];
+  location: string;
+  id: number
+}
 
 const Pet = (props) => {
   const { name, animal, breed, images, location, id } = props;
