@@ -10,7 +10,7 @@ interface Props {
   id: number
 }
 
-const Pet = (props) => {
+const Pet: FunctionComponent<Props> = (props) => {
   const { name, animal, breed, images, location, id } = props;
 
   let hero = "http://pets-images.dev-apis.com/pets/none.jpg";
