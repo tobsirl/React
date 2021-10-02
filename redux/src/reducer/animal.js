@@ -1,6 +1,6 @@
-export default function location(state = "Seattle, WA", action) {
+export default function animal(state = "dog", action) {
   switch (action.type) {
-    case "CHANGE_LOCATION": {
+    case "CHANGE_ANIMAL": {
       return action.payload;
     }
 
