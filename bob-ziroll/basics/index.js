@@ -1,7 +1,14 @@
-ReactDOM.render(
-  <ul>
-    <li>One</li>
-    <li>Two</li>
-  </ul>,
-  document.getElementById('root')
-);
+function Navbar() {
+  return (
+    <nav>
+      <h1>Test site</h1>
+      <ul>
+        <li>Pricing</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  );
+}
+
+ReactDOM.render(<Navbar />, document.getElementById('root'));
