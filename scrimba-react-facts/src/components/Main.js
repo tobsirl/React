@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export default function Main() {
   return (
@@ -12,5 +12,5 @@ export default function Main() {
         <li>Powers thousands of enterprise apps, including mobile apps</li>
       </ul>
     </main>
-  );
+  )
 }
