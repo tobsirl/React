@@ -1,4 +1,4 @@
-import React from 'react'
+import logoLarge from '../images/react-icon-large.png'
 
 export default function Main() {
   return (
