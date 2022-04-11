@@ -28,3 +28,16 @@ section {
   display: flex;
   flex-direction: column;
 }
+
+.photo-grid {
+  max-width: 400px;
+  align-self: center;
+}
+
+.hero--title {
+  margin-bottom: 16px;
+}
+
+.hero--text {
+  margin-top: 0;
+}
