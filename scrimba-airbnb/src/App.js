@@ -15,13 +15,7 @@ export default function App() {
         {data.map((data, id) => (
           <Card
             key={id}
-            img={`/images/${data.coverImg}`}
-            rating={data.rating}
-            reviewCount={data.reviewCount}
-            location={data.location}
-            title={data.title}
-            price={data.price}
-            openSpots={data.openSpots}
+            data={data}
           />
         ))}
       </section>
