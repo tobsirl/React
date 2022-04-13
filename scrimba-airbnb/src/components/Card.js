@@ -1,8 +1,15 @@
-export default function Card({ data }) {
+export default function Card({
+  openSpots,
+  location,
+  coverImg,
+  title,
+  price,
+  stats,
+}) {
   let badgeText;
-  if (data.openSpots === 0) {
+  if (openSpots === 0) {
     badgeText = 'SOLD OUT';
-  } else if (data.location === 'Online') {
+  } else if (location === 'Online') {
     badgeText = 'ONLINE';
   }
 
@@ -10,19 +17,19 @@ export default function Card({ data }) {
     <div className="card">
       {badgeText && <div className="card--badge">{badgeText}</div>}
       <img
-        src={`/images/${data.coverImg}`}
+        src={`/images/${coverImg}`}
         alt="katie-zaferes"
         className="card--image"
       />
       <div className="card--stats">
         <img src="/images/star.png" alt="star" className="card--star" />
-        <span>{data.stats.rating}</span>
-        <span className="gray">({data.stats.reviewCount}) • </span>
-        <span className="gray">{data.location}</span>
+        <span>{stats.rating}</span>
+        <span className="gray">({stats.reviewCount}) • </span>
+        <span className="gray">{location}</span>
       </div>
-      <p className="card--title">{data.title}</p>
+      <p className="card--title">{title}</p>
       <p className="card--price">
-        <span className="bold">From ${data.price}</span> / person
+        <span className="bold">From ${price}</span> / person
       </p>
     </div>
   );
