@@ -7,6 +7,7 @@ function App() {
   const [url, setUrl] = useState(null);
   const { data } = useFetch({
     url,
+    onSuccess: () => console.log('Success'),
   });
   console.log('App rendering');
   return (
