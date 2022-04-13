@@ -13,10 +13,7 @@ export default function App() {
       <Hero />
       <section className="cards-list">
         {data.map((data, id) => (
-          <Card
-            key={id}
-            data={data}
-          />
+          <Card key={id} data={{ ...data }} />
         ))}
       </section>
     </div>
