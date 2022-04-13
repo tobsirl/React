@@ -18,7 +18,7 @@ export default function App() {
             img={`/images/${data.coverImg}`}
             rating={data.rating}
             reviewCount={data.reviewCount}
-            country={data.location}
+            location={data.location}
             title={data.title}
             price={data.price}
             openSpots={data.openSpots}
