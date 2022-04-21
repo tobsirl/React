@@ -41,6 +41,13 @@ main {
   gap: 17px;
 }
 
+.form--inputs {
+  font-family: 'Karla', sans-serif;
+  border-radius: 5px;
+  border: 1px solid D5D4D8;
+}
+
 .form--button {
   grid-column: 1 / -1;
+  font-family: 'Karla', sans-serif;
 }
