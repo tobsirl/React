@@ -1,12 +1,13 @@
 import memesdata from '../memesData';
 
 export default function Meme() {
+  
   function getMemeImage() {
     const meme =
       memesdata.data.memes[
         Math.floor(Math.random() * memesdata.data.memes.length)
       ];
-    console.log(meme);
+    return meme.url;
   }
 
   return (
