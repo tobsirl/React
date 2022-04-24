@@ -4,7 +4,9 @@ import memesdata from '../memesData';
 
 export default function Meme() {
   const [meme, setMeme] = useState({
-
+    topText: '',
+    bottomText: '',
+    randomImage: 'http://i.imgflip.com/1bij.jpg',
   });
 
   function getMemeImage() {
@@ -24,7 +26,7 @@ export default function Meme() {
           Get a new meme image 🖼
         </button>
       </div>
-      <img src={meme} className="meme--image" />
+      <img src={meme.randomImage} className="meme--image" />
     </main>
   );
 }
