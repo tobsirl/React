@@ -12,8 +12,8 @@ export default function Meme() {
 
   function getMemeImage() {
     const meme =
-      memesdata.data.memes[
-        Math.floor(Math.random() * memesdata.data.memes.length)
+      allMemeImages.data.memes[
+        Math.floor(Math.random() * allMemeImages.data.memes.length)
       ];
     return setMeme((prevState) => ({
       ...prevState,
