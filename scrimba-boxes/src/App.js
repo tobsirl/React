@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import boxes from './boxes';
+import './style.css';
 
-function App() {
+export default function App() {
+  /**
+   * Challenge part 1:
+   * 1. Initialize state with the default value of the
+   *    array pulled in from boxes.js
+   * 2. Map over that state array and display each one
+   *    as an empty square (black border, transparent bg color)
+   *    (Don't worry about using the "on" property yet)
+   */
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <h1>Boxes will go here</h1>
+    </main>
   );
 }
-
-export default App;
