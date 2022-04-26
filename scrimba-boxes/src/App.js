@@ -11,9 +11,16 @@ export default function App() {
    *    as an empty square (black border, transparent bg color)
    *    (Don't worry about using the "on" property yet)
    */
+  const [boxArr, setBoxArr] = React.useState(boxes);
   return (
     <main>
       <h1>Boxes will go here</h1>
+      <div className="boxes">
+        {' '}
+        {boxArr.map((b) => (
+          <p className="box">{b.id}</p>
+        ))}
+      </div>
     </main>
   );
 }
