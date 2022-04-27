@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Box({ on }) {
   /**
    * Challenge: Create state controlling whether
@@ -9,8 +11,10 @@ export default function Box({ on }) {
    *
    * Goal: clicking each box should toggle it on and off.
    */
+  const [state, setState] = React.useState(on);
+
   const styles = {
-    backgroundColor: on ? '#222222' : 'none',
+    backgroundColor: state ? '#222222' : 'none',
   };
 
   return <div className="box" style={styles}></div>;
