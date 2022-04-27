@@ -1,7 +1,7 @@
-import React from 'react'
+export default function Box({ on }) {
+  const styles = {
+    backgroundColor: on ? '#222222' : '#cccccc',
+  };
 
-export default function Box() {
-  return (
-    <div>Box</div>
-  )
+  return <div className="box" style={styles}></div>;
 }

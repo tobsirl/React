@@ -17,15 +17,11 @@ export default function App(props) {
    *    backgroundColor to "#222222". If off, set it to "none"
    */
 
-  const styles = {
-    backgroundColor: props.darkMode ? '#222222' : '#cccccc',
-  };
-
   return (
     <main>
       <div className="boxes">
         {squares.map((box) => (
-          <Box style={styles} className="box" key={box.id} on={box.on}></Box>
+          <Box key={box.id} on={box.on}></Box>
         ))}
       </div>
     </main>
