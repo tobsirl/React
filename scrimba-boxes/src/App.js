@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from './Box';
 import boxes from './boxes';
 import './style.css';
 
@@ -24,7 +25,7 @@ export default function App(props) {
     <main>
       <div className="boxes">
         {squares.map((box) => (
-          <div style={styles} className="box" key={box.id}></div>
+          <Box style={styles} className="box" key={box.id} on={box.on}></Box>
         ))}
       </div>
     </main>
