@@ -11,11 +11,16 @@ export default function Box({ on }) {
    *
    * Goal: clicking each box should toggle it on and off.
    */
+
   const [state, setState] = React.useState(on);
 
+  function handleClick() {
+    setState((prevState) => !prevState);
+  }
+
   const styles = {
-    backgroundColor: state ? '#222222' : 'none',
+    backgroundColor: state ? '#222222' : 'transparent',
   };
 
-  return <div className="box" style={styles}></div>;
+  return <div className="box" style={styles} onClick={handleClick}></div>;
 }
