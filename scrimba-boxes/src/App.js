@@ -7,12 +7,12 @@ export default function App() {
   const [squares, setSquares] = React.useState(boxes);
   console.log(squares);
 
-  function handleClick() {
-    setSquares((prevState) => ({
-      ...prevState,
-      prevState: !prevState.on,
-    }));
-    console.log('Clicked', !squares[0].on);
+  function handleClick(id) {
+    // setSquares((prevState) => ({
+    //   ...prevState,
+    //   prevState: !prevState.on,
+    // }));
+    console.log('Clicked', id);
   }
 
   /**
