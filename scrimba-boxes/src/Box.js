@@ -1,15 +1,9 @@
 import React from 'react';
 
-export default function Box({ on }) {
-  const [state, setState] = React.useState(on);
-
-  function handleClick() {
-    setState((prevState) => !prevState);
-  }
-
+export default function Box({ on, toggle }) {
   const styles = {
-    backgroundColor: state ? '#222222' : 'transparent',
+    backgroundColor: on ? '#222222' : 'transparent',
   };
 
-  return <div className="box" style={styles} onClick={handleClick}></div>;
+  return <div className="box" style={styles} onClick={toggle}></div>;
 }
