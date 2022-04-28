@@ -18,7 +18,7 @@ export default function App() {
     <main>
       <div className="boxes">
         {squares.map((box) => (
-          <Box key={box.id} on={box.on} toggle={handleClick} id={box.id}></Box>
+          <Box key={box.id} on={box.on} toggle={() =>handleClick(box.id)} ></Box>
         ))}
       </div>
     </main>
