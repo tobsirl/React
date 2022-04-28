@@ -25,14 +25,6 @@ export default function App() {
     });
   }
 
-  /**
-   * Challenge: Create a toggle() function that logs
-   * "clicked!" to the console
-   *
-   * Pass that function down to each of the Box components
-   * and set it up so when they get clicked it runs the function
-   */
-
   return (
     <main>
       <div className="boxes">
