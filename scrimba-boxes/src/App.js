@@ -10,7 +10,7 @@ export default function App() {
   function handleClick() {
     setSquares((prevState) => ({
       ...prevState,
-      'prevState': !prevState.on,
+      prevState: !prevState.on,
     }));
     console.log('Clicked', !squares[0].on);
   }
@@ -27,7 +27,7 @@ export default function App() {
     <main>
       <div className="boxes">
         {squares.map((box) => (
-          <Box key={box.id} on={box.on} toggle={handleClick}></Box>
+          <Box key={box.id} on={box.on} toggle={handleClick} id={box.id}></Box>
         ))}
       </div>
     </main>

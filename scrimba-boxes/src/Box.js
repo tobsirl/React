@@ -5,5 +5,5 @@ export default function Box({ on, toggle }) {
     backgroundColor: on ? '#222222' : 'transparent',
   };
 
-  return <div className="box" style={styles} onClick={toggle}></div>;
+  return <div className="box" style={styles} onClick={() =>toggle(id)}></div>;
 }
