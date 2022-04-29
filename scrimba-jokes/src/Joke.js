@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Joke(props) {
+  const [isShown, setIsShown] = useState(false);
   /**
    * Challenge:
    * - Create state `isShown` (boolean, default to `false`)
