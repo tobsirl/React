@@ -1,6 +1,7 @@
 import React from 'react';
 import Joke from './Joke';
 import jokesData from './jokesData';
+import './style.css';
 
 export default function App() {
   const jokeElements = jokesData.map((joke) => {

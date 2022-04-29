@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Karla", sans-serif;
+  font-family: 'Indie Flower', cursive;
 }
