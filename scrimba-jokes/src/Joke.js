@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 export default function Joke(props) {
-  const [isShown, setIsShown] = useState(false);
+  const [isShown, setIsShown] = useState(false)
 
   function toggleShown() {
-    setIsShown((prevState) => !prevState);
+    setIsShown((prevState) => !prevState)
   }
   return (
     <div>
@@ -15,5 +15,5 @@ export default function Joke(props) {
       </button>
       <hr />
     </div>
-  );
+  )
 }
