@@ -17,3 +17,7 @@ select {
   background-color: black;
   color: aliceblue;
 }
+
+.container {
+  max-width: 400px;
+}
