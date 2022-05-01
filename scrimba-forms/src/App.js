@@ -46,6 +46,11 @@ function App() {
         name="comment"
         onChange={handleChange}
       />
+      <div>
+        <input type="checkbox" id="isFriendly" />
+        <label htmlFor="isFriendly">Are you friendly?</label>
+      </div>
+      <br />
     </form>
   );
 }
