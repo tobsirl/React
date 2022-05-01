@@ -7,9 +7,11 @@ function App() {
     lastName: '',
     email: '',
     comment: '',
+    isFriendly: true,
   });
 
   function handleChange(event) {
+    const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
