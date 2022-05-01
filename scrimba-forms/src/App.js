@@ -6,6 +6,7 @@ function App() {
     firstName: '',
     lastName: '',
     email: '',
+    comment: '',
   });
 
   function handleChange(event) {
@@ -40,7 +41,11 @@ function App() {
         name="email"
         value={formData.email}
       />
-      <textarea></textarea>
+      <textarea
+        value={formData.comment}
+        name="comment"
+        onChange={handleChange}
+      />
     </form>
   );
 }
