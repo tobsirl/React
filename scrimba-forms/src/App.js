@@ -15,7 +15,7 @@ function App() {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [event.target.name]: event.target.value,
+        [name]: type === 'checkbox' ? checked : value,
       };
     });
   }
@@ -48,7 +48,13 @@ function App() {
         name="comment"
         onChange={handleChange}
       />
-      <input type="checkbox" id="isFriendly" />
+      <input
+        type="checkbox"
+        id="isFriendly"
+        checked={formData.isFriendly}
+        onChange={handleChange}
+        name="isFriendly"
+      />
       <label htmlFor="isFriendly">Are you friendly?</label>
       <br />
     </form>
