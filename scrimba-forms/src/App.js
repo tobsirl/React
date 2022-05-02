@@ -12,6 +12,8 @@ function App() {
     favColor: '',
   });
 
+  console.log(formData.favColor);
+
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => {
@@ -99,7 +101,7 @@ function App() {
       <br />
       <label htmlFor="favColor">What is your favorite color?</label>
       <br />
-      <select id="favColor" value={formData.favColor}>
+      <select id="favColor" value={formData.favColor} onChange={handleChange} name="favColor">
         <option value="red">Red</option>
         <option value="orange">Orange</option>
         <option value="yellow">Yellow</option>
