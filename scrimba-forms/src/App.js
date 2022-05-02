@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="First Name"
@@ -110,6 +110,7 @@ function App() {
         <option value="indigo">Indigo</option>
         <option value="violet">Violet</option>
       </select>
+      <button>Submit</button>
     </form>
   );
 }
