@@ -9,6 +9,7 @@ function App() {
     comment: '',
     isFriendly: true,
     employment: '',
+    favColor: '',
   });
 
   function handleChange(event) {
@@ -97,16 +98,16 @@ function App() {
       </fieldset>
       <br />
       <label htmlFor="favColor">What is your favorite color?</label>
-            <br />
-            <select id="favColor">
-                <option value="red">Red</option>
-                <option value="orange">Orange</option>
-                <option value="yellow">Yellow</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="indigo">Indigo</option>
-                <option value="violet">Violet</option>
-            </select>
+      <br />
+      <select id="favColor" value={formData.favColor}>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+      </select>
     </form>
   );
 }
