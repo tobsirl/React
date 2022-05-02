@@ -67,6 +67,7 @@ function App() {
           id="unemployed"
           name="employment"
           value="unemployed"
+          onChange={handleChange}
         />
         <label htmlFor="unemployed">Unemployed</label>
         <br />
@@ -76,6 +77,7 @@ function App() {
           id="part-time"
           name="employment"
           value="part-time"
+          onChange={handleChange}
         />
         <label htmlFor="part-time">Part-time</label>
         <br />
@@ -85,6 +87,7 @@ function App() {
           id="full-time"
           name="employment"
           value="full-time"
+          onChange={handleChange}
         />
         <label htmlFor="full-time">Full-time</label>
         <br />
