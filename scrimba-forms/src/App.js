@@ -8,6 +8,7 @@ function App() {
     email: '',
     comment: '',
     isFriendly: true,
+    employment: '',
   });
 
   function handleChange(event) {
@@ -61,15 +62,15 @@ function App() {
       <fieldset>
         <legend>Current employment status</legend>
 
-        <input type="radio" id="unemployed" />
+        <input type="radio" id="unemployed" name="employment" />
         <label htmlFor="unemployed">Unemployed</label>
         <br />
 
-        <input type="radio" id="part-time" />
+        <input type="radio" id="part-time" name="employment" />
         <label htmlFor="part-time">Part-time</label>
         <br />
 
-        <input type="radio" id="full-time" />
+        <input type="radio" id="full-time" name="employment" />
         <label htmlFor="full-time">Full-time</label>
         <br />
       </fieldset>
