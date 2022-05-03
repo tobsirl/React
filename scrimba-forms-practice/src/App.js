@@ -47,11 +47,21 @@ export default function App() {
           value={formData.email}
           onChange={handleChange}
         />
-        <input type="password" placeholder="Password" className="form--input" />
+        <input
+          type="password"
+          placeholder="Password"
+          className="form--input"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
         <input
           type="password"
           placeholder="Confirm password"
           className="form--input"
+          name="passwordConfirm"
+          value={formData.passwordConfirm}
+          onChange={handleChange}
         />
 
         <div className="form--marketing">
