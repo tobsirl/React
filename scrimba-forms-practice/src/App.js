@@ -8,6 +8,14 @@ export default function App() {
     passwordConfirm: '',
     checkbox: false,
   });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  }
   /**
    * Challenge: Connect the form to local state
    *
@@ -35,6 +43,9 @@ export default function App() {
           type="email"
           placeholder="Email address"
           className="form--input"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
         />
         <input type="password" placeholder="Password" className="form--input" />
         <input
