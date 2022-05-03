@@ -6,23 +6,19 @@ export default function App() {
     email: '',
     password: '',
     passwordConfirm: '',
-    checkbox: false,
+    okayToEmail: false,
   });
 
   function handleChange(event) {
-    const { name, value } = event.target;
+    const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   }
   /**
    * Challenge: Connect the form to local state
    *
-   * 1. Create a state object to store the 4 values we need to save.
-   * 2. Create a single handleChange function that can
-   *    manage the state of all the inputs and set it up
-   *    correctly
    * 3. When the user clicks "Sign up", check if the
    *    password & confirmation match each other. If
    *    so, log "Successfully signed up" to the console.
@@ -65,7 +61,13 @@ export default function App() {
         />
 
         <div className="form--marketing">
-          <input id="okayToEmail" type="checkbox" />
+          <input
+            id="okayToEmail"
+            type="checkbox"
+            onChange={handleChange}
+            name="okayToEmail"
+            checked={formData.okayToEmail}
+          />
           <label htmlFor="okayToEmail">I want to join the newsletter</label>
         </div>
         <button className="form--submit">Sign up</button>
