@@ -30,6 +30,14 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log(formData);
+    const passwordCheck = formData.password === formData.passwordConfirm;
+
+    const check = passwordCheck
+      ? 'Successfully signed up'
+      : 'passwords to not match';
+
+    console.log(check);
   }
 
   return (
