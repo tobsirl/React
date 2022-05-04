@@ -38,6 +38,12 @@ export default function App() {
       : 'passwords to not match';
 
     console.log(check);
+
+    const checkSignup = formData.okayToEmail
+      ? 'Thanks for signing up for our newsletter!'
+      : '';
+
+    console.log(checkSignup);
   }
 
   return (
