@@ -28,7 +28,7 @@ export default function Meme() {
   React.useEffect(() => {
     fetch(`https://api.imgflip.com/get_memes`)
       .then((res) => res.json())
-      .then((data) => console.log(data.data));
+      .then((data) => setAllMemes(data.data.memes));
   }, []);
 
   function getMemeImage() {
