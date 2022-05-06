@@ -25,6 +25,12 @@ export default function Meme() {
   });
   const [allMemes, setAllMemes] = React.useState(memesData);
 
+  React.useEffect(() => {
+    fetch(`https://api.imgflip.com/get_memes`)
+      .then((res) => res.json())
+      .then((data) => console.log(data.data));
+  }, []);
+
   function getMemeImage() {
     const memesArray = allMemes.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
