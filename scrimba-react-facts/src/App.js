@@ -4,10 +4,10 @@ import Main from './components/Main'
 import './style.css'
 
 export default function App() {
-  const [darkMode, setDarkMode] = React.useState('')
+  const [darkMode, setDarkMode] = React.useState(true)
 
   function toggleDarkMode() {
-    setDarkMode(darkMode === 'dark' ? '' : 'dark')
+    setDarkMode((prevMode) => !prevMode)
   }
   return (
     <div className="container">
