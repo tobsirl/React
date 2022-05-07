@@ -8,10 +8,17 @@ export default function Meme() {
   });
   const [allMemes, setAllMemes] = React.useState([]);
 
+  async function loadMemes() {
+    const res = await fetch(`https://api.imgflip.com/get_memes`);
+    const data = await res.json();
+    setAllMemes(data.data.memes);
+  }
+
   React.useEffect(() => {
-    fetch(`https://api.imgflip.com/get_memes`)
-      .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
+    loadMemes();
+    // fetch(`https://api.imgflip.com/get_memes`)
+    //   .then((res) => res.json())
+    //   .then((data) => setAllMemes(data.data.memes));
   }, []);
 
   function getMemeImage() {
