@@ -1,19 +1,19 @@
-function Pet() {
+function Pet(props) {
   return React.createElement('div', {}, [
-    React.createElement('h1', {}, 'Luna'),
-    React.createElement('h2', {}, 'Dog'),
-    React.createElement('h2', {}, 'Havanese'),
+    React.createElement('h1', {}, props.name),
+    React.createElement('h2', {}, props.animal),
+    React.createElement('h2', {}, props.breed),
   ]);
 }
 
-const App = () => {
+function App() {
   return React.createElement('div', {}, [
     React.createElement('h1', {}, 'Adopt Me!'),
     React.createElement(Pet),
     React.createElement(Pet),
     React.createElement(Pet),
   ]);
-};
+}
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
