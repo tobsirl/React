@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function SearchParams() {
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState('')
 
   return (
     <div className="search-params">
@@ -18,5 +18,5 @@ export default function SearchParams() {
         <button>Submit</button>
       </form>
     </div>
-  );
+  )
 }
