@@ -1,6 +1,5 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import Pet from './Pet'
 import SearchParams from './SearchParams'
 
 function App() {
