@@ -24,7 +24,12 @@ export default function SearchParams() {
 
   return (
     <div className="search-params">
-      <form>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault()
+          requestPets()
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
