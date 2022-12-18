@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
-import Results from './Results'
+import Results from './Results.jsx'
 import useBreedList from './useBreedList'
 
 export default function SearchParams() {
