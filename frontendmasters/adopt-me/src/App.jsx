@@ -1,16 +1,18 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Details from './Details'
 import SearchParams from './SearchParams'
 
 function App() {
   return (
-    <Router>
-      <div>
-        <h1 id="something-important">Adopt Me!</h1>
-        <SearchParams />
-      </div>
-    </Router>
+    <BrowserRouter>
+      <h1 id="something-important">Adopt Me!</h1>
+      <Routes>
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/" element={<SearchParams />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
