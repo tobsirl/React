@@ -5,6 +5,7 @@ import fetchPet from './fetchPet'
 export default function Details() {
   const { id } = useParams()
   const results = useQuery(['details', id], fetchPet)
+
   if (results.isLoading) {
     return <h2>Loading...</h2>
   }
