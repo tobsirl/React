@@ -13,7 +13,19 @@ export default function Details() {
     return <h2>Error!</h2>
   }
 
-  const pet = results.data.pet[0]
+  const pet = results.data.pets[0]
 
-  return <h2>{pet}</h2>
+  return (
+    <div className="details">
+      <div>
+        <h1>{pet.name}</h1>
+        <h2>{`${pet.animal} - ${pet.breed} - ${pet.location}`}</h2>
+        <button>Adopt {pet.name}</button>
+        <p>{pet.description}</p>
+      </div>
+      <div>
+        <img src={pet.images[0]} alt={pet.name} />
+      </div>
+    </div>
+  )
 }
