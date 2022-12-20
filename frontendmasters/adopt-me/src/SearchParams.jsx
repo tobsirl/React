@@ -6,24 +6,17 @@ import fetchSearch from './fetchSearch.js'
 import useBreedList from './useBreedList'
 
 export default function SearchParams() {
-  const [location, setLocation] = useState('')
+  const [requestParams, setRequestParams] = useState({
+    location: '',
+    animal: '',
+    breed: '',
+  })
   const [animal, setAnimal] = useState('')
-  const [breed, setBreed] = useState('')
   const [pets, setPets] = useState([])
   const [breeds] = useBreedList(animal)
 
-  useEffect(() => {
-    requestPets()
-  }, [])
-
-  async function requestPets() {
-    const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
-    )
-    const json = await res.json()
-
-    setPets(json.pets)
-  }
+  const results = useQuery(['search', requestParams], fetchSearch)
+  const pets = results?.data?.pets ?? []
 
   return (
     <div className="search-params">
