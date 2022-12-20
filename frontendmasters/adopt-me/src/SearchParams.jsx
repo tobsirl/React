@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
 import Results from './Results.jsx'
+import { useQuery } from '@tanstack/react-query'
+import fetchSearch from './fetchSearch.js'
 import useBreedList from './useBreedList'
 
 export default function SearchParams() {
