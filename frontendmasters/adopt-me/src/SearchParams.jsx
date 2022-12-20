@@ -5,7 +5,7 @@ import useBreedList from './useBreedList'
 
 export default function SearchParams() {
   const [location, setLocation] = useState('')
-  const [animal, updateAnimal] = useState('')
+  const [animal, setAnimal] = useState('')
   const [breed, setBreed] = useState('')
   const [pets, setPets] = useState([])
   const [breeds] = useBreedList(animal)
@@ -46,12 +46,12 @@ export default function SearchParams() {
             id="animal"
             value={animal}
             onChange={(e) => {
-              updateAnimal(e.target.value)
-              updateBreed('')
+              setAnimal(e.target.value)
+              setBreed('')
             }}
             onBlur={(e) => {
-              updateAnimal(e.target.value)
-              updateBreed('')
+              setAnimal(e.target.value)
+              setBreed('')
             }}
           >
             <option />
