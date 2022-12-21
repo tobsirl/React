@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
+import AdoptedPetContext from './AdpotedPetContext.js'
 import Results from './Results.jsx'
 import { useQuery } from '@tanstack/react-query'
 import fetchSearch from './fetchSearch.js'
@@ -13,6 +14,7 @@ export default function SearchParams() {
   })
   const [animal, setAnimal] = useState('')
   const [breeds] = useBreedList(animal)
+  const [adoptedPet] = useContext(AdoptedPetContext)
 
   const results = useQuery(['search', requestParams], fetchSearch)
   const pets = results?.data?.pets ?? []
@@ -31,6 +33,13 @@ export default function SearchParams() {
           setRequestParams(obj)
         }}
       >
+        {
+          adoptedPet ? (
+            <div className="pet image-container">
+              <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
+            </div>
+          ) : null // you have to remove this semi-colon, my auto-formatter adds it back if I delete it
+        }
         <label htmlFor="location">
           Location
           <input name="location" id="location" placeholder="Location" />
