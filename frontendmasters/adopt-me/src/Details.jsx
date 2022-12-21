@@ -10,6 +10,7 @@ import Modal from './Modal'
 function Details() {
   const [showModal, setShowModal] = useState(false)
   const navigate = useNavigate()
+  // eslint-disable-next-line no-unused-vars
   const [adoptedPet, setAdoptedPet] = useContext(AdoptedPetContext)
   const { id } = useParams()
   const results = useQuery(['details', id], fetchPet)
