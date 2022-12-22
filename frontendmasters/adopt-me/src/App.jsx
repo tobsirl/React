@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import AdoptedPetContext from './AdpotedPetContext'
-import Details from './Details'
-import SearchParams from './SearchParams'
+import { useState } from "react";
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AdoptedPetContext from "./AdpotedPetContext";
+import Details from "./Details";
+import SearchParams from "./SearchParams";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,15 +14,15 @@ const queryClient = new QueryClient({
       cacheTime: Infinity,
     },
   },
-})
+});
 
 function App() {
-  const adoptedPet = useState(null)
+  const adoptedPet = useState(null);
   return (
     <div
-      className="p-0 m-0"
+      className="m-0 p-0"
       style={{
-        background: 'url(https://pets-images.dev-apis.com/pets/wallpaperA.jpg)',
+        background: "url(https://pets-images.dev-apis.com/pets/wallpaperA.jpg)",
       }}
     >
       <Router>
@@ -39,9 +39,9 @@ function App() {
         </QueryClientProvider>
       </Router>
     </div>
-  )
+  );
 }
 
-const container = document.getElementById('root')
-const root = createRoot(container)
-root.render(<App />)
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
