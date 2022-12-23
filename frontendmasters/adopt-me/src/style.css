@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+}
+
 @layer components {
   .search-input {
     @apply mb-5 block w-60;
