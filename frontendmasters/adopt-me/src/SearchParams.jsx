@@ -43,13 +43,20 @@ export default function SearchParams() {
         }
         <label htmlFor="location">
           Location
-          <input name="location" id="location" placeholder="Location" />
+          <input
+            name="location"
+            id="location"
+            placeholder="Location"
+            type="text"
+            className="mb-5 block  w-60"
+          />
         </label>
         <label htmlFor="animal">
           Animal
           <select
             id="animal"
             name="animal"
+            className="mb-5 block  w-60"
             onChange={(e) => {
               setAnimal(e.target.value);
             }}
@@ -67,7 +74,7 @@ export default function SearchParams() {
         </label>
         <label htmlFor="breed">
           Breed
-          <select disabled={!breeds.length} id="breed" name={breeds}>
+          <select className="mb-5 block  w-60" disabled={!breeds.length} id="breed" name={breeds}>
             <option />
             {breeds.map((breed) => (
               <option key={breed} value={breed}>
