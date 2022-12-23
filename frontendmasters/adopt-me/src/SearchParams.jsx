@@ -22,6 +22,7 @@ export default function SearchParams() {
   return (
     <div className="my-0 mx-auto w-11/12">
       <form
+        className="mb-10 flex flex-col items-center justify-center rounded-lg bg-gray-200 p-10 shadow-lg"
         onSubmit={(event) => {
           event.preventDefault();
           const formData = new FormData(event.target);
