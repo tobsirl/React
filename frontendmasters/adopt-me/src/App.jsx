@@ -28,7 +28,7 @@ function App() {
       <Router>
         <QueryClientProvider client={queryClient}>
           <AdoptedPetContext.Provider value={adoptedPet}>
-            <header>
+            <header className="mb-10 w-full bg-gradient-to-b p-7 text-center">
               <Link to="/">Adopt Me!</Link>
             </header>
             <Routes>
