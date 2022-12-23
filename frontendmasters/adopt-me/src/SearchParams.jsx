@@ -1,36 +1,36 @@
-import { useState, useContext } from 'react'
-const ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile']
-import AdoptedPetContext from './AdpotedPetContext.js'
-import Results from './Results.jsx'
-import { useQuery } from '@tanstack/react-query'
-import fetchSearch from './fetchSearch.js'
-import useBreedList from './useBreedList'
+import { useState, useContext } from "react";
+const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+import AdoptedPetContext from "./AdpotedPetContext.js";
+import Results from "./Results.jsx";
+import { useQuery } from "@tanstack/react-query";
+import fetchSearch from "./fetchSearch.js";
+import useBreedList from "./useBreedList";
 
 export default function SearchParams() {
   const [requestParams, setRequestParams] = useState({
-    location: '',
-    animal: '',
-    breed: '',
-  })
-  const [animal, setAnimal] = useState('')
-  const [breeds] = useBreedList(animal)
-  const [adoptedPet] = useContext(AdoptedPetContext)
+    location: "",
+    animal: "",
+    breed: "",
+  });
+  const [animal, setAnimal] = useState("");
+  const [breeds] = useBreedList(animal);
+  const [adoptedPet] = useContext(AdoptedPetContext);
 
-  const results = useQuery(['search', requestParams], fetchSearch)
-  const pets = results?.data?.pets ?? []
+  const results = useQuery(["search", requestParams], fetchSearch);
+  const pets = results?.data?.pets ?? [];
 
   return (
-    <div className="search-params">
+    <div className="my-0 mx-auto w-11/12">
       <form
         onSubmit={(event) => {
-          event.preventDefault()
-          const formData = new FormData(event.target)
+          event.preventDefault();
+          const formData = new FormData(event.target);
           const obj = {
-            animal: formData.get('animal') ?? '',
-            breed: formData.get('breed') ?? '',
-            location: formData.get('location') ?? '',
-          }
-          setRequestParams(obj)
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
+            location: formData.get("location") ?? "",
+          };
+          setRequestParams(obj);
         }}
       >
         {
@@ -50,10 +50,10 @@ export default function SearchParams() {
             id="animal"
             name="animal"
             onChange={(e) => {
-              setAnimal(e.target.value)
+              setAnimal(e.target.value);
             }}
             onBlur={(e) => {
-              setAnimal(e.target.value)
+              setAnimal(e.target.value);
             }}
           >
             <option />
@@ -79,5 +79,5 @@ export default function SearchParams() {
       </form>
       <Results pets={pets} />
     </div>
-  )
+  );
 }

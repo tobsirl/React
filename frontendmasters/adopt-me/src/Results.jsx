@@ -1,4 +1,4 @@
-import Pet from './Pet'
+import Pet from "./Pet";
 
 export default function Result({ pets }) {
   return (
@@ -19,5 +19,5 @@ export default function Result({ pets }) {
         ))
       )}
     </div>
-  )
+  );
 }

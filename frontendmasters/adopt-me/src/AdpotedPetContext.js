@@ -1,5 +1,5 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
-const AdoptedPetContext = createContext([])
+const AdoptedPetContext = createContext([]);
 
-export default AdoptedPetContext
+export default AdoptedPetContext;
