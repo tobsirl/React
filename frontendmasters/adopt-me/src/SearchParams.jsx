@@ -74,7 +74,12 @@ export default function SearchParams() {
         </label>
         <label htmlFor="breed">
           Breed
-          <select className="mb-5 block  w-60" disabled={!breeds.length} id="breed" name={breeds}>
+          <select
+            className="mb-5 block  w-60 disabled:opacity-50"
+            disabled={!breeds.length}
+            id="breed"
+            name={breeds}
+          >
             <option />
             {breeds.map((breed) => (
               <option key={breed} value={breed}>
@@ -83,7 +88,9 @@ export default function SearchParams() {
             ))}
           </select>
         </label>
-        <button>Submit</button>
+        <button className="rounded border-none bg-orange-500 px-6 py-2 text-white hover:opacity-50">
+          Submit
+        </button>
       </form>
       <Results pets={pets} />
     </div>
