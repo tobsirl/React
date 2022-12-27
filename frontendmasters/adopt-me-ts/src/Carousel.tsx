@@ -14,7 +14,7 @@ class Carousel extends Component<IProps> {
   };
 
   handleIndexClick = (event: MouseEvent<HTMLElement>) => {
-    if(!(event.target instanceof HTMLElement)) return;
+    if (!(event.target instanceof HTMLElement)) return;
 
     if (event.target.dataset.index) {
       this.setState({
