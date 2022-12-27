@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import ErrorBoundary from "./ErrorBoundary";
 import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
-import { PetAPIResponse } from "./APIResponsesTypes";
+import { PetAPIResponse } from "./APIResponsesTypes.ts";
 
 const Details = () => {
   const { id } = useParams();
