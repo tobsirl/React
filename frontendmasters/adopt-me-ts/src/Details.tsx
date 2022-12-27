@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import AdoptedPetContext from "./AdoptedPetContext";
 import Modal from "./Modal";
 import ErrorBoundary from "./ErrorBoundary";
-import fetchPet from "./fetchPet.ts";
+import fetchPet from "./fetchPet";
 import Carousel from "./Carousel";
 import { PetAPIResponse } from "./APIResponsesTypes";
 
