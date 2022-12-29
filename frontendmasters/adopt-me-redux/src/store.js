@@ -9,6 +9,8 @@ const store = configureStore({
     searchParams,
     [petApi.reducerPath]: petApi.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(petApi.middleware),
 });
 
 export default store;
