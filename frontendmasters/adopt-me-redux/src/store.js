@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import searchParams from "../searchParamsSlice";
+import searchParams from "./searchParamsSlice";
 import adoptedPet from "./adoptedPetSlice";
 
 const store = configureStore({
