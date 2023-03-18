@@ -1,16 +1,13 @@
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import './App.css';
+import Table from './components/Table';
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <header className="App-header">
-          <h1 className="text-6xl font-bold underline">React Table</h1>
-        </header>
-      </div>
+      <Table />
     </QueryClientProvider>
   );
 }
