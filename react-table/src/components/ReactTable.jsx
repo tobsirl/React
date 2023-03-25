@@ -7,10 +7,6 @@ export default function Table() {
     fetch('https://swapi.dev/api/people').then((res) => res.json())
   );
 
-  if (isLoading) return 'Loading...';
-
-  if (error) return 'An error has occurred: ' + error.message;
-
   const tableData = useMemo(() => [
     {
       name: 'Luke Skywalker',
@@ -55,13 +51,42 @@ export default function Table() {
     },
   ]);
 
-  const tableInstance = useTable({ columns, tableData });
+  if (isLoading) return 'Loading...';
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+  if (error) return 'An error has occurred: ' + error.message;
+  
+  const tableInstance = useTable({ columns, data });
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
 
   return (
     <div>
       <h1 className="text-6xl font-bold underline">React Table</h1>
+      <table {...getTableProps()}>
+        <thead>
+          {
+            // Loop over the header rows
+            headerGroups.map((headerGroup) => (
+              // Apply the header row props
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {
+                  // Loop over the headers in each row
+                  headerGroup.headers.map((column) => (
+                    // Apply the header cell props
+                    <th {...column.getHeaderProps()}>
+                      {
+                        // Render the header
+                        column.render('Header')
+                      }
+                    </th>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </thead>
+      </table>
     </div>
   );
 }
