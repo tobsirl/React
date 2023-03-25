@@ -15,7 +15,7 @@ export const block = (duration = defaultDuration) => {
 
 export const makeExpensive = <T extends (...args: any[]) => any>(
   fn: T,
-  duration = defaultDuration
+  duration = defaultDuration,
 ): ((...args: Parameters<T>) => ReturnType<T>) => {
   return (...args: Parameters<T>): ReturnType<T> => {
     block(duration);
