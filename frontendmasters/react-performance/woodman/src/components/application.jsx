@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import generateRandomColor from '../lib/generate-random-color';
-import ColorSwatch from './color-swatch';
-import ExpensiveComponent from './expensive-component';
-import GameInput from './game-input';
-import GameStatus from './game-status';
+import { useState } from 'react'
+import generateRandomColor from '../lib/generate-random-color'
+import ColorSwatch from './color-swatch'
+import ExpensiveComponent from './expensive-component'
+import GameInput from './game-input'
+import GameStatus from './game-status'
 
 const Application = () => {
-  const [colorGuess, setColorGuess] = useState('');
-  const [correctAnswer, setCorrectAnswer] = useState(generateRandomColor());
-  const [hasGuessed, setHasGuessed] = useState(false);
-  const [isWinner, setIsWinner] = useState(false);
+  const [colorGuess, setColorGuess] = useState('')
+  const [correctAnswer, setCorrectAnswer] = useState(generateRandomColor())
+  const [hasGuessed, setHasGuessed] = useState(false)
+  const [isWinner, setIsWinner] = useState(false)
 
   if (hasGuessed) {
     if (correctAnswer === colorGuess) {
-      setIsWinner(true);
+      setIsWinner(true)
     }
   }
 
@@ -29,9 +29,9 @@ const Application = () => {
       <GameStatus isWinner={isWinner} hasGuessed={hasGuessed} />
       <button
         onClick={() => {
-          setCorrectAnswer(generateRandomColor());
-          setHasGuessed(false);
-          setColorGuess('');
+          setCorrectAnswer(generateRandomColor())
+          setHasGuessed(false)
+          setColorGuess('')
         }}
         type={hasGuessed ? 'submit' : 'button'}
       >
@@ -39,7 +39,7 @@ const Application = () => {
       </button>
       <ExpensiveComponent />
     </main>
-  );
-};
+  )
+}
 
-export default Application;
+export default Application

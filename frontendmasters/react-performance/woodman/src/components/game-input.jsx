@@ -3,8 +3,8 @@ const GameInput = ({ onSubmit, disabled, ...props }) => {
     <form
       className="flex items-end"
       onSubmit={(e) => {
-        e.preventDefault();
-        if (onSubmit) onSubmit(e);
+        e.preventDefault()
+        if (onSubmit) onSubmit(e)
       }}
     >
       <label htmlFor="game-input">
@@ -23,7 +23,7 @@ const GameInput = ({ onSubmit, disabled, ...props }) => {
         Take a Guess
       </button>
     </form>
-  );
-};
+  )
+}
 
-export default GameInput;
+export default GameInput

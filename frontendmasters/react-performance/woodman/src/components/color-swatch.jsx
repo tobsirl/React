@@ -5,7 +5,7 @@ const ColorSwatch = ({ color, ...props }) => {
       {...props}
       style={{ backgroundColor: '#' + color }}
     />
-  );
-};
+  )
+}
 
-export default ColorSwatch;
+export default ColorSwatch
