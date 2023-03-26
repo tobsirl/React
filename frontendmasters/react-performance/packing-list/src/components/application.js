@@ -1,39 +1,39 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   createItem,
   filterItems,
   getInitialItems,
   removeItem,
   updateItem,
-} from '../lib/items';
-import Header from './header';
-import ItemList from './item-list';
-import MarkAllAsUnpacked from './mark-all-as-unpacked';
-import NewItem from './new-item';
+} from '../lib/items'
+import Header from './header'
+import ItemList from './item-list'
+import MarkAllAsUnpacked from './mark-all-as-unpacked'
+import NewItem from './new-item'
 
 const Application = () => {
-  const [items, setItems] = useState(getInitialItems());
-  const [newItemName, setNewItemName] = useState('');
+  const [items, setItems] = useState(getInitialItems())
+  const [newItemName, setNewItemName] = useState('')
 
   const add = (name) => {
-    const item = createItem(name);
-    setItems([...items, item]);
-  };
+    const item = createItem(name)
+    setItems([...items, item])
+  }
 
   const update = (id, updates) => {
-    setItems(updateItem(items, id, updates));
-  };
+    setItems(updateItem(items, id, updates))
+  }
 
   const remove = (id) => {
-    setItems(removeItem(items, id));
-  };
+    setItems(removeItem(items, id))
+  }
 
-  const unpackedItems = filterItems(items, { packed: false });
-  const packedItems = filterItems(items, { packed: true });
+  const unpackedItems = filterItems(items, { packed: false })
+  const packedItems = filterItems(items, { packed: true })
 
   const markAllAsUnpacked = () => {
-    return setItems(items.map((item) => ({ ...item, packed: false })));
-  };
+    return setItems(items.map((item) => ({ ...item, packed: false })))
+  }
 
   return (
     <main className="mx-auto flex flex-col gap-8 p-8 lg:max-w-4xl">
@@ -59,7 +59,7 @@ const Application = () => {
       </section>
       <MarkAllAsUnpacked onClick={markAllAsUnpacked} />
     </main>
-  );
-};
+  )
+}
 
-export default Application;
+export default Application

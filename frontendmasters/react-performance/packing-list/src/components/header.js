@@ -5,6 +5,6 @@ const Header = ({ items }) => (
       {items.length} {items.length === 1 ? 'item' : 'items'}
     </p>
   </header>
-);
+)
 
-export default Header;
+export default Header

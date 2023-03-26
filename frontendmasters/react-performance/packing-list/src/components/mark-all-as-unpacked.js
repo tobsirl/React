@@ -4,6 +4,6 @@ const MarkAllAsUnpacked = ({ onClick }) => (
       🏠 Mark All As Unpacked
     </button>
   </div>
-);
+)
 
-export default MarkAllAsUnpacked;
+export default MarkAllAsUnpacked

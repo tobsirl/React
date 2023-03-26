@@ -1,5 +1,5 @@
 {
-	"arrowParens": "always",
+  "arrowParens": "always",
   "bracketSpacing": true,
   "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "css",

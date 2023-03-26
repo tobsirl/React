@@ -3,15 +3,15 @@ const NewItem = ({ newItemName, setNewItemName, addItem }) => {
     <form
       id="new-item"
       onSubmit={(e) => {
-        e.preventDefault();
-        addItem(newItemName);
-        setNewItemName('');
+        e.preventDefault()
+        addItem(newItemName)
+        setNewItemName('')
       }}
     >
       <label htmlFor="new-item-name" className="font-semibold">
         New Item Name
       </label>
-      <div className="flex my-2">
+      <div className="my-2 flex">
         <input
           id="new-item-name"
           className="w-full"
@@ -23,7 +23,7 @@ const NewItem = ({ newItemName, setNewItemName, addItem }) => {
         />
         <button
           id="new-item-submit"
-          className="border-l-0 whitespace-nowrap bg-primary-300"
+          className="whitespace-nowrap border-l-0 bg-primary-300"
           aria-label={`Add ${newItemName}`}
           type="submit"
         >
@@ -31,7 +31,7 @@ const NewItem = ({ newItemName, setNewItemName, addItem }) => {
         </button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default NewItem;
+export default NewItem

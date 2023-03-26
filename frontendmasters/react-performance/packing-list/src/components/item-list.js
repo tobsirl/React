@@ -1,20 +1,20 @@
-import { useState } from 'react';
-import { filterItems } from '../lib/items';
-import { toKebabCase } from '../lib/kebab-case';
-import Item from './item';
+import { useState } from 'react'
+import { filterItems } from '../lib/items'
+import { toKebabCase } from '../lib/kebab-case'
+import Item from './item'
 
 const EmptyState = ({ id, items, filteredItems }) => (
   <p id={id} className="text-primary-400">
     (No items.)
   </p>
-);
+)
 
 const ItemList = ({ title = 'Items', items, update, remove }) => {
-  const [filter, setFilter] = useState('');
-  const id = toKebabCase(title);
+  const [filter, setFilter] = useState('')
+  const id = toKebabCase(title)
 
-  const filteredItems = filterItems(items, { name: filter });
-  const isEmpty = !items.length;
+  const filteredItems = filterItems(items, { name: filter })
+  const isEmpty = !items.length
 
   return (
     <section id={id} className="w-full border-2 border-primary-200 p-4">
@@ -42,7 +42,7 @@ const ItemList = ({ title = 'Items', items, update, remove }) => {
         />
       )}
     </section>
-  );
-};
+  )
+}
 
-export default ItemList;
+export default ItemList

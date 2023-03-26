@@ -1,8 +1,8 @@
-import clsx from 'clsx';
-import { useState } from 'react';
+import clsx from 'clsx'
+import { useState } from 'react'
 
 const Item = ({ item, update, remove }) => {
-  const [editing, setEditing] = useState(false);
+  const [editing, setEditing] = useState(false)
 
   return (
     <li className="flex items-center gap-2">
@@ -42,7 +42,7 @@ const Item = ({ item, update, remove }) => {
         </button>
       </div>
     </li>
-  );
-};
+  )
+}
 
-export default Item;
+export default Item
