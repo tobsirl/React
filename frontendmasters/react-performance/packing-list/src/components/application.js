@@ -12,7 +12,7 @@ import MarkAllAsUnpacked from './mark-all-as-unpacked'
 import NewItem from './new-item'
 
 const Application = () => {
-  const [items, setItems] = useState(getInitialItems())
+  const [items, setItems] = useState(() => getInitialItems())
 
   const add = (name) => {
     const item = createItem(name)
