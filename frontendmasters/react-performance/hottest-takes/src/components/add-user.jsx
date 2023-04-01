@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import {  useState } from 'react';
 import { useActions } from '../hooks';
 
 const AddPost = () => {
