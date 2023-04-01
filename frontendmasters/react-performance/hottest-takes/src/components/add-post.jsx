@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useActions } from '../hooks';
+import { useState } from 'react'
+import { useActions } from '../hooks'
 
 const AddPost = () => {
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const { addPost } = useActions();
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
+  const { addPost } = useActions()
 
   return (
     <div className="mb-8 border-2 border-primary-600 p-4 shadow-sm">
@@ -12,8 +12,8 @@ const AddPost = () => {
       <form
         className="flex flex-col gap-4"
         onSubmit={(e) => {
-          e.preventDefault();
-          addPost({ title, body });
+          e.preventDefault()
+          addPost({ title, body })
         }}
       >
         <div className="flex flex-col sm:flex-row">
@@ -47,7 +47,7 @@ const AddPost = () => {
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default AddPost;
+export default AddPost

@@ -1,12 +1,12 @@
-import { useId, useState } from 'react';
-import users from '../api/users.json';
-import { useActions } from '../hooks';
+import { useId, useState } from 'react'
+import users from '../api/users.json'
+import { useActions } from '../hooks'
 
 const AddComment = ({ postId }) => {
-  const id = useId();
-  const [comment, setComment] = useState('');
-  const [selectedUser, setSelectedUser] = useState(users[0]);
-  const { addComment } = useActions();
+  const id = useId()
+  const [comment, setComment] = useState('')
+  const [selectedUser, setSelectedUser] = useState(users[0])
+  const { addComment } = useActions()
 
   return (
     <div className="my-8 border-2 border-primary-600 p-4 shadow-sm">
@@ -14,8 +14,8 @@ const AddComment = ({ postId }) => {
       <form
         className="flex flex-col gap-4"
         onSubmit={(e) => {
-          e.preventDefault();
-          addComment(postId, selectedUser, comment);
+          e.preventDefault()
+          addComment(postId, selectedUser, comment)
         }}
       >
         <div className="flex items-center gap-2">
@@ -24,9 +24,9 @@ const AddComment = ({ postId }) => {
             id={`${id}-user`}
             value={selectedUser.id}
             onChange={(e) => {
-              console.log(e.target.value);
-              const user = users.find((u) => u.id === e.target.value);
-              setSelectedUser(user || users[0]);
+              console.log(e.target.value)
+              const user = users.find((u) => u.id === e.target.value)
+              setSelectedUser(user || users[0])
             }}
           >
             {users.map((user) => (
@@ -54,7 +54,7 @@ const AddComment = ({ postId }) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default AddComment;
+export default AddComment
