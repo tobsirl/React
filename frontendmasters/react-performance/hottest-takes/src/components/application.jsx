@@ -1,6 +1,6 @@
-import AddPost from './add-post'
-import Posts from './posts'
-import Users from './users'
+import AddPost from './add-post';
+import Posts from './posts';
+import Users from './users';
 
 const Application = () => {
   return (
@@ -18,7 +18,7 @@ const Application = () => {
         <Users />
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Application
+export default Application;

@@ -1,15 +1,15 @@
-import { usePosts } from '../hooks'
-import Post from './post'
+import { usePosts } from '../hooks';
+import Post from './post';
 
 const Posts = () => {
-  const posts = usePosts()
+  const posts = usePosts();
 
   if (!posts.length)
     return (
       <section className="w-full text-center italic text-primary-900">
         No one has posted a hot take yet.
       </section>
-    )
+    );
 
   return (
     <section className="w-full">
@@ -19,7 +19,7 @@ const Posts = () => {
         ))}
       </section>
     </section>
-  )
-}
+  );
+};
 
-export default Posts
+export default Posts;

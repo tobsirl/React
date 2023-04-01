@@ -1,9 +1,9 @@
-import AddComment from './add-comment'
-import PostComment from './comment'
-import { useActions } from '../hooks'
+import AddComment from './add-comment';
+import PostComment from './comment';
+import { useActions } from '../hooks';
 
 const Post = ({ post }) => {
-  const { removePost } = useActions()
+  const { removePost } = useActions();
 
   return (
     <article className="mb-20 flex w-full flex-col gap-4 border-2 border-primary-800 border-opacity-50 p-4 shadow-sm">
@@ -27,7 +27,7 @@ const Post = ({ post }) => {
         <AddComment postId={post.id} />
       </section>
     </article>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

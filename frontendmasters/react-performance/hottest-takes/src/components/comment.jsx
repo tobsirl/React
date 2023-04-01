@@ -1,8 +1,8 @@
-import User from './user'
-import { useActions } from '../hooks'
+import User from './user';
+import { useActions } from '../hooks';
 
 const PostComment = ({ comment, postId }) => {
-  const { removeComment } = useActions()
+  const { removeComment } = useActions();
 
   return (
     <article className="flex flex-col gap-2 rounded-sm border-2 border-l-8 border-primary-700 p-2 pl-4 shadow-md">
@@ -14,7 +14,7 @@ const PostComment = ({ comment, postId }) => {
         </button>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default PostComment
+export default PostComment;

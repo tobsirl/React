@@ -1,17 +1,17 @@
-import { bindActionCreators } from '@reduxjs/toolkit'
-import { createContext, useMemo, useReducer } from 'react'
-import { postActions, postsReducer } from './features/posts'
-import { userActions, usersReducer } from './features/users'
+import { bindActionCreators } from '@reduxjs/toolkit';
+import { createContext, useMemo, useReducer } from 'react';
+import { postActions, postsReducer } from './features/posts';
+import { userActions, usersReducer } from './features/users';
 
-import postData from './api/posts.json'
-import userData from './api/users.json'
+import postData from './api/posts.json';
+import userData from './api/users.json';
 
-export const StateContext = createContext({})
-export const ActionsContext = createContext({})
+export const StateContext = createContext({});
+export const ActionsContext = createContext({});
 
 export const Provider = ({ children }) => {
-  const [posts, postDispatch] = useReducer(postsReducer, postData)
-  const [users, userDispatch] = useReducer(usersReducer, userData)
+  const [posts, postDispatch] = useReducer(postsReducer, postData);
+  const [users, userDispatch] = useReducer(usersReducer, userData);
 
   const actions = useMemo(
     () => ({
@@ -19,7 +19,7 @@ export const Provider = ({ children }) => {
       ...bindActionCreators(userActions, userDispatch),
     }),
     [postDispatch, userDispatch],
-  )
+  );
 
   return (
     <ActionsContext.Provider value={actions}>
@@ -27,5 +27,5 @@ export const Provider = ({ children }) => {
         {children}
       </StateContext.Provider>
     </ActionsContext.Provider>
-  )
-}
+  );
+};

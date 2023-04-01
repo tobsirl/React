@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import clsx from 'clsx';
 
 const User = ({ user, className, children }) => {
   return (
@@ -16,7 +16,7 @@ const User = ({ user, className, children }) => {
       </div>
       {children}
     </article>
-  )
-}
+  );
+};
 
-export default User
+export default User;
