@@ -3,7 +3,7 @@ import NameBadge from './name-badge';
 
 const Application = () => (
   <main className="application">
-    <NameBadge name="Paul" />
+    <NameBadge name="Paul" greeting='Hello' />
   </main>
 );
 
