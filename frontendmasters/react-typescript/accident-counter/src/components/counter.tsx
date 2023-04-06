@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Counter = () => {
   const [count, setCount] = useState(0);
   const [draftCount, setDraftCount] = useState(count);
+
+  useEffect(() => {
+    setDraftCount(count);
+  }, [count]);
 
   return (
     <section className="flex w-2/3 flex-col items-center gap-8 border-4 border-primary-500 bg-white p-8 shadow-lg">
