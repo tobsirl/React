@@ -28,17 +28,15 @@ const Application = () => {
   return (
     <main className="mx-auto w-full max-w-2xl py-16">
       <Quotes count={count} onSubmit={() => fetchQuotes(count).then(setQuotes)}>
-        <div className="grid grid-cols-2 gap-4">
-          {quotes.map((quote) => {
-            return (
-              <InspirationalQuote
-                key={quote.id}
-                content={quote.content}
-                source={quote.source}
-              />
-            );
-          })}
-        </div>
+        {quotes.map((quote) => {
+          return (
+            <InspirationalQuote
+              key={quote.id}
+              content={quote.content}
+              source={quote.source}
+            />
+          );
+        })}
       </Quotes>
     </main>
   );
