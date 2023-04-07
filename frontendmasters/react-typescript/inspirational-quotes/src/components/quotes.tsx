@@ -1,13 +1,7 @@
-import React, {
-  ChangeEventHandler,
-  FormEventHandler,
-  PropsWithChildren,
-  useState,
-} from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import { Quote, fetchQuotes } from './application';
 
 type QuotesProps = {
-  count: number;
   setQuotes: React.Dispatch<React.SetStateAction<Quote[]>>;
 };
 
@@ -33,7 +27,7 @@ const Quotes = ({ children, setQuotes }: PropsWithChildren<QuotesProps>) => {
             min="0"
             max="25"
             value={count}
-            onChange={onChange}
+            onChange={(e) => setCount(Number(e.target.valueAsNumber))}
           />
           <button type="submit">Load Quotes</button>
         </div>
