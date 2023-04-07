@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Quotes from './quotes';
 import InspirationalQuote from './quote';
 import Loading from './loading';
@@ -20,13 +20,14 @@ export const fetchQuotes = async (count: number) => {
 };
 
 const Application = () => {
-  const [quotes, setQuotes] = useState();
+  const [quotes, setQuotes] = useState<Quote[]>([]);
+  const [count, setCount] = useState(10);
 
   if (!quotes) return <Loading />;
 
   return (
     <main className="mx-auto w-full max-w-2xl py-16">
-      <Quotes>
+      <Quotes count={count} onSubmit={() => fetchQuotes(count).then(setQuotes)}>
         <div className="grid grid-cols-2 gap-4">
           {quotes.map((quote) => {
             return (
