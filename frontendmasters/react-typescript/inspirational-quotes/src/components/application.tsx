@@ -22,15 +22,20 @@ export const fetchQuotes = async (count: number) => {
 const Application = () => {
   const [quotes, setQuotes] = useState();
 
-
   if (!quotes) return <Loading />;
 
   return (
-    <main className="w-full max-w-2xl py-16 mx-auto">
+    <main className="mx-auto w-full max-w-2xl py-16">
       <Quotes>
         <div className="grid grid-cols-2 gap-4">
           {quotes.map((quote) => {
-            return <InspirationalQuote key={quote.id} content={quote.content} source={quote.source} />;
+            return (
+              <InspirationalQuote
+                key={quote.id}
+                content={quote.content}
+                source={quote.source}
+              />
+            );
           })}
         </div>
       </Quotes>
