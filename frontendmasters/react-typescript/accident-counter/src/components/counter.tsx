@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
-  const [draftCount, setDraftCount] = useState(count);
+  const reducer = (count: number, newValue: number): number => {
+    return newValue;
+  }
 
-  useEffect(() => {
-    setDraftCount(count);
-  }, [count]);
+  const [count, setCount] = useReducer(reducer, 0)
+  const [draftCount, setDraftCount] = useState(count);
 
   return (
     <section className="flex w-2/3 flex-col items-center gap-8 border-4 border-primary-500 bg-white p-8 shadow-lg">
