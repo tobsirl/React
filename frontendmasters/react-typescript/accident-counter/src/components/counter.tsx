@@ -62,7 +62,7 @@ const Counter = () => {
         >
           <input
             type="number"
-            value={draftCount}
+            value={state.draftCount}
             onChange={(event) => setDraftCount(event.target.valueAsNumber)}
           />
           <button type="submit">Update Counter</button>
