@@ -1,11 +1,11 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useState, useReducer } from 'react';
 
 const Counter = () => {
   const reducer = (count: number, newValue: number): number => {
     return newValue;
-  }
+  };
 
-  const [count, setCount] = useReducer(reducer, 0)
+  const [count, setCount] = useReducer(reducer, 0);
   const [draftCount, setDraftCount] = useState(count);
 
   return (
