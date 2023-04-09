@@ -1,3 +1,5 @@
+import { Dispatch } from 'react';
+import { AdjustColorActions } from '../../color-reducer';
 import ColorName from './color-name';
 import HexToCMYK from './to-cmyk';
 import HexToHSL from './to-hsl';
@@ -6,7 +8,7 @@ import HexToRGB from './to-rgb';
 
 type AdjustColorsProps = {
   hexColor: string;
-  dispatch: Dispatch
+  dispatch: Dispatch<AdjustColorActions>
 };
 
 const AdjustColors = ({ hexColor }: AdjustColorsProps) => {

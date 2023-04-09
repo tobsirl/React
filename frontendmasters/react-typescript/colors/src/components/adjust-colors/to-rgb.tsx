@@ -1,8 +1,11 @@
 import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
+import { Dispatch } from 'react';
+import { AdjustColorActions } from '../../color-reducer';
 
 type HexToRGBProps = {
   hexColor: string;
+  dispatch: Dispatch<AdjustColorActions>
 };
 
 const HexToRGB = ({ hexColor }: HexToRGBProps) => {
