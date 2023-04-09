@@ -6,6 +6,7 @@ import HexToRGB from './to-rgb';
 
 type AdjustColorsProps = {
   hexColor: string;
+  dispatch: Dispatch
 };
 
 const AdjustColors = ({ hexColor }: AdjustColorsProps) => {
