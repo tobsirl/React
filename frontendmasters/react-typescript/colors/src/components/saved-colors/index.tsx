@@ -16,7 +16,7 @@ const SavedColors = ({ hexColor }: SavedColorsProps) => {
   const [savedColors, setSavedColors] = useState(saved);
 
   return (
-    <section className="flex flex-col w-full gap-4 sm:col-span-2">
+    <section className="flex w-full flex-col gap-4 sm:col-span-2">
       <h3>Save Color</h3>
       <AddSavedColor
         onSave={(name) =>

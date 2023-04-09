@@ -18,7 +18,7 @@ const RelatedColorPalette = ({
             <ColorChangeSwatch
               key={hexColor}
               hexColor={hexColor}
-              className="w-full h-full"
+              className="h-full w-full"
             />
           );
         })}
