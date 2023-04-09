@@ -20,7 +20,7 @@ export const initialState: ColorState = {
   hexColor: '#BADA55',
 };
 
-const colorReducer = (
+export const colorReducer = (
   state: ColorState = initialState,
   action: UpdateHexColorAction | UpdateRGBColorAction,
 ) => {
