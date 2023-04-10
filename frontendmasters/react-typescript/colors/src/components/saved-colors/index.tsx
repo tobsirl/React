@@ -30,6 +30,7 @@ const SavedColors = ({ hexColor, dispatch }: SavedColorsProps) => {
             key={id}
             name={name}
             hexColor={hexColor}
+            dispatch={dispatch}
             onRemove={() =>
               setSavedColors((colors) =>
                 colors.filter((color) => color.id !== id),
