@@ -15,7 +15,7 @@ export const ColorProvider = ({ children }: PropsWithChildren) => {
   const hexColor = state.hexColor;
 
   return (
-    <ColorContext.Provider value={{ hexColor: '#BADA55', dispatch }}>
+    <ColorContext.Provider value={{ hexColor, dispatch }}>
       {children}
     </ColorContext.Provider>
   );
