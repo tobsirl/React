@@ -5,7 +5,9 @@ type ColorContextState = {
   dispatch: React.Dispatch<ColorActions>;
 };
 
-export const ColorContext = createContext({ hexColor: '#FFADEF' });
+export const ColorContext = createContext<ColorContextState>({
+  hexColor: '#FFADEF',
+} as ColorContextState);
 
 export const ColorProvider = ({ children }: PropsWithChildren) => {
   return (
