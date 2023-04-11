@@ -3,7 +3,7 @@ import SavedColors from './saved-colors';
 import RelatedColors from './related-colors';
 import AdjustColors from './adjust-colors';
 import ColorPicker from './color-picker';
-import { colorReducer, initialState } from '../color-reducer';
+import { colorReducer, initialState } from '../lib/color-reducer';
 
 const Application = () => {
   const [{ hexColor }, dispatch] = useReducer(colorReducer, initialState);

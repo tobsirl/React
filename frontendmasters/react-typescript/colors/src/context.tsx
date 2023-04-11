@@ -1,6 +1,11 @@
 import { PropsWithChildren, createContext } from 'react';
 
-const ColorContext = createContext({ hexColor: '#FFADEF' });
+type ColorContextState = {
+  hexColor: string;
+  dispatch: React.Dispatch<ColorActions>;
+}
+
+export const ColorContext = createContext({ hexColor: '#FFADEF' });
 
 export const ColorProvider = ({ children }: PropsWithChildren) => {
   return (
