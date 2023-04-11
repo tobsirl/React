@@ -3,7 +3,7 @@ import { PropsWithChildren, createContext } from 'react';
 type ColorContextState = {
   hexColor: string;
   dispatch: React.Dispatch<ColorActions>;
-}
+};
 
 export const ColorContext = createContext({ hexColor: '#FFADEF' });
 
