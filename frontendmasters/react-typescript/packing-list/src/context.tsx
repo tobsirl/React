@@ -17,7 +17,7 @@ type ItemsState = {
   markAllAsUnpacked: () => void;
 };
 
-const ItemsContext = createContext({} as ItemsState);
+export const ItemsContext = createContext({} as ItemsState);
 
 const ItemsProvider = ({ children }: PropsWithChildren) => {
   // eslint-disable-next-line
