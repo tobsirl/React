@@ -6,7 +6,7 @@ const items = [
   { id: "3", name: "Still Another Thing", packed: false },
 ];
 
-describe(normalize, () => {
+describe("normalize", () => {
   it("should normalize an array of items", () => {
     expect(normalize(items)).toEqual({
       ids: ["1", "2", "3"],
@@ -31,7 +31,7 @@ describe(normalize, () => {
   });
 });
 
-describe(normalizeWithSeparateLists, () => {
+describe("normalizeWithSeparateLists", () => {
   it("should normalize but distinguish between packed and unpacked lists", () => {
     expect(normalizeWithSeparateLists(items)).toEqual({
       ids: ["1", "2", "3"],
