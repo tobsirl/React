@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   createItem,
   filterItems,
   getInitialItems,
   removeItem,
   updateItem,
-} from '../lib/items';
-import Header from './header';
-import ItemList from './item-list';
-import MarkAllAsUnpacked from './mark-all-as-unpacked';
-import NewItem from './new-item';
+} from "../lib/items";
+import Header from "./header";
+import ItemList from "./item-list";
+import MarkAllAsUnpacked from "./mark-all-as-unpacked";
+import NewItem from "./new-item";
 
 const Application = () => {
   const [items, setItems] = useState(getInitialItems());

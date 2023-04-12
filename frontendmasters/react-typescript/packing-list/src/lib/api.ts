@@ -1,5 +1,5 @@
-import { getInitialItems } from './items';
-import { sleep } from './slow-down';
+import { getInitialItems } from "./items";
+import { sleep } from "./slow-down";
 
 const delay = 2000;
 let items = getInitialItems();

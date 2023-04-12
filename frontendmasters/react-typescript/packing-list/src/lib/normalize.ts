@@ -5,12 +5,12 @@ type NormalizedState = {
 
 export const normalize = (state: Item[]): NormalizedState => {
   if (!Array.isArray(state)) {
-    console.error('[normalize] Expecting an array, but received:', state);
+    console.error("[normalize] Expecting an array, but received:", state);
     return state;
   }
 
   const ids = [];
-  const items: NormalizedState['items'] = {};
+  const items: NormalizedState["items"] = {};
 
   for (const item of state) {
     const { id } = item;

@@ -62,42 +62,42 @@ input {
 }
 
 button,
-button[type='button'],
-button[type='reset'],
-button[type='submit'] input[type='button'],
-input[type='submit'],
-input[type='reset'] {
+button[type="button"],
+button[type="reset"],
+button[type="submit"] input[type="button"],
+input[type="submit"],
+input[type="reset"] {
   @apply inline-flex items-center justify-center border-2 border-primary-700 bg-primary-100 px-4 py-2 transition-colors ease-in hover:bg-primary-200 active:bg-primary-300;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   @apply hover:accent-primary-700;
 }
 
-input[type='range'] {
+input[type="range"] {
   @apply h-2 w-full cursor-pointer appearance-none rounded-lg bg-primary-100;
 }
 
-input[type='submit'],
-button[type='submit'] {
+input[type="submit"],
+button[type="submit"] {
   @apply bg-primary-500 font-semibold text-white hover:bg-primary-600 active:bg-primary-700;
 }
 
-input[type='color'] {
+input[type="color"] {
   @apply h-12 p-1;
 }
 
-input[type='file']::-webkit-file-upload-button {
+input[type="file"]::-webkit-file-upload-button {
   @apply placeholder-red-400 accent-red-800;
 }
 
-input[type='date'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='month'],
-input[type='week'],
-input[type='time'] {
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"] {
   @apply text-primary-900;
 }
 

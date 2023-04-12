@@ -1,4 +1,4 @@
-import { v4 as id } from 'uuid';
+import { v4 as id } from "uuid";
 
 export const createItem = (name: string): Item => {
   return {
@@ -9,29 +9,29 @@ export const createItem = (name: string): Item => {
 };
 
 let items = [
-  'Sweatshirt',
-  'Running shoes',
-  'AirPods',
-  'MacBook',
-  'iPad',
-  'USB-C cable',
-  'Lightning cable',
-  'Wallet',
-  'MagSafe cable',
-  'Apple Watch charger',
-  'Power brick',
-  'Toothbrush',
-  'Toothpaste',
-  'Deorderant',
-  'Backpack',
-  'Vitamins',
-  'Kindle',
-  'Micro-USB cable',
-  'Sleep mask',
-  'Ear plugs',
-  'Face masks',
-  'Sony Walkman',
-  'Emergency Vegan Bacon',
+  "Sweatshirt",
+  "Running shoes",
+  "AirPods",
+  "MacBook",
+  "iPad",
+  "USB-C cable",
+  "Lightning cable",
+  "Wallet",
+  "MagSafe cable",
+  "Apple Watch charger",
+  "Power brick",
+  "Toothbrush",
+  "Toothpaste",
+  "Deorderant",
+  "Backpack",
+  "Vitamins",
+  "Kindle",
+  "Micro-USB cable",
+  "Sleep mask",
+  "Ear plugs",
+  "Face masks",
+  "Sony Walkman",
+  "Emergency Vegan Bacon",
 ].map(createItem);
 
 const [first, second] = items;
@@ -66,11 +66,11 @@ export const filterItems = (
 ) => {
   return items.filter((item) => {
     for (const [filterKey, filterValue] of Object.entries(properties)) {
-      if (filterKey === 'name' && typeof filterValue === 'string') {
+      if (filterKey === "name" && typeof filterValue === "string") {
         return item.name.toLowerCase().startsWith(filterValue.toLowerCase());
       }
 
-      if (filterKey === 'packed' && typeof filterValue === 'boolean') {
+      if (filterKey === "packed" && typeof filterValue === "boolean") {
         return item.packed === filterValue;
       }
     }

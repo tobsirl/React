@@ -1,5 +1,5 @@
-import clsx from 'clsx';
-import { useState } from 'react';
+import clsx from "clsx";
+import { useState } from "react";
 
 type ItemProps = {
   item: Item;
@@ -28,7 +28,7 @@ const Item = ({ item, update, remove }: ItemProps) => {
       <input
         value={item.name}
         id={`edit-${item.id}`}
-        className={clsx('py-0 text-sm', { hidden: !editing })}
+        className={clsx("py-0 text-sm", { hidden: !editing })}
         onChange={(event) => update(item.id, { name: event.target.value })}
       />
       <div className="flex gap-2">
@@ -37,7 +37,7 @@ const Item = ({ item, update, remove }: ItemProps) => {
           aria-label={`Edit "${item.name}"`}
           onClick={() => setEditing(!editing)}
         >
-          {editing ? '💾 Save' : '✍️ Edit'}
+          {editing ? "💾 Save" : "✍️ Edit"}
         </button>
         <button
           className="px-2 py-0 text-xs"

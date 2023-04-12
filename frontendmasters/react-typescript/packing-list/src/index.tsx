@@ -1,12 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Application from './components/application';
-import ItemsProvider from './context';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Application from "./components/application";
+import ItemsProvider from "./context";
 
-import './index.css';
+import "./index.css";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLDivElement,
+  document.getElementById("root") as HTMLDivElement
 );
 
 root.render(
@@ -14,5 +14,5 @@ root.render(
     <ItemsProvider>
       <Application />
     </ItemsProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
