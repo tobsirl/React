@@ -12,7 +12,7 @@ type ItemsState = {
   unpackedItems: Item[];
   packedItems: Item[];
   add: (name: string) => void;
-  update: (id: string, updates: any) => void;
+  update: (id: string, updates: Item) => void;
   remove: (id: string) => void;
   markAllAsUnpacked: () => void;
 };
@@ -28,7 +28,7 @@ const ItemsProvider = ({ children }: PropsWithChildren) => {
     setItems([...items, item]);
   };
 
-  const update = (id: string, updates: any) => {
+  const update = (id: string, updates: Item) => {
     setItems(updateItem(items, id, updates));
   };
 
