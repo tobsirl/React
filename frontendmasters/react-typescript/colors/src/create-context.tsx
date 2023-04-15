@@ -6,6 +6,10 @@ export const createContext = <T extends {}>() => {
   const useContext = () => {
     const ctx = React.useContext(Context);
 
+    if (ctx === undefined) {
+      throw new Error('useContext must be used within a Provider and a value must be provided');
+    }
+
     return ctx;
   }
 
