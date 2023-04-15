@@ -9,7 +9,7 @@ type ColorContextState = {
 
 const [useColorContext, ContextProvider] = createContext<ColorContextState>();
 
-const useContext = useColorContext;
+export const useContext = useColorContext;
 
 export const useHexColor = () => {
   const { hexColor } = useColorContext();
