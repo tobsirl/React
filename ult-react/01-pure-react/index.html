@@ -12,10 +12,11 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
       function App() {
+        const time = new Date().toLocaleTimeString();
         return React.createElement(
           'div',
           null,
-          React.createElement('h1', null, 'Hello React!')
+          React.createElement('h1', null, `Hello React! ${time}`)
         );
       }
       const root = document.getElementById('root');
