@@ -50,7 +50,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Pizza />
+      <Menu />
       <Footer />
     </div>
   );
@@ -60,7 +60,20 @@ function Header() {
   return <h1>Fast React Pizza Co.</h1>;
 }
 
-function Menu() {}
+function Menu() {
+  return (
+    <div>
+      <h2>Menu</h2>
+      <ul>
+        {pizzaData.map((pizza) => (
+          <li key={pizza.name}>
+            <Pizza pizza={pizza} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 function Footer() {
   return (
@@ -68,12 +81,12 @@ function Footer() {
   );
 }
 
-function Pizza() {
+function Pizza(props) {
   return (
     <div>
       <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+      <h2>{props.pizza.name}</h2>
+      <p>{props.pizza.ingredients}</p>
     </div>
   );
 }
