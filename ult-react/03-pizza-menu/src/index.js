@@ -5,8 +5,13 @@ function App() {
   return (
     <div>
       <h1>Pizza Menu</h1>
+      <Pizza />
     </div>
   );
+}
+
+function Pizza() {
+  return <h2>Pizza</h2>;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
