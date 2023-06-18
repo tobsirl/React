@@ -89,12 +89,12 @@ function Footer() {
   );
 }
 
-function Pizza(props) {
+function Pizza({ pizza }) {
   return (
     <div>
-      <img src={`${props.pizza.photoName}`} alt="Pizza Spinaci" />
-      <h2>{props.pizza.name}</h2>
-      <p>{props.pizza.ingredients}</p>
+      <img src={`${pizza.photoName}`} alt="Pizza Spinaci" />
+      <h2>{pizza.name}</h2>
+      <p>{pizza.ingredients}</p>
     </div>
   );
 }
