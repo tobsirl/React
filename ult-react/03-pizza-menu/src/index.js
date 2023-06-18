@@ -67,7 +67,7 @@ function Header() {
 
 function Menu() {
   return (
-    <div>
+    <div className="menu">
       <h2>Menu</h2>
       <ul>
         {pizzaData.map((pizza) => (
