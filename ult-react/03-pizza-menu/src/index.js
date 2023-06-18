@@ -92,7 +92,7 @@ function Footer() {
 function Pizza(props) {
   return (
     <div>
-      <img src="pizzas/spinaci.jpg" alt="Pizza Spinaci" />
+      <img src={`${props.pizza.photoName}`} alt="Pizza Spinaci" />
       <h2>{props.pizza.name}</h2>
       <p>{props.pizza.ingredients}</p>
     </div>
