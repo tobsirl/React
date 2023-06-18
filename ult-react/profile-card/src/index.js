@@ -24,7 +24,7 @@ function Intro() {
 function SkillList() {
   return (
     <ul className="skill-list">
-      <Skill name="JavaScript" />
+      <Skill name="JavaScript" emoji="💪" />
       <Skill name="React" />
       <Skill name="HTML" />
       <Skill name="CSS" />
@@ -33,7 +33,12 @@ function SkillList() {
 }
 
 function Skill(props) {
-  return <li className="skill">{props.name}</li>;
+  return (
+    <li className="skill">
+      {props.name}
+      {props.emoji}
+    </li>
+  );
 }
 
 function App() {
