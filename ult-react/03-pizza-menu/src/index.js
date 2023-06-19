@@ -95,6 +95,7 @@ function Footer() {
           <p>
             We're are open until {closeHour}:00. Come visit us or order online!
           </p>
+          <button className="btn">Order now!</button>
         </div>
       )}
     </footer>
