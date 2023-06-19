@@ -82,14 +82,13 @@ function Footer() {
   const hour = new Date().getHours();
   const openHour = 12;
   const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
 
   if (hour < openHour || hour > closeHour) {
     return <footer>We're currently closed</footer>;
   }
 
-  return (
-    <footer>{new Date().toLocaleTimeString()} We're currently open!</footer>
-  );
+  return <footer>{isOpen && <p>We're currently open!</p>} </footer>;
 }
 
 function Pizza({ pizza }) {
