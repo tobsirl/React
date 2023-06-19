@@ -88,7 +88,17 @@ function Footer() {
     return <footer>We're currently closed</footer>;
   }
 
-  return <footer>{isOpen && <p>We're currently open!</p>} </footer>;
+  return (
+    <footer>
+      {isOpen && (
+        <div className="order">
+          <p>
+            We're are open until {closeHour}:00. Come visit us or order online!
+          </p>
+        </div>
+      )}
+    </footer>
+  );
 }
 
 function Pizza({ pizza }) {
