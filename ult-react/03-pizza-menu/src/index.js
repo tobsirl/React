@@ -67,16 +67,17 @@ function Header() {
 
 function Menu() {
   const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
   return (
     <div className="menu">
       <h2>Menu</h2>
-      {pizzas && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
           {pizzaData.map((pizza) => (
             <Pizza pizza={pizza} key={pizza.name} />
           ))}
         </ul>
-      )}
+      ) : null}
     </div>
   );
 }
