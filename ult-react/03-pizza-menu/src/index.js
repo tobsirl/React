@@ -112,7 +112,7 @@ function Pizza({ pizza }) {
   // if (pizza.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizza.soldOut ? 'sold-out' : ''}`}>
       <img src={`${pizza.photoName}`} alt={pizza.name} />
       <div>
         <h2>{pizza.name}</h2>
