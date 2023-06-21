@@ -109,7 +109,7 @@ function Footer() {
 }
 
 function Pizza({ pizza }) {
-  if (pizza.soldOut) return null;
+  // if (pizza.soldOut) return null;
 
   return (
     <li className="pizza">
@@ -117,7 +117,7 @@ function Pizza({ pizza }) {
       <div>
         <h2>{pizza.name}</h2>
         <p>{pizza.ingredients}</p>
-        <span>{pizza.price + 3}</span>
+        <span>{pizza.soldOut ? 'SOLD OUT' : pizza.price + 3}</span>
       </div>
     </li>
   );
