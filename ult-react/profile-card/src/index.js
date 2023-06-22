@@ -57,19 +57,18 @@ function Intro() {
 function SkillList() {
   return (
     <ul className="skill-list">
-      <Skill name="JavaScript" emoji="💪" color="blue" />
-      <Skill name="React" emoji="💪" />
-      <Skill name="HTML" />
-      <Skill name="CSS" />
+      {skills.map((skill) => (
+        <Skill skill={skill.skill} level={skill.level} color={skill.color} />
+      ))}
     </ul>
   );
 }
 
-function Skill(props) {
+function Skill({ skill, level, color }) {
   return (
-    <li className="skill" style={{ backgroundColor: props.color }}>
-      {props.name}
-      {props.emoji}
+    <li className="skill" style={{ backgroundColor: color }}>
+      {skill}
+      {level}
     </li>
   );
 }
