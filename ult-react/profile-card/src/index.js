@@ -67,8 +67,8 @@ function SkillList() {
 function Skill({ skill, level, color }) {
   return (
     <li className="skill" style={{ backgroundColor: color }}>
-      {skill}
-      {level}
+      <span>{skill}</span>
+      <span>{level}</span>
     </li>
   );
 }
