@@ -7,14 +7,14 @@ const messages = [
 ];
 
 export default function App() {
-  const step = 3;
+  const [step, setStep] = React.useState(1);
 
   function handlePrevious() {
-    alert('Previous');
+    setStep(step - 1);
   }
 
   function handleNext() {
-    alert('Next');
+    setStep(step + 1);
   }
 
   return (
