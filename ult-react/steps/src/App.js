@@ -23,7 +23,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <button className="close" onClick={toggleClose}>
         &times;
       </button>
@@ -55,6 +55,6 @@ export default function App() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
