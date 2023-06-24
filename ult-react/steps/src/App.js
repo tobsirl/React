@@ -18,8 +18,15 @@ export default function App() {
     if (step < 3) setStep(step + 1);
   }
 
+  function toggleClose() {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <div>
+      <button className="close" onClick={toggleClose}>
+        &times;
+      </button>
       {isOpen && (
         <div className="steps">
           <div className="numbers">
