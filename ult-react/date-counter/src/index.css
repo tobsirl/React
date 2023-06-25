@@ -17,3 +17,10 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
