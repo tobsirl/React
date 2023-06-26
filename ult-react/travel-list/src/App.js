@@ -40,9 +40,10 @@ function Stats() {
 function Item({ item }) {
   return (
     <li>
-      <input type="checkbox" />
-      {item.quantity} {item.description}
-      <button className="remove">Remove</button>
+      <span>
+        {item.quantity} {item.description}
+      </span>
+      <button className="remove">❌</button>
     </li>
   );
 }
