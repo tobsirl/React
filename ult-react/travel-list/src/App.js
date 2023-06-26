@@ -12,9 +12,17 @@ function Form() {
   );
 }
 
-function PackingList() {}
+function PackingList() {
+  return <div className="list">LIST</div>;
+}
 
-function Stats() {}
+function Stats() {
+  return (
+    <footer>
+      <em>👜 You have X items on your list, and you already packed X (X%)</em>
+    </footer>
+  );
+}
 
 export default function App() {
   return <div>App</div>;
