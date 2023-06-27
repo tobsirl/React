@@ -10,7 +10,9 @@ function Logo() {
 }
 
 function Form() {
-  function handleSubmit() {}
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
@@ -23,6 +25,7 @@ function Form() {
         ))}
       </select>
       <input type="text" placeholder="Item..." />
+      <button>Add</button>
     </form>
   );
 }
