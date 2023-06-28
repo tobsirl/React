@@ -10,6 +10,8 @@ function Logo() {
 }
 
 function Form() {
+  const [description, setDescription] = useState('');
+
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -24,7 +26,7 @@ function Form() {
           </option>
         ))}
       </select>
-      <input type="text" placeholder="Item..." />
+      <input type="text" placeholder="Item..." value={description} />
       <button>Add</button>
     </form>
   );
