@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 const initialItems = [
   { id: 1, description: 'Passports', quantity: 2, packed: false },
@@ -26,7 +26,12 @@ function Form() {
           </option>
         ))}
       </select>
-      <input type="text" placeholder="Item..." value={description} />
+      <input
+        type="text"
+        placeholder="Item..."
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
       <button>Add</button>
     </form>
   );
