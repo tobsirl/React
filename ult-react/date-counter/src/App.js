@@ -4,6 +4,7 @@ import './styles.css';
 function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
+  const [range, setRange] = useState(0);
 
   const date = new Date('june 21 2027');
   date.setDate(date.getDate() + count);
@@ -11,6 +12,13 @@ function Counter() {
   return (
     <div>
       <div>
+        <input
+          type="range"
+          min={0}
+          max={10}
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        />
         <button onClick={() => setStep((c) => c - 1)}>-</button>
         <span>Step: {step}</span>
         <button onClick={() => setStep((c) => c + 1)}>+</button>
@@ -32,6 +40,7 @@ function Counter() {
         </span>
         <span>{date.toDateString()}</span>
       </p>
+      {count > 0 ? <button onClick={() => setCount(0)}>Reset</button> : null}
     </div>
   );
 }
