@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// class based component
+import React, { Component } from 'react';
+
+// Pure Component DisplayLocal
+class DisplayLocal extends Component {
+  render() {
+    return (
+      <div>
+        <h2>Local Storage</h2>
+        <p>Name: {this.props.name}</p>
+        <p>Age: {this.props.age}</p>
+      </div>
+    );
+  }
+}
+
+class App extends Component {
+  state = {
+    default: null,
+  };
+
+  componentDidMount() {
+    this.setState({ default: JSON.parse(localStorage.getItem('test')) });
+  }
+
+  saveToLocal() {
+    localStorage.setItem('test', JSON.stringify({ name: 'Paul', age: 30 }));
+  }
+
+  render() {
+    if (this.state.default === null) {
+      return <div>Loading...</div>;
+    }
+
+    return (
+      <div className="App">
+        <h1>Hello, React!</h1>
+        <button onClick={this.saveToLocal}>Click me!</button>
+        <DisplayLocal
+          name={this.state.default.name}
+          age={this.state.default.age}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
