@@ -25,6 +25,21 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      <h1>MANAGING EFFECTS</h1>
+      <ul>
+        <li>
+          Rule #0 When a component renders, it should do so without running into
+          any side effects
+        </li>
+        <li>
+          Rule #1 If a side effect is triggered by an event, put that side
+          effect in an event handler
+        </li>
+        <li>
+          Rule #2 If a side effect is synchronizing your component with some
+          outside system, put that side effect inside useEffect
+        </li>
+      </ul>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more Test to see if this
         breaks tests
