@@ -2,16 +2,27 @@ import * as React from "react";
 import "./styles.css";
 
 const initialFormData = {
-  name: "",
-  email: "",
-  address: "",
-  city: "",
-  zipcode: "",
+  currentStep: 1,
+  formData: {
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+    zipcode: "",
+  },
 };
 
+export function REDUCER(state = initialFormData, action) {
+  switch (action.type) {
+    case "ACTION_TYPE":
+      return;
+    default:
+      return state;
+  }
+}
+
 export default function MultistepFormReducer() {
-  const [currentStep, setCurrentStep] = React.useState(1);
-  const [formData, setFormData] = React.useState(initialFormData);
+  const [state, dispatch] = React.useReducer(REDUCER, initialFormData);
 
   const handleNextStep = () => {
     setCurrentStep(currentStep + 1);
