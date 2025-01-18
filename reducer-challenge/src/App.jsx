@@ -14,8 +14,17 @@ const initialFormData = {
 
 export function REDUCER(state = initialFormData, action) {
   switch (action.type) {
-    case "ACTION_TYPE":
-      return;
+    case "NEXT_STEP":
+      return { ...state, currentStep: state.currentStep + 1 };
+    case "PREV_STEP":
+      return { ...state, currentStep: state.currentStep - 1 };
+    case "HANDLE_CHANGE":
+      return {
+        ...state,
+        formData: { ...state.formData, [action.name]: action.value },
+      };
+    case "RESET_FORM":
+      return initialFormData;
     default:
       return state;
   }
@@ -23,24 +32,28 @@ export function REDUCER(state = initialFormData, action) {
 
 export default function MultistepFormReducer() {
   const [state, dispatch] = React.useReducer(REDUCER, initialFormData);
+  const { currentStep, formData } = state;
 
   const handleNextStep = () => {
-    setCurrentStep(currentStep + 1);
+    dispatch({ type: "NEXT_STEP" });
   };
 
   const handlePrevStep = () => {
-    setCurrentStep(currentStep - 1);
+    dispatch({ type: "PREV_STEP" });
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    dispatch({
+      type: "HANDLE_CHANGE",
+      name: e.target.name,
+      value: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you for your submission");
-    setCurrentStep(1);
-    setFormData(initialFormData);
+    dispatch({ type: "RESET_FORM" });
   };
 
   if (currentStep === 1) {
