@@ -3,7 +3,23 @@ import { createTask } from "./utils";
 import "./App.css";
 
 function reducer(tasks, action) {
-  return tasks;
+  switch (action.type) {
+    case "add":
+      return [...tasks, action.task];
+    case "update":
+      return tasks.map((task) =>
+        task.id === action.id
+          ? {
+              ...task,
+              status: task.status === "pending" ? "completed" : "pending",
+            }
+          : task
+      );
+    case "delete":
+      return tasks.filter((task) => task.id !== action.id);
+    default:
+      return tasks;
+  }
 }
 
 export default function TaskManager() {
