@@ -1,35 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const products = [
+  { id: 1, name: "Poké Ball", price: 10 },
+  { id: 2, name: "Great Ball", price: 20 },
+  { id: 3, name: "Ultra Ball", price: 30 },
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function calculateTotal(cart) {
+  return 0;
 }
 
-export default App
+const initialState = [];
+
+function reducer(cart, action) {
+  return cart;
+}
+
+export default function ShoppingCart() {
+  const [cart, dispatch] = React.useReducer(reducer, initialState);
+
+  const handleAddToCart = (id) => dispatch({ type: "add", id });
+
+  const handleUpdateQuantity = (id, adjustment) => {
+    dispatch({
+      type: "update",
+      id,
+      adjustment,
+    });
+  };
+
+  return (
+    <main>
+      <h1>Poké Mart</h1>
+      <section>
+        <div>
+          <ul className="products">
+            {products.map((product) => (
+              <li key={product.id}>
+                {product.name} - ${product.price}
+                <button
+                  className="primary"
+                  onClick={() => handleAddToCart(product.id)}
+                >
+                  Add to cart
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <hr />
+      <aside>
+        <div>
+          <h2>Shopping Cart</h2>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id}>
+                {item.name}
+                <div>
+                  <button
+                    onClick={() => handleUpdateQuantity(item.id, "decrement")}
+                  >
+                    -
+                  </button>
+                  {item.quantity}
+                  <button
+                    onClick={() => handleUpdateQuantity(item.id, "increment")}
+                  >
+                    +
+                  </button>
+                </div>
+              </li>
+            ))}
+            {!cart.length && <li>Cart is empty</li>}
+          </ul>
+        </div>
+        <hr />
+
+        <h3>Total: ${calculateTotal(cart)}</h3>
+      </aside>
+    </main>
+  );
+}
