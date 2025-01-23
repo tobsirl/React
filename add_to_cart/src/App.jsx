@@ -13,7 +13,41 @@ function calculateTotal(cart) {
 const initialState = [];
 
 function reducer(cart, action) {
-  return cart;
+  switch (action.type) {
+    case "add": {
+      const item = cart.find((item) => item.id === action.id);
+      if (item) {
+        return cart.map((item) =>
+          item.id === action.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [
+        ...cart,
+        {
+          id: action.id,
+          name: products.find((p) => p.id === action.id).name,
+          quantity: 1,
+        },
+      ];
+    }
+    case "update": {
+      return cart.map((item) =>
+        item.id === action.id
+          ? {
+              ...item,
+              quantity:
+                action.adjustment === "increment"
+                  ? item.quantity + 1
+                  : item.quantity - 1,
+            }
+          : item
+      );
+    }
+    default:
+      return cart;
+  }
 }
 
 export default function ShoppingCart() {
