@@ -7,7 +7,9 @@ const products = [
 ];
 
 function calculateTotal(cart) {
-  return 0;
+  return cart.reduce((total, item) => {
+    return total + item.quantity * products.find((p) => p.id === item.id).price;
+  }, 0);
 }
 
 const initialState = [];
@@ -46,7 +48,7 @@ function reducer(cart, action) {
       );
     }
     default:
-      return cart;
+      return calculateTotal(cart);
   }
 }
 
