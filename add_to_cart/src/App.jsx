@@ -7,48 +7,43 @@ const products = [
 ];
 
 function calculateTotal(cart) {
-  return cart.reduce((total, item) => {
-    return total + item.quantity * products.find((p) => p.id === item.id).price;
+  return cart.reduce((total, product) => {
+    return total + product.quantity * product.price;
   }, 0);
 }
 
 const initialState = [];
 
 function reducer(cart, action) {
-  switch (action.type) {
-    case "add": {
-      const item = cart.find((item) => item.id === action.id);
-      if (item) {
-        return cart.map((item) =>
-          item.id === action.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      }
-      return [
-        ...cart,
-        {
-          id: action.id,
-          name: products.find((p) => p.id === action.id).name,
-          quantity: 1,
-        },
-      ];
+  if (action.type === "add") {
+    const inCart = Boolean(cart.find((item) => item.id === action.id));
+
+    if (!inCart) {
+      const product = products.find((p) => p.id === action.id);
+      return [...cart, { ...product, quantity: 1 }];
     }
-    case "update": {
+
+    return cart.map((item) =>
+      item.id === action.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+  } else if (action.type === "update") {
+    if (action.adjustment === "increment") {
       return cart.map((item) =>
-        item.id === action.id
-          ? {
-              ...item,
-              quantity:
-                action.adjustment === "increment"
-                  ? item.quantity + 1
-                  : item.quantity - 1,
-            }
-          : item
+        item.id === action.id ? { ...item, quantity: item.quantity + 1 } : item
       );
     }
-    default:
-      return calculateTotal(cart);
+
+    const item = cart.find(({ id }) => action.id === id);
+
+    if (item.quantity === 1) {
+      return cart.filter((item) => item.id !== action.id);
+    } else {
+      return cart.map((item) =>
+        item.id === action.id ? { ...item, quantity: item.quantity - 1 } : item
+      );
+    }
+  } else {
+    throw new Error("This action type isn't supported.");
   }
 }
 
