@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 function App() {
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState<Date | null>(null);
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
@@ -15,7 +15,7 @@ function App() {
     <>
       <section>
         <h1>Current Time</h1>
-        <p>{time.toLocaleTimeString()}</p>
+        <h3>{time.toLocaleTimeString()}</h3>
       </section>
     </>
   );
