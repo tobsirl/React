@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+
 function App() {
   const [time, setTime] = useState<Date | null>(null);
   useEffect(() => {
