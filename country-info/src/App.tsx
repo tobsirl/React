@@ -1,11 +1,29 @@
 import * as React from "react";
+import { fetchCountryData } from "./utils";
 import "./App.css";
 
 export default function CountryInfo() {
-  const countryCode = "AU";
-  const data = null;
-  const isLoading = true;
-  const error = null;
+  const [countryCode, setCountryCode] = React.useState("AU");
+  const [data, setData] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      setError(null);
+      try {
+        const countryData = await fetchCountryData(countryCode);
+        setData(countryData);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [countryCode]);
 
   const handleChange = (e) => {};
   return (
