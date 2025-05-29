@@ -4,9 +4,17 @@ import "./App.css";
 
 export default function CountryInfo() {
   const [countryCode, setCountryCode] = React.useState("AU");
-  const [data, setData] = React.useState(null);
+  interface CountryData {
+    name: string;
+    capital: string;
+    region: string;
+    population: number;
+    area: number;
+  }
+
+  const [data, setData] = React.useState<CountryData | null>(null);
   const [isLoading, setIsLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState<CountryError | null>(null);
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +24,7 @@ export default function CountryInfo() {
         const countryData = await fetchCountryData(countryCode);
         setData(countryData);
       } catch (err) {
-        setError(err);
+        setError({ message: err instanceof Error ? err.message : String(err) });
       } finally {
         setIsLoading(false);
       }
@@ -25,7 +33,16 @@ export default function CountryInfo() {
     fetchData();
   }, [countryCode]);
 
-  const handleChange = (e) => {};
+  interface CountryError {
+    message: string;
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setCountryCode(e.target.value);
+    setData(null); // Reset data when country changes
+    setIsLoading(true); // Reset loading state
+    setError(null); // Reset error state
+  };
   return (
     <section>
       <header>
