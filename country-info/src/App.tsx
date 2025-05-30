@@ -3,7 +3,7 @@ import { fetchCountryData } from "./utils";
 import "./App.css";
 
 export default function CountryInfo() {
-  const [countryCode, setCountryCode] = React.useState("AU");
+  const [countryCode, setCountryCode] = React.useState("DE");
   interface CountryData {
     name: string;
     capital: string;
