@@ -1,5 +1,4 @@
 import * as React from "react";
-import { RotatingLines } from "react-loader-spinner";
 import "./App.css";
 
 const fetchData = async ({ query = "", page = 0, tag = "" }) => {
@@ -92,15 +91,10 @@ export default function HackerNewsSearch() {
         <header>
           <h2>
             <span>
-              Page {page} of {totalPages}
+              {totalPages === 0
+                ? "No Results"
+                : `Page ${page + 1} of ${totalPages}`}
             </span>
-            <RotatingLines
-              strokeColor="grey"
-              strokeWidth="5"
-              animationDuration="0.75"
-              width="20"
-              visible={null}
-            />
           </h2>
           <div>
             <button className="link" onClick={null} disabled={null}>
