@@ -5,7 +5,16 @@ export default function VideoPlayer() {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const videoRef = React.useRef(null);
 
-  function handleTogglePlay() {}
+  function handleTogglePlay() {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  }
   return (
     <section className="container">
       <h1>Video Player</h1>
