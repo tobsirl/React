@@ -1,7 +1,11 @@
-import { useState } from "react";
+import * as React from "react";
 import "./App.css";
 
 export default function VideoPlayer() {
+  const [isPlaying, setIsPlaying] = React.useState(false);
+  const videoRef = React.useRef(null);
+
+  function handleTogglePlay() {}
   return (
     <section className="container">
       <h1>Video Player</h1>
@@ -10,6 +14,7 @@ export default function VideoPlayer() {
           <source
             src="https://stream.mux.com/TbVCJiOghmISJgg4AznPfFHYRfiVoek8OJHF56Y01oR4/high.mp4"
             type="video/mp4"
+            ref={videoRef}
           />
         </video>
         <div>
