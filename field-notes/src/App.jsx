@@ -14,7 +14,7 @@ export default function FieldNotes() {
     const form = e.target;
     const formData = new FormData(form);
     const newNote = formData.get("note");
-    if (newNote) {
+    if (newNote.trim()) {
       setNotes((prevNotes) => [...prevNotes, newNote]);
       form.reset();
     }
