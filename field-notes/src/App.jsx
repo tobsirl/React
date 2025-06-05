@@ -7,6 +7,7 @@ export default function FieldNotes() {
     "JSX combines the power and expressiveness of JavaScript with the readability and accessibility of HTML",
     "Just like a component enabled the composition and reusability of UI, hooks enabled the composition and reusability of non-visual logic.",
   ]);
+  const noteRef = React.useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,6 +19,11 @@ export default function FieldNotes() {
       form.reset();
     }
   }
+  React.useEffect(() => {
+    if (noteRef.current) {
+      noteRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [notes]);
 
   return (
     <article>
@@ -25,7 +31,9 @@ export default function FieldNotes() {
       <div>
         <ul>
           {notes.map((msg, index) => (
-            <li key={index}>{msg}</li>
+            <li ref={index === notes.length - 1 ? noteRef : null} key={index}>
+              {msg}
+            </li>
           ))}
         </ul>
         <form onSubmit={handleSubmit}>
