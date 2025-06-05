@@ -40,3 +40,61 @@
 .read-the-docs {
   color: #888;
 }
+article {
+  padding: 24px;
+}
+
+article div {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 600px;
+}
+
+form {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+form button {
+  position: absolute;
+  right: 7px;
+  top: 1px;
+  border-radius: 2px;
+  padding: 4px;
+  font-weight: bold;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: inline-flex;
+  align-self: flex-start;
+  background: var(--charcoal);
+  padding: 8px 12px;
+  border-radius: 8px 8px 8px 0px;
+  margin-top: 16px;
+  font-size: 14px;
+  max-width: 400px;
+}
+
+li:nth-child(2n) {
+  border-radius: 8px 8px 0px 8px;
+  align-self: flex-end;
+  background: var(--purple);
+  color: var(--charcoal);
+}
+
+li:last-child {
+  margin-bottom: 20px;
+}
