@@ -2,7 +2,7 @@ import * as React from "react";
 import { closeIcon } from "./icons";
 
 export default function ClickOutside() {
-  const isOpen = false;
+  const [isOpen, setIsOpen] = React.useState(false);
   const handleOpenModal = () => {};
 
   const handleCloseModal = () => {};
