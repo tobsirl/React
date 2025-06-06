@@ -1,9 +1,11 @@
 import * as React from "react";
-import { closeIcon } from "./icons";
 
 export default function ClickOutside() {
   const [isOpen, setIsOpen] = React.useState(false);
-  const handleOpenModal = () => {};
+  function handleOpenModal() {
+    console.log("Opening modal");
+    setIsOpen(true);
+  }
 
   const handleCloseModal = () => {};
 
@@ -17,7 +19,7 @@ export default function ClickOutside() {
       </section>
       {isOpen && (
         <dialog>
-          <button onClick={handleCloseModal}>{closeIcon}</button>
+          <button onClick={handleCloseModal}>X</button>
           <h2>Modal</h2>
           <p>
             Click outside the modal to close (or use the button) whatever you
