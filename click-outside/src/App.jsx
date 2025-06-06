@@ -1,9 +1,10 @@
 import * as React from "react";
+import "./App.css";
 
 export default function ClickOutside() {
   const [isOpen, setIsOpen] = React.useState(false);
+  const modalRef = React.useRef(null);
   function handleOpenModal() {
-    console.log("Opening modal");
     setIsOpen(true);
   }
 
