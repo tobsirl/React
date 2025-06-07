@@ -7,6 +7,9 @@ export default function ExpandingTextarea() {
 
   function handleChange(event) {
     setText(event.target.value);
+    textareaRef.current.style.height = "inherit"; // Reset height
+    const scrollHeight = textareaRef.current.scrollHeight;
+    textareaRef.current.style.height = `${scrollHeight}px`; // Set height to scrollHeight
   }
 
   return (
