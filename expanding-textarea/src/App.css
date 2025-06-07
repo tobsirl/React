@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+textarea {
+  resize: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--beige);
+}
