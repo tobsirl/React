@@ -3,6 +3,11 @@ import "./App.css";
 
 export default function ExpandingTextarea() {
   const [text, setText] = React.useState("");
+  const textareaRef = React.useRef(null);
+
+  function handleChange(event) {
+    setText(event.target.value);
+  }
 
   return (
     <section className="container">
@@ -12,9 +17,8 @@ export default function ExpandingTextarea() {
         id="textarea"
         placeholder="Enter some text"
         value={text}
-        onChange={(event) => {
-          setText(event.target.value);
-        }}
+        ref={textareaRef}
+        onChange={handleChange}
         rows={1}
       />
     </section>
