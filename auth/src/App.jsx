@@ -20,7 +20,11 @@ const AuthProvider = ({ children }) => {
     setIsAuthenticated(false);
   };
 
-  return <authContext.Provider>{children}</authContext.Provider>;
+  return (
+    <authContext.Provider value={{ isAuthenticated, login, logout }}>
+      {children}
+    </authContext.Provider>
+  );
 };
 
 function NavBar() {
