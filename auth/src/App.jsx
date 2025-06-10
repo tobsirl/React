@@ -45,7 +45,7 @@ function NavBar() {
 }
 
 function LoginForm() {
-  const login = () => {};
+  const { login } = React.useContext(authContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -86,7 +86,7 @@ function LoginForm() {
 }
 
 function Main() {
-  const isAuthenticated = false;
+  const { isAuthenticated } = React.useContext(authContext);
 
   return <main>{isAuthenticated ? <Dashboard /> : <LoginForm />}</main>;
 }
