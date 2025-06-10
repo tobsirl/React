@@ -28,8 +28,7 @@ const AuthProvider = ({ children }) => {
 };
 
 function NavBar() {
-  const logout = () => {};
-  const isAuthenticated = false;
+  const { logout, isAuthenticated } = React.useContext(authContext);
 
   return (
     <nav>
