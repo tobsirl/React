@@ -33,10 +33,8 @@ function LanguageProvider({ children }) {
     setLanguage(newLanguage);
   };
 
-  const translation = () => {
-    return (key) => {
-      return translations[language]?.[key] || key;
-    };
+  const translation = (key) => {
+    return translations[language]?.[key] || key;
   };
 
   return (
