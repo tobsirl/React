@@ -29,7 +29,7 @@ const languageContext = React.createContext({
 function LanguageProvider({ children }) {
   const [language, setLanguage] = React.useState("en");
 
-  const changeLanguage = () => {
+  const changeLanguage = (newLanguage) => {
     setLanguage(newLanguage);
   };
 
@@ -47,8 +47,7 @@ function LanguageProvider({ children }) {
 }
 
 function LanguageSwitcher() {
-  const language = null;
-  const changeLanguage = () => {};
+  const { language, changeLanguage } = React.useContext(languageContext);
 
   return (
     <div>
@@ -63,7 +62,7 @@ function LanguageSwitcher() {
 }
 
 function Greeting() {
-  const translation = () => {};
+  const { translation } = React.useContext(languageContext);
 
   return (
     <div>
