@@ -39,7 +39,11 @@ function LanguageProvider({ children }) {
     };
   };
 
-  return null;
+  return (
+    <languageContext.Provider value={{ language, changeLanguage, translation }}>
+      {children}
+    </languageContext.Provider>
+  );
 }
 
 function LanguageSwitcher() {
