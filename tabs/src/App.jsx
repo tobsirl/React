@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from "react";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const tabContext = React.createContext({
+  activeTabValue: null,
+  setActiveTabValue: () => {},
+});
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+function TabProvider() {
+  return null;
 }
 
-export default App
+function TabTrigger({ value }) {
+  const activeTabValue = null;
+  const setActiveTabValue = () => {};
+
+  const handleSetActiveTabValue = () => {};
+
+  return (
+    <button
+      onClick={handleSetActiveTabValue}
+      className={`tab ${activeTabValue === value ? "active" : ""}`}
+    >
+      TODO
+    </button>
+  );
+}
+
+function TabContent() {
+  return null;
+}
+
+export default function App() {
+  return (
+    <section>
+      <h1>Tabs</h1>
+      <TabProvider defaultValue="tab-1">
+        <div className="tabs">
+          <TabTrigger value="tab-1">Tab 1</TabTrigger>
+          <TabTrigger value="tab-2">Tab 2</TabTrigger>
+          <TabTrigger value="tab-3">Tab 3</TabTrigger>
+        </div>
+        <TabContent value="tab-1">Tab Content 1</TabContent>
+        <TabContent value="tab-2">Tab Content 2</TabContent>
+        <TabContent value="tab-3">Tab Content 3</TabContent>
+      </TabProvider>
+    </section>
+  );
+}
