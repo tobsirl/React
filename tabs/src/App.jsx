@@ -32,8 +32,13 @@ function TabTrigger({ value, children }) {
   );
 }
 
-function TabContent() {
-  return null;
+function TabContent({ children, value }) {
+  const { activeTabValue } = React.useContext(tabContext);
+  if (activeTabValue !== value) {
+    return null;
+  }
+
+  return children;
 }
 
 export default function App() {
