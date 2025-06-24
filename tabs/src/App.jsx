@@ -15,21 +15,19 @@ function TabProvider({ defaultValue, children }) {
   );
 }
 
-function TabTrigger({ value }) {
-  const [activeTabValue, setActiveTabValue] = React.useState(null);
-  const setActiveTabValue = () => {
-    setActiveTabValue(value);
-    console.log(`Active tab set to: ${value}`);
-  };
+function TabTrigger({ value, children }) {
+  const { activeTabValue, setActiveTabValue } = React.useContext(tabContext);
 
-  const handleSetActiveTabValue = () => {};
+  const handleSetActiveTabValue = () => {
+    setActiveTabValue(value);
+  };
 
   return (
     <button
       onClick={handleSetActiveTabValue}
       className={`tab ${activeTabValue === value ? "active" : ""}`}
     >
-      TODO
+      {children}
     </button>
   );
 }
