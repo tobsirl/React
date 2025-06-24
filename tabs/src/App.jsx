@@ -6,8 +6,13 @@ const tabContext = React.createContext({
   setActiveTabValue: () => {},
 });
 
-function TabProvider() {
-  return null;
+function TabProvider({ defaultValue, children }) {
+  const [activeTabValue, setActiveTabValue] = React.useState(defaultValue);
+  return (
+    <tabContext.Provider value={{ activeTabValue, setActiveTabValue }}>
+      {children}
+    </tabContext.Provider>
+  );
 }
 
 function TabTrigger({ value }) {
@@ -17,9 +22,7 @@ function TabTrigger({ value }) {
     console.log(`Active tab set to: ${value}`);
   };
 
-  const handleSetActiveTabValue = () => {
-    
-  };
+  const handleSetActiveTabValue = () => {};
 
   return (
     <button
