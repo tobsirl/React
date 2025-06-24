@@ -11,10 +11,15 @@ function TabProvider() {
 }
 
 function TabTrigger({ value }) {
-  const activeTabValue = null;
-  const setActiveTabValue = () => {};
+  const [activeTabValue, setActiveTabValue] = React.useState(null);
+  const setActiveTabValue = () => {
+    setActiveTabValue(value);
+    console.log(`Active tab set to: ${value}`);
+  };
 
-  const handleSetActiveTabValue = () => {};
+  const handleSetActiveTabValue = () => {
+    
+  };
 
   return (
     <button
