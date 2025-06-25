@@ -1,0 +1,14 @@
+{
+  "extends": ["oxlint:recommended", "oxlint:react"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  }
+}
