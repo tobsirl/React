@@ -60,7 +60,17 @@ function NewsFeed() {
   return (
     <div>
       <h1>News Feed</h1>
-      <ul></ul>
+      <ul>
+        {videos.map((video) => (
+          <VideoItem
+            key={video.id}
+            videoId={video.id}
+            title={video.title}
+            poster={video.poster}
+            src={video.src}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
