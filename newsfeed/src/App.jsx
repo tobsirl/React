@@ -6,16 +6,29 @@ const videoPlaybackContext = React.createContext({
 });
 
 function VideoPlaybackProvider({ children }) {
-  const playingVideoId = null;
-  const setPlayingVideoId = () => {};
+  const [playingVideoId, setPlayingVideoId] = React.useState(null);
 
-  return null;
+  return (
+    <videoPlaybackContext.Provider
+      value={{ playingVideoId, setPlayingVideoId }}
+    >
+      {children}
+    </videoPlaybackContext.Provider>
+  );
 }
 
 function VideoItem({ videoId, title, poster, src }) {
-  const videoIsActive = false;
+  const { playingVideoId, setPlayingVideoId } =
+    React.useContext(videoPlaybackContext);
+  const videoIsActive = playingVideoId === videoId;
 
-  const handleTogglePlay = () => {};
+  const handleTogglePlay = () => {
+    if (!videoIsActive) {
+      setPlayingVideoId(videoId);
+    } else {
+      setPlayingVideoId(null);
+    }
+  };
 
   return (
     <li>
