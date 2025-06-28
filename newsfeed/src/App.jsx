@@ -18,6 +18,7 @@ function VideoPlaybackProvider({ children }) {
 }
 
 function VideoItem({ videoId, title, poster, src }) {
+  const videoRef = React.useRef(null);
   const { playingVideoId, setPlayingVideoId } =
     React.useContext(videoPlaybackContext);
   const videoIsActive = playingVideoId === videoId;
@@ -29,6 +30,16 @@ function VideoItem({ videoId, title, poster, src }) {
       setPlayingVideoId(null);
     }
   };
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      if (videoIsActive) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [videoIsActive]);
 
   return (
     <li>
