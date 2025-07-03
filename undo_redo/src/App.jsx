@@ -8,15 +8,51 @@ const initialState = {
 
 function reducer(state, action) {
   const { past, present, future } = state;
-
-  return state;
+  switch (action.type) {
+    case "increment":
+      return {
+        past: [...past, present],
+        present: present + 1,
+        future: [],
+      };
+    case "decrement":
+      return {
+        past: [...past, present],
+        present: present - 1,
+        future: [],
+      };
+    case "undo": {
+      if (past.length === 0) return state;
+      const previous = past[past.length - 1];
+      return {
+        past: past.slice(0, -1),
+        present: previous,
+        future: [present, ...future],
+      };
+    }
+    case "redo": {
+      if (future.length === 0) return state;
+      const next = future[0];
+      return {
+        past: [...past, present],
+        present: next,
+        future: future.slice(1),
+      };
+    }
+    default:
+      return state;
+  }
 }
 
 export default function CounterWithUndoRedo() {
-  const state = initialState;
+  const [state, dispatch] = React.useReducer(reducer, initialState);
 
-  const handleIncrement = () => {};
-  const handleDecrement = () => {};
+  const handleIncrement = () => {
+    dispatch({ type: "increment" });
+  };
+  const handleDecrement = () => {
+    dispatch({ type: "decrement" });
+  };
   const handleUndo = () => {};
   const handleRedo = () => {};
 
