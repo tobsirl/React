@@ -53,8 +53,12 @@ export default function CounterWithUndoRedo() {
   const handleDecrement = () => {
     dispatch({ type: "decrement" });
   };
-  const handleUndo = () => {};
-  const handleRedo = () => {};
+  const handleUndo = () => {
+    dispatch({ type: "undo" });
+  };
+  const handleRedo = () => {
+    dispatch({ type: "redo" });
+  };
 
   return (
     <div>
