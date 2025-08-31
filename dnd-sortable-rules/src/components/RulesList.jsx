@@ -1,16 +1,23 @@
 import RulesItem from "./RulesItem";
 import { DndContext } from "@dnd-kit/core";
-import { arrayMove, SortableContext } from "@dnd-kit/sortable";
+import { SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
+import { actions } from "../constants";
 
-export default function RulesList({ rulesList, setRulesList }) {
+export default function RulesList({ state, dispatch }) {
   function handleDragEnd(event) {
     const { active, over } = event;
-    if (over && active.id !== over.id) {
-      setRulesList((items) => {
-        const oldIndex = items.findIndex((item) => item.id === active.id);
-        const newIndex = items.findIndex((item) => item.id === over.id);
-        return arrayMove(items, oldIndex, newIndex);
+    // Only proceed if we have a valid drop target and it's not the same item
+    if (!over || active.id === over.id) return;
+
+    // State is an array of rules
+    const from = state.findIndex((rule) => rule.id === active.id);
+    const to = state.findIndex((rule) => rule.id === over.id);
+
+    if (from !== -1 && to !== -1) {
+      dispatch({
+        type: actions.REORDER_RULES,
+        payload: { from, to },
       });
     }
   }
@@ -20,8 +27,8 @@ export default function RulesList({ rulesList, setRulesList }) {
         modifiers={[restrictToVerticalAxis]}
         onDragEnd={handleDragEnd}
       >
-        <SortableContext items={rulesList}>
-          {rulesList.map((rule, idx) => (
+        <SortableContext items={state.map((r) => r.id)}>
+          {state.map((rule, idx) => (
             <RulesItem key={rule.id} rule={rule} index={idx + 1} />
           ))}
         </SortableContext>

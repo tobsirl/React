@@ -1,4 +1,6 @@
 // Formatting utilities shared across components
+import { actions } from "./constants";
+import { arrayMove } from "@dnd-kit/sortable";
 
 export function formatList(values = []) {
   const arr = (values || []).filter(Boolean).map(String);
@@ -26,4 +28,18 @@ export function formatAdjust(adjust) {
     return dir === "No change" ? dir : `${dir} bid by ${magnitude}%`;
   }
   return `Adjust: ${String(adjust)}`;
+}
+
+export function ruleSetReducer(draft, action) {
+  switch (action.type) {
+    case actions.REORDER_RULES: {
+      const { from, to } = action.payload;
+      // mutate the draft in-place to keep Immer working correctly
+      const moved = arrayMove(draft, from, to);
+      draft.length = 0;
+      draft.push(...moved);
+      break;
+    }
+  }
+  return draft;
 }
