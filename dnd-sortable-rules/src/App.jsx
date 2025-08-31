@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { rules } from "./rules";
+import RulesList from "./components/RulesList";
 import "./App.css";
 
 function App() {
@@ -11,20 +12,13 @@ function App() {
           Drag and Drop Sortable Demo
         </h1>
         <p className="text-sm text-gray-600">
-          If Tailwind is working, this card has padding, rounded corners, and a
-          subtle shadow.
+          Create rules to tell us how much more certain audiences are worth to
+          your business. Our system will optimise for outcomes based on these
+          rules.
         </p>
-        <div className="flex gap-3">
-          <button className="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition">
-            Primary
-          </button>
-          <button className="px-4 py-2 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 text-gray-800">
-            Secondary
-          </button>
-        </div>
-        <div className="grid grid-cols-2 gap-2 text-xs text-gray-500">
-          <div className="p-3 rounded-lg bg-gray-100">grid-cols-2</div>
-          <div className="p-3 rounded-lg bg-gray-100">gap-2</div>
+        <div className="flex gap-3"></div>
+        <div className="grid grid-cols-1 gap-2 text-xs text-gray-500">
+          <RulesList rulesList={rulesList} />
         </div>
       </div>
     </div>
