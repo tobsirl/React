@@ -17,7 +17,7 @@ function App() {
           rules.
         </p>
         <div className="flex gap-3"></div>
-        <div className="grid grid-cols-1 gap-2 text-xs text-gray-500">
+        <div className="grid grid-cols-1 gap-4 text-xs text-gray-500">
           <RulesList rulesList={rulesList} setRulesList={setRulesList} />
         </div>
         <pre className="mt-6 p-1 bg-gray-100 rounded">
