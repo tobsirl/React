@@ -1,7 +1,10 @@
 import React from "react";
 import { formatList, formatAdjust } from "../utils";
+import { useSortable } from "@dnd-kit/sortable";
 
 export default function RulesItem({ rule, index }) {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: rule.id });
   const allValues = (rule?.criterias || []).flatMap((c) =>
     Array.isArray(c?.criteria_values)
       ? c.criteria_values
@@ -14,7 +17,12 @@ export default function RulesItem({ rule, index }) {
   const adjustText = formatAdjust(rule?.adjust_value);
 
   return (
-    <div className="p-3 rounded-lg border border-gray-200 text-left shadow-md bg-gray-100">
+    <div
+      ref={setNodeRef}
+      {...attributes}
+      {...listeners}
+      className="p-3 rounded-lg border border-gray-200 text-left shadow-md bg-gray-100"
+    >
       <h3 className="font-semibold mt-1 text-lg">
         {typeof index === "number" ? `Rule ${index}: ` : ""}
         {rule?.name}
