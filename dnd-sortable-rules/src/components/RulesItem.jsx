@@ -1,6 +1,7 @@
 import React from "react";
 import { formatList, formatAdjust } from "../utils";
 import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 export default function RulesItem({ rule, index }) {
   const { attributes, listeners, setNodeRef, transform, transition } =
@@ -13,6 +14,11 @@ export default function RulesItem({ rule, index }) {
       : []
   );
 
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
   const criteriaText = formatList(allValues);
   const adjustText = formatAdjust(rule?.adjust_value);
 
@@ -21,6 +27,7 @@ export default function RulesItem({ rule, index }) {
       ref={setNodeRef}
       {...attributes}
       {...listeners}
+      style={style}
       className="p-3 rounded-lg border border-gray-200 text-left shadow-md bg-gray-100"
     >
       <h3 className="font-semibold mt-1 text-lg">
